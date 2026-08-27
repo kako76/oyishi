@@ -1,0 +1,2668 @@
+{
+  "categories": [
+    "ENTRANTE",
+    "MENÚS",
+    "ROLL(8piezas)",
+    "URAMAKI(8piezas)",
+    "TEMPURIZADOS(8 piezas)",
+    "NIGIRI SUSHI(2 piezas)",
+    "MAKI(8piezas)",
+    "TEMAKI(1 piezas)",
+    "EXLUSIVOS TARTAS",
+    "SASHIMI(9 cortes)",
+    "KUSHIYAKI(2 piezas)",
+    "PASTAS FRITAS Y PLANCHA",
+    "BANDEJAS Y COMBINADOS",
+    "BEBIDA",
+    "VINO",
+    "POSTRES",
+    "MENU DIA"
+  ],
+  "products": [
+    {
+      "id": "p_1",
+      "originalId": "1",
+      "name": "Rollitos vegetales",
+      "category": "ENTRANTE",
+      "description": "Rollitos rellenos ...",
+      "price": 3.5,
+      "allergens": [
+        "Gluten",
+        "Pescado",
+        "Lácteos"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe50065be6.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=1",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_9",
+      "originalId": "9",
+      "name": "Minirollitos",
+      "category": "ENTRANTE",
+      "description": "(10 unidades)",
+      "pieces": 10,
+      "price": 3,
+      "allergens": [
+        "Gluten"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20260525153533856267.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=9",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_2",
+      "originalId": "2",
+      "name": "Rollitos de gambas",
+      "category": "ENTRANTE",
+      "description": "Rellenos de gamba ...",
+      "price": 4.5,
+      "allergens": [
+        "Gluten",
+        "Crustáceos",
+        "Cacahuetes"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe500664a1.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=2",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_162",
+      "originalId": "162",
+      "name": "Langostino tempura estilo japonesa",
+      "category": "ENTRANTE",
+      "description": "(4 unidades)",
+      "pieces": 4,
+      "price": 5.95,
+      "allergens": [
+        "Gluten",
+        "Crustáceos",
+        "Cacahuetes"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20260525153656236865.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=162",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_3",
+      "originalId": "3",
+      "name": "Rollitos de queso",
+      "category": "ENTRANTE",
+      "description": "Rellenos de queso ...",
+      "price": 3.5,
+      "allergens": [
+        "Gluten",
+        "Huevos",
+        "Cacahuetes"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe500669aa.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=3",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_4",
+      "originalId": "4",
+      "name": "Gyozas de carne y verduras",
+      "category": "ENTRANTE",
+      "description": "Empanadillas a la ...",
+      "price": 5.8,
+      "allergens": [
+        "Gluten",
+        "Pescado",
+        "Lácteos"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe50066d88.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=4",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_5",
+      "originalId": "5",
+      "name": "Shumai",
+      "category": "ENTRANTE",
+      "description": "(masa transparent ...",
+      "price": 4.5,
+      "allergens": [
+        "Gluten",
+        "Pescado"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe50067068.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=5",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_6",
+      "originalId": "6",
+      "name": "Jiaozi de gambas",
+      "category": "ENTRANTE",
+      "description": "(masa de almidon d...",
+      "price": 5,
+      "allergens": [
+        "Gluten",
+        "Crustáceos"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe500674b0.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=6",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_7",
+      "originalId": "7",
+      "name": "Jiaozi peonies",
+      "category": "ENTRANTE",
+      "description": "(Came se cerdo cam...",
+      "price": 4.9,
+      "allergens": [
+        "Gluten",
+        "Crustáceos"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe50067927.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=7",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_158",
+      "originalId": "158",
+      "name": "Gyozas vegetarianas",
+      "category": "ENTRANTE",
+      "price": 5.5,
+      "allergens": [
+        "Gluten",
+        "Pescado"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20260525155046804089.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=158",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_10",
+      "originalId": "10",
+      "name": "Xiao long bao",
+      "category": "ENTRANTE",
+      "description": "(con un relleno ju...",
+      "price": 5,
+      "allergens": [
+        "Gluten"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe50067db1.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=10",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_11",
+      "originalId": "11",
+      "name": "Dim-sum variado",
+      "category": "ENTRANTE",
+      "description": "(5 piezas)",
+      "pieces": 5,
+      "price": 5.5,
+      "allergens": [
+        "Gluten",
+        "Huevos",
+        "Pescado",
+        "Soja"
+      ],
+      "imageUrl": "https://oyishi.es/public/images/novedad.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=11",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_12",
+      "originalId": "12",
+      "name": "Ensalada de algas",
+      "category": "ENTRANTE",
+      "description": "( algas pepino agu...",
+      "price": 4,
+      "allergens": [
+        "Crustáceos",
+        "Pescado",
+        "Sésamo"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe508d169e.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=12",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_13",
+      "originalId": "13",
+      "name": "Goma wakame",
+      "category": "ENTRANTE",
+      "description": "(algas finas)",
+      "price": 4,
+      "allergens": [
+        "Sésamo"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe508d1daa.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=13",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_14",
+      "originalId": "14",
+      "name": "Ensalada sesar",
+      "category": "ENTRANTE",
+      "description": "(Lechuga,tomate,za...",
+      "price": 8.5,
+      "allergens": [
+        "Gluten",
+        "Cacahuetes"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe508d2211.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=14",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_15",
+      "originalId": "15",
+      "name": "Ensalada aguacate",
+      "category": "ENTRANTE",
+      "description": "( aguacate pepino ...",
+      "price": 9,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe508d26e2.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=15",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_16",
+      "originalId": "16",
+      "name": "Edamame",
+      "category": "ENTRANTE",
+      "description": "(habas al vapor)",
+      "price": 4.5,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe508d2b8a.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=16",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_17",
+      "originalId": "17",
+      "name": "Sopa miso",
+      "category": "ENTRANTE",
+      "price": 2.9,
+      "allergens": [
+        "Crustáceos",
+        "Pescado"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe508d2f1b.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=17",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_160",
+      "originalId": "160",
+      "name": "MENÚ PARA 2 PERSONAS",
+      "category": "MENÚS",
+      "description": "4 Maki salmón4 Ma...",
+      "price": 32.95,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/images/no-imagen.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=160",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_161",
+      "originalId": "161",
+      "name": "MENU PARA 4 PERSONAS",
+      "category": "MENÚS",
+      "description": "4 Rollitos4 Xiao L...",
+      "price": 48,
+      "allergens": [
+        "Pescado"
+      ],
+      "imageUrl": "https://oyishi.es/public/images/no-imagen.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=161",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_18",
+      "originalId": "18",
+      "name": "California roll",
+      "category": "ROLL(8piezas)",
+      "description": "(gambas, pepino y ...",
+      "price": 6.95,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe508d324d.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=18",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_19",
+      "originalId": "19",
+      "name": "California salmón roll",
+      "category": "ROLL(8piezas)",
+      "description": "(salmón, pepino y...",
+      "price": 7.85,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe508d34d0.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=19",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_163",
+      "originalId": "163",
+      "name": "Sésamo salmón roll",
+      "category": "ROLL(8piezas)",
+      "description": "(Salmón, pepino y...",
+      "price": 7.5,
+      "allergens": [
+        "Frutos de cáscara",
+        "Sésamo"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20260525155338128270.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=163",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_20",
+      "originalId": "20",
+      "name": "California Atún roll",
+      "category": "ROLL(8piezas)",
+      "description": "(atún pepino y ag...",
+      "price": 8.45,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe508d37c9.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=20",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_21",
+      "originalId": "21",
+      "name": "Gambas roll",
+      "category": "ROLL(8piezas)",
+      "description": "(gambas,pepino y a...",
+      "price": 6.5,
+      "allergens": [
+        "Crustáceos",
+        "Sésamo"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe510e2538.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=21",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_22",
+      "originalId": "22",
+      "name": "Maki Almendra",
+      "category": "ROLL(8piezas)",
+      "description": "(salmón, aguacate...",
+      "price": 8.5,
+      "allergens": [
+        "Cacahuetes",
+        "Soja"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20260525155443669451.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=22",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_23",
+      "originalId": "23",
+      "name": "Sésamo roll",
+      "category": "ROLL(8piezas)",
+      "description": "(surimi, pepino y ...",
+      "price": 6,
+      "allergens": [
+        "Crustáceos",
+        "Sésamo"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe510e2e2c.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=23",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_24",
+      "originalId": "24",
+      "name": "Maki dragón",
+      "category": "ROLL(8piezas)",
+      "description": "( Langostinos en t...",
+      "price": 6.95,
+      "allergens": [
+        "Crustáceos"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe510e31d0.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=24",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_25",
+      "originalId": "25",
+      "name": "Spicy salmon crunch",
+      "category": "ROLL(8piezas)",
+      "description": "(salmón, aguacate...",
+      "price": 7.95,
+      "allergens": [
+        "Gluten",
+        "Cacahuetes",
+        "Frutos de cáscara",
+        "Sésamo"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe510e3553.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=25",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_26",
+      "originalId": "26",
+      "name": "Spicy tuna crunch",
+      "category": "ROLL(8piezas)",
+      "description": "(atún, aguante, m...",
+      "price": 7.95,
+      "allergens": [
+        "Gluten",
+        "Pescado",
+        "Cacahuetes",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe510e3895.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=26",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_27",
+      "originalId": "27",
+      "name": "Spicy gamba crunch",
+      "category": "ROLL(8piezas)",
+      "description": "(gambas, aguante, ...",
+      "price": 7.5,
+      "allergens": [
+        "Gluten",
+        "Crustáceos",
+        "Pescado",
+        "Cacahuetes"
+      ],
+      "imageUrl": "https://oyishi.es/public/images/novedad.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=27",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_28",
+      "originalId": "28",
+      "name": "Aguacate uramaki",
+      "category": "URAMAKI(8piezas)",
+      "description": "(gambas, aguacate,...",
+      "price": 8.5,
+      "allergens": [
+        "Crustáceos",
+        "Cacahuetes"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe510e3e39.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=28",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_164",
+      "originalId": "164",
+      "name": "Uramaki mango",
+      "category": "URAMAKI(8piezas)",
+      "description": "(Salmón, aguacate...",
+      "price": 8.9,
+      "allergens": [
+        "Cacahuetes",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20260525155913617818.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=164",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_29",
+      "originalId": "29",
+      "name": "Cheese bamboo roll",
+      "category": "URAMAKI(8piezas)",
+      "description": "(aguacate y queso ...",
+      "price": 6.75,
+      "allergens": [
+        "Cacahuetes"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe510e4120.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=29",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_30",
+      "originalId": "30",
+      "name": "Sake cheese bamboo roll",
+      "category": "URAMAKI(8piezas)",
+      "description": "(salmón, queso Ph...",
+      "price": 8.5,
+      "allergens": [
+        "Cacahuetes",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe51aa7f19.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=30",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_31",
+      "originalId": "31",
+      "name": "Dinamita roll",
+      "category": "URAMAKI(8piezas)",
+      "description": "(gambas, queso Phi...",
+      "price": 8.9,
+      "allergens": [
+        "Crustáceos",
+        "Cacahuetes",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe51aa8486.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=31",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_32",
+      "originalId": "32",
+      "name": "Salmón uramaki",
+      "category": "URAMAKI(8piezas)",
+      "description": "(salmón, queso Ph...",
+      "price": 8.9,
+      "allergens": [
+        "Cacahuetes",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe51aa886e.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=32",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_33",
+      "originalId": "33",
+      "name": "Atún uramaki",
+      "category": "URAMAKI(8piezas)",
+      "description": "(atún, queso Phil...",
+      "price": 8.9,
+      "allergens": [
+        "Cacahuetes",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/images/novedad.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=33",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_34",
+      "originalId": "34",
+      "name": "Rock roll",
+      "category": "TEMPURIZADOS(8 piezas)",
+      "description": "(pepino, aguacate,...",
+      "price": 8.5,
+      "allergens": [
+        "Gluten",
+        "Crustáceos",
+        "Pescado"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe51aa8fb2.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=34",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_35",
+      "originalId": "35",
+      "name": "Maki crispy salmón",
+      "category": "TEMPURIZADOS(8 piezas)",
+      "description": "(salmón y salsa c...",
+      "price": 9,
+      "allergens": [
+        "Gluten",
+        "Pescado",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe51aa9369.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=35",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_165",
+      "originalId": "165",
+      "name": "Tempurizados maki de pez mantequilla",
+      "category": "TEMPURIZADOS(8 piezas)",
+      "description": "(cebolla crujiente...",
+      "price": 9,
+      "allergens": [
+        "Gluten",
+        "Pescado",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20260525160328396791.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=165",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_36",
+      "originalId": "36",
+      "name": "Maki crispy pato",
+      "category": "TEMPURIZADOS(8 piezas)",
+      "description": "(pato y salsa, ceb...",
+      "price": 8.5,
+      "allergens": [
+        "Gluten",
+        "Pescado"
+      ],
+      "imageUrl": "https://oyishi.es/public/images/novedad.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=36",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_37",
+      "originalId": "37",
+      "name": "Sésamo roll en crispy",
+      "category": "TEMPURIZADOS(8 piezas)",
+      "description": "(pepino, aguacate,...",
+      "price": 8,
+      "allergens": [
+        "Gluten",
+        "Crustáceos",
+        "Pescado"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe51aa993a.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=37",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_38",
+      "originalId": "38",
+      "name": "Sushi atun",
+      "category": "NIGIRI SUSHI(2 piezas)",
+      "description": "(Arroz y atún)",
+      "price": 3.9,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe51aa9c90.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=38",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_166",
+      "originalId": "166",
+      "name": "Sushi atún flameado",
+      "category": "NIGIRI SUSHI(2 piezas)",
+      "price": 4.5,
+      "allergens": [
+        "Pescado",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20260525160545797372.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=166",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_39",
+      "originalId": "39",
+      "name": "Sushi salmon",
+      "category": "NIGIRI SUSHI(2 piezas)",
+      "description": "(Arroz y salmón)",
+      "price": 3.5,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe5291553d.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=39",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_167",
+      "originalId": "167",
+      "name": "Sushi salmón flameado",
+      "category": "NIGIRI SUSHI(2 piezas)",
+      "price": 4,
+      "allergens": [
+        "Pescado",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20260525160808935822.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=167",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_40",
+      "originalId": "40",
+      "name": "Sushi gambas",
+      "category": "NIGIRI SUSHI(2 piezas)",
+      "description": "Arroz y gambas",
+      "price": 3,
+      "allergens": [
+        "Crustáceos"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe52915873.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=40",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_41",
+      "originalId": "41",
+      "name": "Sushi lubina",
+      "category": "NIGIRI SUSHI(2 piezas)",
+      "description": "Arroz y lubina",
+      "price": 4,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe52915b57.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=41",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_168",
+      "originalId": "168",
+      "name": "Sushi lubina flameado",
+      "category": "NIGIRI SUSHI(2 piezas)",
+      "price": 4,
+      "allergens": [
+        "Pescado",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20260525161845618642.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=168",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_169",
+      "originalId": "169",
+      "name": "Sushi de vieira",
+      "category": "NIGIRI SUSHI(2 piezas)",
+      "price": 3.9,
+      "allergens": [
+        "Pescado",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20260525161954608808.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=169",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_42",
+      "originalId": "42",
+      "name": "Sushi Anguila",
+      "category": "NIGIRI SUSHI(2 piezas)",
+      "description": "Arroz y anguila",
+      "price": 4,
+      "allergens": [
+        "Pescado",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe52915e18.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=42",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_43",
+      "originalId": "43",
+      "name": "Pez mantequilla",
+      "category": "NIGIRI SUSHI(2 piezas)",
+      "description": "(arroz y pez mante...",
+      "price": 3.5,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe52916058.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=43",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_170",
+      "originalId": "170",
+      "name": "Sushi pez mantequill  flameado",
+      "category": "NIGIRI SUSHI(2 piezas)",
+      "price": 4,
+      "allergens": [
+        "Pescado",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20260525162210390395.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=170",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_44",
+      "originalId": "44",
+      "name": "Sushi aguacate",
+      "category": "NIGIRI SUSHI(2 piezas)",
+      "description": "Arroz aguante y qu...",
+      "price": 2.8,
+      "allergens": [
+        "Cacahuetes"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe52916374.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=44",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_45",
+      "originalId": "45",
+      "name": "Sushi pulpo",
+      "category": "NIGIRI SUSHI(2 piezas)",
+      "description": "arroz y pulpo",
+      "price": 4,
+      "allergens": [
+        "Moluscos"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe52916787.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=45",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_46",
+      "originalId": "46",
+      "name": "Sushi tobiko",
+      "category": "NIGIRI SUSHI(2 piezas)",
+      "description": "Arroz y huevas de ...",
+      "price": 4,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe52916ae1.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=46",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_47",
+      "originalId": "47",
+      "name": "Sushi ikura",
+      "category": "NIGIRI SUSHI(2 piezas)",
+      "description": "Arroz y huevas de ...",
+      "price": 6,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe54462b24.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=47",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_48",
+      "originalId": "48",
+      "name": "Sushi tartar atún",
+      "category": "NIGIRI SUSHI(2 piezas)",
+      "description": "Arroz y atún",
+      "price": 6.5,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe544630bd.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=48",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_49",
+      "originalId": "49",
+      "name": "Sushi tartar salmón",
+      "category": "NIGIRI SUSHI(2 piezas)",
+      "description": "Arroz y salmón",
+      "price": 5.9,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe54463448.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=49",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_50",
+      "originalId": "50",
+      "name": "Maki atún",
+      "category": "MAKI(8piezas)",
+      "description": "Arroz y atún",
+      "price": 4.9,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe544637d0.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=50",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_51",
+      "originalId": "51",
+      "name": "Maki salmón",
+      "category": "MAKI(8piezas)",
+      "description": "(arroz y salmón)",
+      "price": 4.5,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe54463b26.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=51",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_52",
+      "originalId": "52",
+      "name": "Maki anguila",
+      "category": "MAKI(8piezas)",
+      "description": "(arroz y anguila)",
+      "price": 6,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe54463e55.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=52",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_53",
+      "originalId": "53",
+      "name": "Maki gambas",
+      "category": "MAKI(8piezas)",
+      "description": "(gambas y aguacate...",
+      "price": 4.5,
+      "allergens": [
+        "Crustáceos"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe54464251.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=53",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_54",
+      "originalId": "54",
+      "name": "Maki salmón con aguacate",
+      "category": "MAKI(8piezas)",
+      "description": "(arroz, salmón y ...",
+      "price": 4.5,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe544645e9.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=54",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_55",
+      "originalId": "55",
+      "name": "Maki atún con aguacate",
+      "category": "MAKI(8piezas)",
+      "description": "(arroz, atún y ag...",
+      "price": 4.9,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe5446490f.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=55",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_56",
+      "originalId": "56",
+      "name": "Maki surimi",
+      "category": "MAKI(8piezas)",
+      "description": "(surimi, aguacate ...",
+      "price": 4,
+      "allergens": [
+        "Crustáceos"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe54fa4b24.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=56",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_57",
+      "originalId": "57",
+      "name": "Maki vegetal",
+      "category": "MAKI(8piezas)",
+      "description": "(aguacate y pepino...",
+      "price": 3.5,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe54fa5167.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=57",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_58",
+      "originalId": "58",
+      "name": "Maki pez mantequilla",
+      "category": "MAKI(8piezas)",
+      "description": "(arroz y pez mante...",
+      "price": 4.5,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe54fa5574.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=58",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_59",
+      "originalId": "59",
+      "name": "Maki aguacate",
+      "category": "MAKI(8piezas)",
+      "description": "(arroz y aguacate)",
+      "price": 3.5,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe54fa594d.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=59",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_60",
+      "originalId": "60",
+      "name": "Futomaki",
+      "category": "MAKI(8piezas)",
+      "description": "(relleno de salmó...",
+      "price": 10.9,
+      "allergens": [
+        "Crustáceos",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe54fa5cab.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=60",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_61",
+      "originalId": "61",
+      "name": "Temaki de atún y  aguacate",
+      "category": "TEMAKI(1 piezas)",
+      "price": 4.25,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe54fa5ffc.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=61",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_62",
+      "originalId": "62",
+      "name": "Temaki de salmón y aguacate",
+      "category": "TEMAKI(1 piezas)",
+      "price": 4,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe54fa6310.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=62",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_63",
+      "originalId": "63",
+      "name": "Temaki California",
+      "category": "TEMAKI(1 piezas)",
+      "description": "(Gambas y aguacate...",
+      "price": 4,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe54fa6571.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=63",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_64",
+      "originalId": "64",
+      "name": "Temaki de anguila",
+      "category": "TEMAKI(1 piezas)",
+      "price": 4.65,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe54fa68e7.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=64",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_65",
+      "originalId": "65",
+      "name": "Temaki de pato",
+      "category": "TEMAKI(1 piezas)",
+      "price": 4.5,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe55b49cc3.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=65",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_66",
+      "originalId": "66",
+      "name": "Temaki mantequilla",
+      "category": "TEMAKI(1 piezas)",
+      "price": 4.5,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe55b4a1e0.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=66",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_67",
+      "originalId": "67",
+      "name": "Tartar salmón con aguacate",
+      "category": "EXLUSIVOS TARTAS",
+      "description": "(salmón y salsa...",
+      "price": 12,
+      "allergens": [
+        "Pescado",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe55b4a642.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=67",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_68",
+      "originalId": "68",
+      "name": "Tartar atún con aguacate",
+      "category": "EXLUSIVOS TARTAS",
+      "description": "Atún aguante y sa...",
+      "price": 12.5,
+      "allergens": [
+        "Pescado",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe55b4abdb.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=68",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_69",
+      "originalId": "69",
+      "name": "Yu-sen manguro",
+      "category": "EXLUSIVOS TARTAS",
+      "description": "(Atún poco picant...",
+      "price": 13,
+      "allergens": [
+        "Frutos de cáscara",
+        "Picante"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe55b4b028.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=69",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_70",
+      "originalId": "70",
+      "name": "Tartar salmón",
+      "category": "EXLUSIVOS TARTAS",
+      "description": "Salmón y salsa",
+      "price": 12,
+      "allergens": [
+        "Pescado",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe55b4b449.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=70",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_71",
+      "originalId": "71",
+      "name": "Sashimi salmón",
+      "category": "SASHIMI(9 cortes)",
+      "price": 10.9,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe55b4b848.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=71",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_72",
+      "originalId": "72",
+      "name": "Sashimi atún",
+      "category": "SASHIMI(9 cortes)",
+      "price": 11.9,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe55b4bbb9.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=72",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_73",
+      "originalId": "73",
+      "name": "Sashimi pez mantequilla",
+      "category": "SASHIMI(9 cortes)",
+      "price": 10.9,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe55b4bf4f.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=73",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_74",
+      "originalId": "74",
+      "name": "Tataki maguro",
+      "category": "SASHIMI(9 cortes)",
+      "price": 11.9,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe56625568.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=74",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_75",
+      "originalId": "75",
+      "name": "Sashimi variado",
+      "category": "SASHIMI(9 cortes)",
+      "description": "(9 Cortes)",
+      "pieces": 9,
+      "price": 11,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe56625b4a.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=75",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_76",
+      "originalId": "76",
+      "name": "Sashimi variado (24 cortes)",
+      "category": "SASHIMI(9 cortes)",
+      "description": "(24 Cortes )",
+      "price": 24,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe56625eca.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=76",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_77",
+      "originalId": "77",
+      "name": "Kushiyaki salmón",
+      "category": "KUSHIYAKI(2 piezas)",
+      "description": "Salmón y salsa",
+      "price": 6,
+      "allergens": [
+        "Pescado",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe566261c0.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=77",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_79",
+      "originalId": "79",
+      "name": "Kushiyaki gambas",
+      "category": "KUSHIYAKI(2 piezas)",
+      "description": "Gambas y salsa",
+      "price": 4.9,
+      "allergens": [
+        "Crustáceos",
+        "Pescado"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe56626519.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=79",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_80",
+      "originalId": "80",
+      "name": "Yakitori brocheta de pollo",
+      "category": "KUSHIYAKI(2 piezas)",
+      "description": "Pollo puerros y sa...",
+      "price": 4.5,
+      "allergens": [
+        "Pescado",
+        "Sésamo"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe56626888.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=80",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_81",
+      "originalId": "81",
+      "name": "Yakitori solomillo de buey",
+      "category": "KUSHIYAKI(2 piezas)",
+      "description": "Solomillo y salsa",
+      "price": 5.9,
+      "allergens": [
+        "Pescado"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe56626b2e.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=81",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_82",
+      "originalId": "82",
+      "name": "Arroz de sushi",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "price": 3,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe56626e02.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=82",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_83",
+      "originalId": "83",
+      "name": "Arroz blanco",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "price": 2,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe5662711b.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=83",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_84",
+      "originalId": "84",
+      "name": "Yakisoba con gambas",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "description": "(yakisoba con gamb...",
+      "price": 7.35,
+      "allergens": [
+        "Crustáceos",
+        "Pescado"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe56fec2d1.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=84",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_154",
+      "originalId": "154",
+      "name": "yakisoba vegetal",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "description": "(yakisoba y verdur...",
+      "price": 6.5,
+      "allergens": [
+        "Gluten",
+        "Pescado"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe56fec850.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=154",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_85",
+      "originalId": "85",
+      "name": "Yakiudon con gambas y  verduras",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "description": "(tallarines udon, ...",
+      "price": 7.85,
+      "allergens": [
+        "Crustáceos",
+        "Pescado"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe56fecd71.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=85",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_86",
+      "originalId": "86",
+      "name": "Yakifideo con gambas y verduras",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "description": "(fideos, gambas y ...",
+      "price": 7.85,
+      "allergens": [
+        "Crustáceos",
+        "Pescado"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe56fed1eb.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=86",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_87",
+      "originalId": "87",
+      "name": "Arroz con setas",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "description": "（Arroz seta huev...",
+      "price": 7.25,
+      "allergens": [
+        "Huevos",
+        "Pescado"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe56fed589.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=87",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_88",
+      "originalId": "88",
+      "name": "Kaisen yakimeshi",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "description": "(Arroz frito con m...",
+      "price": 8.25,
+      "allergens": [
+        "Crustáceos",
+        "Huevos",
+        "Sésamo",
+        "Moluscos"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe56fedaa2.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=88",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_89",
+      "originalId": "89",
+      "name": "Yakimeshi",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "description": "(Arroz frito con g...",
+      "price": 6.95,
+      "allergens": [
+        "Crustáceos",
+        "Huevos",
+        "Sésamo"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe56fedf28.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=89",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_153",
+      "originalId": "153",
+      "name": "Arroz frito con tres delicias",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "description": "(arroz, zanahoria,...",
+      "price": 5.95,
+      "allergens": [
+        "Huevos"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe56fee2fe.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=153",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_128",
+      "originalId": "128",
+      "name": "Yakimeshi piña",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "description": "(Arroz frito con g...",
+      "price": 7.5,
+      "allergens": [
+        "Crustáceos",
+        "Huevos"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe56fee779.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=128",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_90",
+      "originalId": "90",
+      "name": "Yakimeshi ternera",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "description": "(Arroz frito con t...",
+      "price": 7.35,
+      "allergens": [
+        "Huevos",
+        "Mostaza"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe57b4df74.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=90",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_146",
+      "originalId": "146",
+      "name": "Yakimeshi pollo",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "description": "(Arroz frito con p...",
+      "price": 6.75,
+      "allergens": [
+        "Huevos",
+        "Pescado"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe57b4e6e1.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=146",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_91",
+      "originalId": "91",
+      "name": "Pollo teppanyaki",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "description": "(pechuga de pollo ...",
+      "price": 9.45,
+      "allergens": [
+        "Pescado",
+        "Soja"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe57b4ebde.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=91",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_92",
+      "originalId": "92",
+      "name": "Ternera con setas",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "description": "Ternera y seta",
+      "price": 8.5,
+      "allergens": [
+        "Gluten",
+        "Pescado"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe57b4f0f7.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=92",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_129",
+      "originalId": "129",
+      "name": "Ternera con verduras",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "description": "Ternera y verduras...",
+      "price": 7.95,
+      "allergens": [
+        "Gluten",
+        "Pescado"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe57b4f5e5.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=129",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_93",
+      "originalId": "93",
+      "name": "Gambas con champiñones",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "description": "Gambas y champiño...",
+      "price": 8.5,
+      "allergens": [
+        "Crustáceos",
+        "Pescado"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe57b4fa54.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=93",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_94",
+      "originalId": "94",
+      "name": "Ebi teppanyaki",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "description": "(gambas a la planc...",
+      "price": 12.5,
+      "allergens": [
+        "Crustáceos"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe57b4fecc.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=94",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_95",
+      "originalId": "95",
+      "name": "1/2 pato crujiente con salsa agripicante",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "description": "Pato y salsa",
+      "price": 11.5,
+      "allergens": [
+        "Gluten",
+        "Pescado"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe57b501e9.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=95",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_96",
+      "originalId": "96",
+      "name": "Pollo crujiente con  almendras",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "description": "pollo y almendras�...",
+      "price": 7.45,
+      "allergens": [
+        "Gluten",
+        "Soja"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe57b5050c.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=96",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_97",
+      "originalId": "97",
+      "name": "Pollo crujiente al limón",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "description": "Pollo, pan ralland...",
+      "price": 6.95,
+      "allergens": [
+        "Gluten"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe58873f80.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=97",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_98",
+      "originalId": "98",
+      "name": "Cerdo agridulce",
+      "category": "PASTAS FRITAS Y PLANCHA",
+      "description": "Carne de credo fri...",
+      "price": 6.75,
+      "allergens": [
+        "Gluten",
+        "Soja"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/677fe58874ec9.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=98",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_101",
+      "originalId": "101",
+      "name": "F1. Bandeja maki",
+      "category": "BANDEJAS Y COMBINADOS",
+      "description": "\" 8maki salmon 8ma...",
+      "price": 11.9,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163245916048.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=101",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_102",
+      "originalId": "102",
+      "name": "F2. Bandeja roll",
+      "category": "BANDEJAS Y COMBINADOS",
+      "description": "\"8california roll ...",
+      "price": 12.5,
+      "allergens": [
+        "Crustáceos",
+        "Frutos de cáscara",
+        "Sésamo"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163256926463.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=102",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_103",
+      "originalId": "103",
+      "name": "F3. Bandeja omega",
+      "category": "BANDEJAS Y COMBINADOS",
+      "description": "\"8 sésamo roll 8 ...",
+      "price": 15.9,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163310388056.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=103",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_104",
+      "originalId": "104",
+      "name": "F4. Bandeja sushi",
+      "category": "BANDEJAS Y COMBINADOS",
+      "description": "\" 4sushi salmon 4s...",
+      "price": 11.5,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163321565815.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=104",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_105",
+      "originalId": "105",
+      "name": "F5. Bandeja sushi y maki",
+      "category": "BANDEJAS Y COMBINADOS",
+      "description": "\" 8 maki salmon 2s...",
+      "price": 13.9,
+      "allergens": [
+        "Cacahuetes",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163331850922.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=105",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_106",
+      "originalId": "106",
+      "name": "F6. Bandeja",
+      "category": "BANDEJAS Y COMBINADOS",
+      "description": "\" 4 maki salmon 4 ...",
+      "price": 16.5,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163339890158.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=106",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_159",
+      "originalId": "159",
+      "name": "F7. Bandeja",
+      "category": "BANDEJAS Y COMBINADOS",
+      "description": "(28 piezas)8 Spicy...",
+      "pieces": 28,
+      "price": 24.9,
+      "allergens": [
+        "Pescado",
+        "Cacahuetes",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250114184136678941.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=159",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_108",
+      "originalId": "108",
+      "name": "F8. Bandeja variada",
+      "category": "BANDEJAS Y COMBINADOS",
+      "description": "\" 4 sushi pez ment...",
+      "price": 29.5,
+      "allergens": [
+        "Huevos",
+        "Pescado",
+        "Cacahuetes",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163348567061.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=108",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_109",
+      "originalId": "109",
+      "name": "F9. Bandeja",
+      "category": "BANDEJAS Y COMBINADOS",
+      "description": "\" 4 sashimi salmon...",
+      "price": 32.9,
+      "allergens": [
+        "Gluten",
+        "Crustáceos",
+        "Frutos de cáscara",
+        "Sésamo"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163359942084.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=109",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_151",
+      "originalId": "151",
+      "name": "F10. Bandeja maki sushi sashimi",
+      "category": "BANDEJAS Y COMBINADOS",
+      "description": "8 maki salmon 8mak...",
+      "price": 58.8,
+      "allergens": [
+        "Cacahuetes",
+        "Frutos de cáscara",
+        "Sésamo"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163413587248.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=151",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_155",
+      "originalId": "155",
+      "name": "F11. Sushi Fusion",
+      "category": "BANDEJAS Y COMBINADOS",
+      "description": "2 Sushi atún flam...",
+      "price": 18,
+      "allergens": [
+        "Pescado",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163419236880.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=155",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_156",
+      "originalId": "156",
+      "name": "F12. Bandeja",
+      "category": "BANDEJAS Y COMBINADOS",
+      "description": "4 Aguacate uramaki...",
+      "price": 21.9,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163428681401.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=156",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_157",
+      "originalId": "157",
+      "name": "F13. Bandeja Vegetariana",
+      "category": "BANDEJAS Y COMBINADOS",
+      "description": "4 Maki aguacate4 M...",
+      "price": 13.95,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163436454504.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=157",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_110",
+      "originalId": "110",
+      "name": "Lata coca cola",
+      "category": "BEBIDA",
+      "price": 2,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163601371672.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=110",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_111",
+      "originalId": "111",
+      "name": "Lata coca cola zero",
+      "category": "BEBIDA",
+      "price": 2,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163551250548.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=111",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_113",
+      "originalId": "113",
+      "name": "Lata fanta naranja",
+      "category": "BEBIDA",
+      "price": 2,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163541268671.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=113",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_114",
+      "originalId": "114",
+      "name": "Lata fanta limon",
+      "category": "BEBIDA",
+      "price": 2,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163534779175.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=114",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_115",
+      "originalId": "115",
+      "name": "Lata nestea",
+      "category": "BEBIDA",
+      "price": 2,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163524977469.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=115",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_116",
+      "originalId": "116",
+      "name": "Lata aquarius",
+      "category": "BEBIDA",
+      "price": 2,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163515327905.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=116",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_117",
+      "originalId": "117",
+      "name": "Lata aquarius naranja",
+      "category": "BEBIDA",
+      "price": 2,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163507807371.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=117",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_118",
+      "originalId": "118",
+      "name": "Agua",
+      "category": "BEBIDA",
+      "price": 1.8,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163459423062.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=118",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_119",
+      "originalId": "119",
+      "name": "Lata cerveza",
+      "category": "BEBIDA",
+      "price": 2,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163452467929.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=119",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_123",
+      "originalId": "123",
+      "name": "Vino de la casa",
+      "category": "VINO",
+      "price": 6.5,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163659121460.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=123",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_124",
+      "originalId": "124",
+      "name": "Vino  tinto (La Rioja)",
+      "category": "VINO",
+      "price": 11,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163705233747.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=124",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_125",
+      "originalId": "125",
+      "name": "Vino tinto (ribera del Duero)",
+      "category": "VINO",
+      "price": 12,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163711392981.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=125",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_126",
+      "originalId": "126",
+      "name": "Vino rosado señorío llanos",
+      "category": "VINO",
+      "price": 11,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163726997220.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=126",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_127",
+      "originalId": "127",
+      "name": "Vino blanco rueda",
+      "category": "VINO",
+      "price": 11,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163648428744.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=127",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_130",
+      "originalId": "130",
+      "name": "Mochi sabor a soja rojo",
+      "category": "POSTRES",
+      "description": "(2p)",
+      "price": 2.95,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/images/no-imagen.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=130",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_131",
+      "originalId": "131",
+      "name": "Mochi sabor a cacahuete",
+      "category": "POSTRES",
+      "description": "(2p)",
+      "price": 2.95,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/images/no-imagen.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=131",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_132",
+      "originalId": "132",
+      "name": "Mochi sabor a sesamo",
+      "category": "POSTRES",
+      "description": "(2p)",
+      "price": 2.95,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/images/no-imagen.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=132",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_133",
+      "originalId": "133",
+      "name": "Movhi sabor de mango",
+      "category": "POSTRES",
+      "price": 2.95,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/images/no-imagen.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=133",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_134",
+      "originalId": "134",
+      "name": "Mochi sabor a taro",
+      "category": "POSTRES",
+      "description": "(2p)",
+      "price": 2.95,
+      "allergens": [],
+      "imageUrl": "https://oyishi.es/public/images/no-imagen.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=134",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "unknown",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_141",
+      "originalId": "141",
+      "name": "Tarta  de queso con arandanos",
+      "category": "POSTRES",
+      "price": 2.9,
+      "allergens": [
+        "Gluten",
+        "Cacahuetes"
+      ],
+      "imageUrl": "https://oyishi.es/public/images/no-imagen.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=141",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_145",
+      "originalId": "145",
+      "name": "Tarta de tiramisu",
+      "category": "POSTRES",
+      "price": 2.9,
+      "allergens": [
+        "Gluten",
+        "Cacahuetes"
+      ],
+      "imageUrl": "https://oyishi.es/public/images/no-imagen.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=145",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_143",
+      "originalId": "143",
+      "name": "tarta de san marcos",
+      "category": "POSTRES",
+      "price": 2.9,
+      "allergens": [
+        "Gluten",
+        "Cacahuetes"
+      ],
+      "imageUrl": "https://oyishi.es/public/images/no-imagen.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=143",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_144",
+      "originalId": "144",
+      "name": "Tarta de selva de trufa",
+      "category": "POSTRES",
+      "price": 2.9,
+      "allergens": [
+        "Gluten",
+        "Cacahuetes"
+      ],
+      "imageUrl": "https://oyishi.es/public/images/no-imagen.jpg",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=144",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_135",
+      "originalId": "135",
+      "name": "FORMULA 1",
+      "category": "MENU DIA",
+      "description": "De lunes a Viernes...",
+      "price": 14.5,
+      "allergens": [
+        "Soja",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163803978373.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=135",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_136",
+      "originalId": "136",
+      "name": "FORMULA 2",
+      "category": "MENU DIA",
+      "description": "3 sushi salmon3 su...",
+      "price": 14.5,
+      "allergens": [
+        "Soja",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163810488373.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=136",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_137",
+      "originalId": "137",
+      "name": "FORMULA 3",
+      "category": "MENU DIA",
+      "description": "4 sesamo roll4 mak...",
+      "price": 14.5,
+      "allergens": [
+        "Gluten",
+        "Pescado",
+        "Frutos de cáscara",
+        "Sésamo"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163817405004.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=137",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_138",
+      "originalId": "138",
+      "name": "FORMULA 4",
+      "category": "MENU DIA",
+      "description": "3 sashimi salmon4 ...",
+      "price": 14.5,
+      "allergens": [
+        "Gluten",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163824923944.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=138",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_139",
+      "originalId": "139",
+      "name": "FORMULA 5",
+      "category": "MENU DIA",
+      "description": "2 sashimi salmon4 ...",
+      "price": 14.5,
+      "allergens": [
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163834479819.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=139",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    },
+    {
+      "id": "p_140",
+      "originalId": "140",
+      "name": "FORMULA 6",
+      "category": "MENU DIA",
+      "description": "2 Rollito gambas4 ...",
+      "price": 14.5,
+      "allergens": [
+        "Gluten",
+        "Pescado",
+        "Frutos de cáscara"
+      ],
+      "imageUrl": "https://oyishi.es/public/uploadfile/20250109163841820807.png",
+      "sourceUrl": "https://oyishi.es/menu_detail.php?id=140",
+      "source": "oyishi.es",
+      "verified": true,
+      "allergenStatus": "verified",
+      "imageStatus": "official"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "sourceUrls": {
+    "HOME": "https://oyishi.es/",
+    "CARTA": "https://oyishi.es/menu.php",
+    "RESERVAS": "https://oyishi.es/reservation.php",
+    "PUNTOS": "https://oyishi.es/points.php",
+    "CONTACTO": "https://oyishi.es/contact.php",
+    "PRODUCT_DETAIL_BASE": "https://oyishi.es/menu_detail.php?id=",
+    "IMAGE_BASE": "https://oyishi.es/public/uploadfile/"
+  }
+}

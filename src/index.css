@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  body {
+    @apply bg-oyishi-bg text-oyishi-text font-sans antialiased overflow-x-hidden selection:bg-oyishi-coral selection:text-white;
+    background-color: #120E0C;
+    color: #F7F2EC;
+  }
+}
+
+@layer utilities {
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  }
+  .text-shadow-md {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  }
+  .vignette-overlay {
+    box-shadow: inset 0 0 150px rgba(0,0,0,0.85);
+  }
+
+  /* Shimmer CTA animation */
+  .btn-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 100%
+    );
+    transform: skewX(-20deg);
+  }
+  .btn-shimmer:hover::after {
+    animation: shimmer-swipe 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Accessible focus rings */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oyishi-gold focus-visible:ring-offset-2 focus-visible:ring-offset-oyishi-bg;
+  }
+}
+
+@keyframes shimmer-swipe {
+  100% {
+    left: 140%;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #120E0C;
+}
+::-webkit-scrollbar-thumb {
+  background: #2E241F;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D8B36A;
+}
+
+/* Hide scrollbar for category horizontal scroll */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
