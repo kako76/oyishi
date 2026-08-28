@@ -25,6 +25,22 @@ import { useSEO } from '../hooks/useSEO';
 type DateFilter = 'hoy' | 'ayer' | 'semana' | 'todos';
 type StatusFilter = 'TODOS' | 'NUEVO' | 'CONFIRMADO' | 'PREPARANDO' | 'LISTO' | 'COMPLETADO';
 
+const normalizeOrderItems = (items: any): any[] => {
+  if (Array.isArray(items)) return items;
+  if (typeof items === 'string') {
+    try {
+      const parsed = JSON.parse(items);
+      if (Array.isArray(parsed)) return parsed;
+    } catch {
+      return [{ name: items, quantity: 1 }];
+    }
+  }
+  if (items && typeof items === 'object') {
+    return [items];
+  }
+  return [];
+};
+
 export const AdminOrdersPage: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => !!adminOrdersService.getToken());
   const [passwordInput, setPasswordInput] = useState('');
@@ -60,7 +76,11 @@ export const AdminOrdersPage: React.FC = () => {
     setIsLoading(true);
     try {
       const data = await adminOrdersService.getOrders();
-      setOrders(data);
+      const normalizedData = data.map(order => ({
+        ...order,
+        order_items: normalizeOrderItems(order.order_items)
+      }));
+      setOrders(normalizedData);
     } catch (err) {
       console.error('Error cargando pedidos:', err);
     } finally {
