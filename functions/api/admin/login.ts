@@ -1,5 +1,8 @@
+import { signJWT } from './_jwt';
+
 interface Env {
   ADMIN_PASSWORD?: string;
+  JWT_SECRET?: string;
 }
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
@@ -20,7 +23,20 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     }
 
     if (body?.password && body.password === expectedPassword) {
-      const token = `oyishi_token_${Date.now()}_${Math.random().toString(36).substring(2)}`;
+      if (!env.JWT_SECRET) {
+        return new Response(JSON.stringify({ success: false, error: 'JWT_SECRET no configurada' }), {
+          status: 500,
+          headers: { 'Content-Type': 'application/json' }
+        });
+      }
+
+      const payload = {
+        role: 'admin',
+        iat: Math.floor(Date.now() / 1000),
+        exp: Math.floor(Date.now() / 1000) + (60 * 60 * 24) // 24 hours
+      };
+      const token = await signJWT(payload, env.JWT_SECRET);
+
       return new Response(JSON.stringify({ success: true, token }), {
         status: 200,
         headers: { 'Content-Type': 'application/json' }

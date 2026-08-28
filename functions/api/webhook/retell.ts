@@ -10,8 +10,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const retellSecret = request.headers.get('x-retell-secret');
   const expectedSecret = env.RETELL_WEBHOOK_SECRET;
 
-  if (expectedSecret && retellSecret !== expectedSecret) {
-    return new Response(JSON.stringify({ error: 'Webhook Secret no válido' }), {
+  if (!expectedSecret || retellSecret !== expectedSecret) {
+    return new Response(JSON.stringify({ error: 'Webhook Secret no configurado o inválido' }), {
       status: 401,
       headers: { 'Content-Type': 'application/json' }
     });
