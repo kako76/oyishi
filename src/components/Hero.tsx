@@ -62,7 +62,7 @@ export const Hero: React.FC = () => {
     const video = videoRef.current;
     if (!video) return;
     try {
-      video.playbackRate = 0.8;
+      video.playbackRate = 1.0;
       video.muted = true;
       await video.play();
     } catch (error) {
@@ -203,8 +203,8 @@ export const Hero: React.FC = () => {
         >
           <div className="relative w-full h-full lg:max-h-[100%] lg:w-[125%] flex items-center justify-center overflow-visible pointer-events-none">
 
-            {/* Máscara suave lateral izquierda (gradient) para fundir el borde del vídeo con el fondo */}
-            <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-[#17110e] via-[#17110e]/60 to-transparent z-10 opacity-80 pointer-events-none"></div>
+            {/* Máscara sutil lateral izquierda para fundir suavemente la transición sin cubrir la animación del vídeo */}
+            <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-[#16100E] via-[#16100E]/40 to-transparent z-10 pointer-events-none"></div>
 
             <video
               ref={videoRef}
@@ -215,10 +215,10 @@ export const Hero: React.FC = () => {
               loop={true}
               onCanPlay={handleCanPlay}
               poster="/images/hero/oyishi-sushi-poster.webp"
-              className="w-full h-full object-cover object-[center_35%] scale-[1.17] lg:scale-[1.18] transform-gpu mix-blend-lighten opacity-95"
+              className="w-full h-full object-cover object-center scale-100 transform-gpu opacity-100 drop-shadow-[0_20px_50px_rgba(0,0,0,0.6)]"
               style={{
-                maskImage: 'radial-gradient(ellipse at 65% 50%, black 45%, transparent 80%)',
-                WebkitMaskImage: 'radial-gradient(ellipse at 65% 50%, black 45%, transparent 80%)'
+                maskImage: 'radial-gradient(ellipse at 55% 50%, black 70%, transparent 98%)',
+                WebkitMaskImage: 'radial-gradient(ellipse at 55% 50%, black 70%, transparent 98%)'
               }}
             >
               <source src="/images/hero/oyishi-sushi-build.mp4" type="video/mp4" />
