@@ -11,7 +11,7 @@ export const PrivacidadPage: React.FC = () => {
   return (
     <main className="pt-28 pb-20 bg-oyishi-bg min-h-screen text-oyishi-text">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="mb-10 text-center">
           <span className="text-xs font-mono text-oyishi-gold tracking-[0.3em] uppercase mb-2 block">Protección de Datos</span>
           <h1 className="text-3xl md:text-5xl font-display text-oyishi-text mb-4">POLÍTICA DE PRIVACIDAD</h1>
@@ -19,7 +19,7 @@ export const PrivacidadPage: React.FC = () => {
         </div>
 
         <div className="bg-oyishi-card border border-oyishi-border/80 rounded-2xl p-8 md:p-12 shadow-2xl space-y-8 text-sm md:text-base font-light leading-relaxed text-oyishi-textSec">
-          
+
           <section>
             <h2 className="text-xl font-display text-oyishi-text mb-3">1. Responsable del Tratamiento</h2>
             <p>

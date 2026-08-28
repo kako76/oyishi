@@ -1,1 +1,7 @@
+/menu.php /carta 301
+/reservation.php /reservas 301
+/contact.php /contacto 301
+/points.php / 301
+/pedidos /carta 301
+/admin/pedidos /index.html 200
 /* /index.html 200

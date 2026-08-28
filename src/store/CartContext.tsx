@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState } from 'react';
+/* eslint-disable react-refresh/only-export-components */
+import React, { createContext, useContext, useState, useCallback } from 'react';
 import type { ReactNode } from 'react';
 import type { OyishiProduct } from '../data/oyishi';
 
@@ -15,13 +16,22 @@ interface CartContextType {
   totalPrice: number;
   isCartOpen: boolean;
   setIsCartOpen: (isOpen: boolean) => void;
+  toastMessage: string | null;
+  clearToast: () => void;
+  badgeAnimationKey: number;
 }
 
-const CartContext = createContext<CartContextType | undefined>(undefined);
+export const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [badgeAnimationKey, setBadgeAnimationKey] = useState(0);
+
+  const clearToast = useCallback(() => {
+    setToastMessage(null);
+  }, []);
 
   const addToCart = (item: OyishiProduct) => {
     setCart(prev => {
@@ -31,7 +41,12 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       }
       return [...prev, { ...item, quantity: 1 }];
     });
-    setIsCartOpen(true);
+
+    // Trigger toast notification
+    setToastMessage(`Añadido: ${item.name}`);
+
+    // Trigger badge animation bump
+    setBadgeAnimationKey(prev => prev + 1);
   };
 
   const removeFromCart = (itemId: string) => {
@@ -50,7 +65,19 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQuantity, totalItems, totalPrice, isCartOpen, setIsCartOpen }}>
+    <CartContext.Provider value={{
+      cart,
+      addToCart,
+      removeFromCart,
+      updateQuantity,
+      totalItems,
+      totalPrice,
+      isCartOpen,
+      setIsCartOpen,
+      toastMessage,
+      clearToast,
+      badgeAnimationKey
+    }}>
       {children}
     </CartContext.Provider>
   );

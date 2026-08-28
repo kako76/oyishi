@@ -29,13 +29,13 @@ export const NotFoundPage: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a 
+            <a
               href="/"
               className="btn-shimmer focus-ring px-8 py-4 bg-oyishi-coral text-white font-bold tracking-[0.2em] text-[11px] uppercase rounded-sm flex items-center justify-center gap-3 transition-all duration-300"
             >
               VOLVER AL INICIO
             </a>
-            <a 
+            <a
               href="/carta"
               className="focus-ring px-8 py-4 border border-oyishi-gold/40 text-[#E8E4DF] font-bold tracking-[0.2em] text-[11px] uppercase rounded-sm flex items-center justify-center gap-3 hover:bg-oyishi-gold hover:text-[#120E0C] hover:border-oyishi-gold transition-all duration-300"
             >

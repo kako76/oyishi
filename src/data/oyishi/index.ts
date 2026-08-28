@@ -23,7 +23,7 @@ export const dataMetadata = {
 };
 
 // Normalize categories a bit for display while keeping the real string
-export const categories: string[] = oyishiData.categories.map(c => 
+export const categories: string[] = oyishiData.categories.map(c =>
   c.replace('MENsS', 'MENÚS')
    .replace('EXLUSIVOS TARTAS', 'EXCLUSIVOS TARTAS')
 );

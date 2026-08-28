@@ -1,399 +1,399 @@
-# OYISHI — Entrega Comercial del Nuevo Proyecto Digital
+# OYISHI â€” Entrega Comercial del Nuevo Proyecto Digital
 
-> **Documento preparado para:** Propietario de OYISHI Gastronomía Japonesa
+> **Documento preparado para:** Propietario de OYISHI GastronomÃ­a Japonesa
 > **Fecha de entrega:** Agosto 2026
-> **Carácter:** Confidencial · Uso interno
+> **CarÃ¡cter:** Confidencial Â· Uso interno
 
 ---
 
-## ÍNDICE
+## ÃNDICE
 
-1. [Situación Anterior](#1-situación-anterior)
+1. [SituaciÃ³n Anterior](#1-situaciÃ³n-anterior)
 2. [La Nueva Web](#2-la-nueva-web)
 3. [Beneficios para OYISHI](#3-beneficios-para-oyishi)
-4. [Guion de Demo — 5 Minutos](#4-guion-de-demo--5-minutos)
+4. [Guion de Demo â€” 5 Minutos](#4-guion-de-demo--5-minutos)
 5. [Desarrollos Futuros](#5-desarrollos-futuros)
 6. [Propuesta de Soporte y Mantenimiento](#6-propuesta-de-soporte-y-mantenimiento)
 7. [Checklist de Entrega al Cliente](#7-checklist-de-entrega-al-cliente)
 
 ---
 
-## 1. Situación Anterior
+## 1. SituaciÃ³n Anterior
 
-La web anterior de OYISHI fue construida en un momento en el que las prioridades y los recursos disponibles eran distintos. Cumplió su función durante su ciclo de vida y contiene información válida sobre el restaurante. Sin embargo, con el tiempo fueron acumulándose ciertas limitaciones que hoy resultan difíciles de ignorar.
+La web anterior de OYISHI fue construida en un momento en el que las prioridades y los recursos disponibles eran distintos. CumpliÃ³ su funciÃ³n durante su ciclo de vida y contiene informaciÃ³n vÃ¡lida sobre el restaurante. Sin embargo, con el tiempo fueron acumulÃ¡ndose ciertas limitaciones que hoy resultan difÃ­ciles de ignorar.
 
-### Áreas de mejora identificadas
+### Ãreas de mejora identificadas
 
-**Diseño visual**
-La estética general respondía a patrones web de hace varios años. La tipografía, los colores y la composición de las páginas no transmitían con suficiente claridad el nivel gastronómico que OYISHI ofrece. Un cliente que visitara la web antes de acudir al restaurante podría llevarse una impresión que no correspondía con la experiencia real.
+**DiseÃ±o visual**
+La estÃ©tica general respondÃ­a a patrones web de hace varios aÃ±os. La tipografÃ­a, los colores y la composiciÃ³n de las pÃ¡ginas no transmitÃ­an con suficiente claridad el nivel gastronÃ³mico que OYISHI ofrece. Un cliente que visitara la web antes de acudir al restaurante podrÃ­a llevarse una impresiÃ³n que no correspondÃ­a con la experiencia real.
 
-**Experiencia en dispositivos móviles**
-Más del 60–70 % del tráfico de restaurantes proviene de búsquedas desde el teléfono. La web anterior no estaba diseñada con el móvil como prioridad, lo que podía dificultar la lectura de la carta, el acceso al teléfono o la localización del restaurante en pantallas pequeñas.
+**Experiencia en dispositivos mÃ³viles**
+MÃ¡s del 60â€“70 % del trÃ¡fico de restaurantes proviene de bÃºsquedas desde el telÃ©fono. La web anterior no estaba diseÃ±ada con el mÃ³vil como prioridad, lo que podÃ­a dificultar la lectura de la carta, el acceso al telÃ©fono o la localizaciÃ³n del restaurante en pantallas pequeÃ±as.
 
-**Navegación fragmentada**
-El sitio estaba estructurado en páginas separadas con carga completa al cambiar de sección. Esto generaba tiempos de espera visibles, inconsistencias visuales entre páginas y una sensación de sitio "compartimentado" en lugar de una experiencia de marca unificada.
+**NavegaciÃ³n fragmentada**
+El sitio estaba estructurado en pÃ¡ginas separadas con carga completa al cambiar de secciÃ³n. Esto generaba tiempos de espera visibles, inconsistencias visuales entre pÃ¡ginas y una sensaciÃ³n de sitio "compartimentado" en lugar de una experiencia de marca unificada.
 
 **Carta digital**
-La carta estaba presentada en un formato que hacía difícil la exploración. No había manera de buscar un plato concreto, filtrar por tipo de producto, ni visualizar de manera clara el catálogo completo de lo que OYISHI ofrece.
+La carta estaba presentada en un formato que hacÃ­a difÃ­cil la exploraciÃ³n. No habÃ­a manera de buscar un plato concreto, filtrar por tipo de producto, ni visualizar de manera clara el catÃ¡logo completo de lo que OYISHI ofrece.
 
 **Coherencia visual entre secciones**
-Cada página tenía un estilo ligeramente diferente, lo que impedía que el visitante percibiera una identidad visual única y reconocible de marca.
+Cada pÃ¡gina tenÃ­a un estilo ligeramente diferente, lo que impedÃ­a que el visitante percibiera una identidad visual Ãºnica y reconocible de marca.
 
-**Dependencia de tecnología antigua**
-El sitio funcionaba sobre scripts PHP independientes (menu.php, reservation.php, contact.php, points.php), lo que limitaba la capacidad de evolución, dificultaba el mantenimiento y hacía imposible garantizar una experiencia de usuario moderna.
+**Dependencia de tecnologÃ­a antigua**
+El sitio funcionaba sobre scripts PHP independientes (menu.php, reservation.php, contact.php, points.php), lo que limitaba la capacidad de evoluciÃ³n, dificultaba el mantenimiento y hacÃ­a imposible garantizar una experiencia de usuario moderna.
 
 ---
 
 ## 2. La Nueva Web
 
-El nuevo proyecto digital de OYISHI es una propuesta integral: no es una actualización de lo anterior, sino una construcción desde cero pensada para reflejar el nivel real del restaurante.
+El nuevo proyecto digital de OYISHI es una propuesta integral: no es una actualizaciÃ³n de lo anterior, sino una construcciÃ³n desde cero pensada para reflejar el nivel real del restaurante.
 
 ### Una nueva identidad visual
 
-La nueva web tiene una identidad propia: paleta de color oscura con detalles dorados, tipografía display de alta jerarquía y una estética que evoca la cultura gastronómica japonesa contemporánea sin recurrir a clichés. El resultado es una imagen de marca coherente, premium y diferenciada.
+La nueva web tiene una identidad propia: paleta de color oscura con detalles dorados, tipografÃ­a display de alta jerarquÃ­a y una estÃ©tica que evoca la cultura gastronÃ³mica japonesa contemporÃ¡nea sin recurrir a clichÃ©s. El resultado es una imagen de marca coherente, premium y diferenciada.
 
-### Navegación SPA (Single Page Application)
+### NavegaciÃ³n SPA (Single Page Application)
 
-La web funciona sin recargas de página. Al navegar entre secciones, el cambio es instantáneo y fluido, como una aplicación nativa. Esto elimina los tiempos de espera y proporciona una experiencia percibida de mayor calidad.
+La web funciona sin recargas de pÃ¡gina. Al navegar entre secciones, el cambio es instantÃ¡neo y fluido, como una aplicaciÃ³n nativa. Esto elimina los tiempos de espera y proporciona una experiencia percibida de mayor calidad.
 
 ### Home editorial
 
-La página de inicio no es un listado de información, sino una experiencia curada: un hero cinematográfico, una selección de productos estrella, y una presentación de la identidad del restaurante que invita a explorar y quedarse.
+La pÃ¡gina de inicio no es un listado de informaciÃ³n, sino una experiencia curada: un hero cinematogrÃ¡fico, una selecciÃ³n de productos estrella, y una presentaciÃ³n de la identidad del restaurante que invita a explorar y quedarse.
 
-### Carta independiente — 155 productos reales, 17 categorías
+### Carta independiente â€” 155 productos reales, 17 categorÃ­as
 
-La carta ha sido extraída y verificada directamente desde oyishi.es. Todos los productos, nombres, precios y categorías son datos reales del restaurante. La carta está organizada en 17 familias de producto y presenta los 155 platos disponibles con fotografía cuando está disponible.
+La carta ha sido extraÃ­da y verificada directamente desde oyishi.es. Todos los productos, nombres, precios y categorÃ­as son datos reales del restaurante. La carta estÃ¡ organizada en 17 familias de producto y presenta los 155 platos disponibles con fotografÃ­a cuando estÃ¡ disponible.
 
 ### Buscador y filtros
 
-El visitante puede escribir el nombre de cualquier plato o ingrediente y el resultado aparece al instante, sin esperas. También puede filtrar por categoría con un solo clic. La exploración de la carta es ahora intuitiva y rápida.
+El visitante puede escribir el nombre de cualquier plato o ingrediente y el resultado aparece al instante, sin esperas. TambiÃ©n puede filtrar por categorÃ­a con un solo clic. La exploraciÃ³n de la carta es ahora intuitiva y rÃ¡pida.
 
 ### Carrito / Comanda
 
-El cliente puede seleccionar platos desde la carta y construir una comanda, que puede usar como referencia para comunicarla al restaurante. Esta funcionalidad mejora el recorrido del cliente y sienta las bases para integraciones más avanzadas en el futuro.
+El cliente puede seleccionar platos desde la carta y construir una comanda, que puede usar como referencia para comunicarla al restaurante. Esta funcionalidad mejora el recorrido del cliente y sienta las bases para integraciones mÃ¡s avanzadas en el futuro.
 
-### Páginas completas
+### PÃ¡ginas completas
 
 El sitio incluye las siguientes secciones:
 
-| Sección | Contenido |
+| SecciÃ³n | Contenido |
 |---|---|
-| **Home** | Página editorial de presentación de marca |
-| **La Carta** | Catálogo completo con buscador, filtros y comanda |
-| **Quiénes Somos** | Historia, valores y equipo del restaurante |
+| **Home** | PÃ¡gina editorial de presentaciÃ³n de marca |
+| **La Carta** | CatÃ¡logo completo con buscador, filtros y comanda |
+| **QuiÃ©nes Somos** | Historia, valores y equipo del restaurante |
 | **Reservas** | Formulario de solicitud de reserva |
-| **Contacto** | Datos de contacto, teléfono, mapa y formulario |
+| **Contacto** | Datos de contacto, telÃ©fono, mapa y formulario |
 | **Aviso Legal** | Textos legales del sitio |
-| **Política de Privacidad** | Tratamiento de datos personales |
-| **Política de Cookies** | Gestión de cookies |
+| **PolÃ­tica de Privacidad** | Tratamiento de datos personales |
+| **PolÃ­tica de Cookies** | GestiÃ³n de cookies |
 
-### SEO técnico
+### SEO tÃ©cnico
 
-El sitio está preparado con estructura semántica HTML correcta, metadatos por página (título, descripción, Open Graph), sitemap XML y robots.txt configurados. Esta base permite a Google indexar el sitio correctamente desde el primer día.
+El sitio estÃ¡ preparado con estructura semÃ¡ntica HTML correcta, metadatos por pÃ¡gina (tÃ­tulo, descripciÃ³n, Open Graph), sitemap XML y robots.txt configurados. Esta base permite a Google indexar el sitio correctamente desde el primer dÃ­a.
 
 ### Responsive y accesible
 
-El diseño está pensado desde el móvil. Cada elemento —botones, textos, imágenes, formularios— ha sido adaptado para funcionar en cualquier tamaño de pantalla. Los elementos interactivos cumplen los estándares de accesibilidad (WCAG), con áreas táctiles adecuadas y etiquetas correctas para lectores de pantalla.
+El diseÃ±o estÃ¡ pensado desde el mÃ³vil. Cada elemento â€”botones, textos, imÃ¡genes, formulariosâ€” ha sido adaptado para funcionar en cualquier tamaÃ±o de pantalla. Los elementos interactivos cumplen los estÃ¡ndares de accesibilidad (WCAG), con Ã¡reas tÃ¡ctiles adecuadas y etiquetas correctas para lectores de pantalla.
 
-### Optimización de rendimiento
+### OptimizaciÃ³n de rendimiento
 
-Las páginas se cargan de forma diferida (lazy loading): solo se descarga el código de la sección que el usuario visita. Las imágenes se cargan progresivamente. El resultado es una web rápida y eficiente incluso en conexiones de datos móvil.
+Las pÃ¡ginas se cargan de forma diferida (lazy loading): solo se descarga el cÃ³digo de la secciÃ³n que el usuario visita. Las imÃ¡genes se cargan progresivamente. El resultado es una web rÃ¡pida y eficiente incluso en conexiones de datos mÃ³vil.
 
-### Analítica preparada
+### AnalÃ­tica preparada
 
-El sitio está preparado para conectar con Google Analytics y Google Search Console. Estas herramientas permiten conocer cuántas personas visitan la web, desde dónde llegan, qué páginas consultan y cómo interactúan con la carta.
+El sitio estÃ¡ preparado para conectar con Google Analytics y Google Search Console. Estas herramientas permiten conocer cuÃ¡ntas personas visitan la web, desde dÃ³nde llegan, quÃ© pÃ¡ginas consultan y cÃ³mo interactÃºan con la carta.
 
 ---
 
 ## 3. Beneficios para OYISHI
 
-Traduciendo cada mejora técnica a lo que significa para el negocio:
+Traduciendo cada mejora tÃ©cnica a lo que significa para el negocio:
 
-### 🍱 Mejor presentación del producto
+### ðŸ± Mejor presentaciÃ³n del producto
 
-La carta digital presenta cada plato con nombre, precio, descripción y fotografía cuando está disponible. El cliente puede ver qué va a pedir antes de llegar o incluso antes de decidir a qué restaurante ir. Una carta bien presentada influye directamente en la percepción del valor de lo que se sirve.
+La carta digital presenta cada plato con nombre, precio, descripciÃ³n y fotografÃ­a cuando estÃ¡ disponible. El cliente puede ver quÃ© va a pedir antes de llegar o incluso antes de decidir a quÃ© restaurante ir. Una carta bien presentada influye directamente en la percepciÃ³n del valor de lo que se sirve.
 
-### 📱 Más facilidad para consultar la carta
+### ðŸ“± MÃ¡s facilidad para consultar la carta
 
-En el móvil, la carta anterior podía resultar difícil de navegar. La nueva carta está diseñada para el teléfono: scroll fluido, buscador de texto, filtros por categoría y tarjetas de producto claras. El cliente encuentra lo que busca en segundos.
+En el mÃ³vil, la carta anterior podÃ­a resultar difÃ­cil de navegar. La nueva carta estÃ¡ diseÃ±ada para el telÃ©fono: scroll fluido, buscador de texto, filtros por categorÃ­a y tarjetas de producto claras. El cliente encuentra lo que busca en segundos.
 
-### 🌟 Mejor imagen de marca
+### ðŸŒŸ Mejor imagen de marca
 
-La nueva web proyecta una imagen coherente con la calidad gastronómica del restaurante. El diseño transmite seriedad, cuidado y diferenciación. Esto importa: la primera impresión digital de un restaurante condiciona la decisión de visitarlo.
+La nueva web proyecta una imagen coherente con la calidad gastronÃ³mica del restaurante. El diseÃ±o transmite seriedad, cuidado y diferenciaciÃ³n. Esto importa: la primera impresiÃ³n digital de un restaurante condiciona la decisiÃ³n de visitarlo.
 
-### 📅 Más facilidad para reservar y contactar
+### ðŸ“… MÃ¡s facilidad para reservar y contactar
 
-El formulario de reservas es claro, directo y funciona en cualquier dispositivo. La página de contacto muestra el teléfono, el correo, el horario y la ubicación de forma inmediata. Menos fricciones para que el cliente llegue al restaurante.
+El formulario de reservas es claro, directo y funciona en cualquier dispositivo. La pÃ¡gina de contacto muestra el telÃ©fono, el correo, el horario y la ubicaciÃ³n de forma inmediata. Menos fricciones para que el cliente llegue al restaurante.
 
-### 🔍 Mejor base SEO
+### ðŸ” Mejor base SEO
 
-La nueva web está estructurada para que Google la entienda y la indexe correctamente. A medio plazo, esto puede mejorar la posición de OYISHI en búsquedas locales como "restaurante japonés Fuenlabrada" o "sushi Fuenlabrada", atrayendo visitas orgánicas sin inversión publicitaria adicional.
+La nueva web estÃ¡ estructurada para que Google la entienda y la indexe correctamente. A medio plazo, esto puede mejorar la posiciÃ³n de OYISHI en bÃºsquedas locales como "restaurante japonÃ©s Fuenlabrada" o "sushi Fuenlabrada", atrayendo visitas orgÃ¡nicas sin inversiÃ³n publicitaria adicional.
 
-### 🔧 Arquitectura preparada para evolucionar
+### ðŸ”§ Arquitectura preparada para evolucionar
 
-La web está construida sobre tecnología moderna y mantenible. Agregar nuevas funcionalidades, cambiar contenidos o conectar servicios externos en el futuro es significativamente más sencillo que con la arquitectura anterior.
-
----
-
-## 4. Guion de Demo — 5 Minutos
-
-> Este guion está pensado para ser presentado en una pantalla o proyector, navegando en tiempo real por la web.
+La web estÃ¡ construida sobre tecnologÃ­a moderna y mantenible. Agregar nuevas funcionalidades, cambiar contenidos o conectar servicios externos en el futuro es significativamente mÃ¡s sencillo que con la arquitectura anterior.
 
 ---
 
-### ⏱ 0:00 — Apertura (30 segundos)
+## 4. Guion de Demo â€” 5 Minutos
 
-**Acción:** Abrir la web en el navegador. Dejar que cargue el Home.
-
-**Qué decir:**
-> "Esta es la nueva web de OYISHI. Lo primero que ve cualquier cliente cuando busca el restaurante. Fíjate en la primera impresión."
-
-Señalar el contraste de la pantalla: oscuridad, tipografía, el logo. Dejar unos segundos en silencio para que el propietario absorba el impacto visual.
+> Este guion estÃ¡ pensado para ser presentado en una pantalla o proyector, navegando en tiempo real por la web.
 
 ---
 
-### ⏱ 0:30 — Hero (30 segundos)
+### â± 0:00 â€” Apertura (30 segundos)
 
-**Acción:** Hacer scroll lento hacia abajo desde el hero.
+**AcciÃ³n:** Abrir la web en el navegador. Dejar que cargue el Home.
 
-**Qué decir:**
+**QuÃ© decir:**
+> "Esta es la nueva web de OYISHI. Lo primero que ve cualquier cliente cuando busca el restaurante. FÃ­jate en la primera impresiÃ³n."
+
+SeÃ±alar el contraste de la pantalla: oscuridad, tipografÃ­a, el logo. Dejar unos segundos en silencio para que el propietario absorba el impacto visual.
+
+---
+
+### â± 0:30 â€” Hero (30 segundos)
+
+**AcciÃ³n:** Hacer scroll lento hacia abajo desde el hero.
+
+**QuÃ© decir:**
 > "La entrada al sitio funciona como un escaparate premium. Sin distracciones, sin ruido visual. La identidad de OYISHI ocupa el primer plano."
 
 ---
 
-### ⏱ 1:00 — Sección Explora (30 segundos)
+### â± 1:00 â€” SecciÃ³n Explora (30 segundos)
 
-**Acción:** Continuar el scroll hasta la sección de exploración del Home.
+**AcciÃ³n:** Continuar el scroll hasta la secciÃ³n de exploraciÃ³n del Home.
 
-**Qué decir:**
-> "Desde el inicio ya puedes explorar la propuesta gastronómica. El cliente sabe inmediatamente lo que OYISHI ofrece antes de abrir la carta."
-
----
-
-### ⏱ 1:30 — Selección / Productos Destacados (30 segundos)
-
-**Acción:** Scroll hasta los productos destacados del Home.
-
-**Qué decir:**
-> "Aquí mostramos una selección curada de los platos más representativos. No está toda la carta: está lo que queremos que el cliente vea primero."
+**QuÃ© decir:**
+> "Desde el inicio ya puedes explorar la propuesta gastronÃ³mica. El cliente sabe inmediatamente lo que OYISHI ofrece antes de abrir la carta."
 
 ---
 
-### ⏱ 2:00 — La Carta (1 minuto)
+### â± 1:30 â€” SelecciÃ³n / Productos Destacados (30 segundos)
 
-**Acción:** Navegar a `/carta` desde el menú.
+**AcciÃ³n:** Scroll hasta los productos destacados del Home.
 
-**Qué decir:**
-> "Esta es la carta completa. 155 productos reales, organizados en 17 categorías. Todo extraído directamente de oyishi.es."
-
-Señalar:
-- Las tarjetas de producto con nombre, precio y fotografía.
-- Los filtros por categoría en la parte superior.
+**QuÃ© decir:**
+> "AquÃ­ mostramos una selecciÃ³n curada de los platos mÃ¡s representativos. No estÃ¡ toda la carta: estÃ¡ lo que queremos que el cliente vea primero."
 
 ---
 
-### ⏱ 2:30 — Buscador (30 segundos)
+### â± 2:00 â€” La Carta (1 minuto)
 
-**Acción:** Escribir "salmón" o "California" en el buscador.
+**AcciÃ³n:** Navegar a `/carta` desde el menÃº.
 
-**Qué decir:**
-> "El cliente puede buscar cualquier plato o ingrediente. El resultado es inmediato, sin esperas, sin recargar la página."
+**QuÃ© decir:**
+> "Esta es la carta completa. 155 productos reales, organizados en 17 categorÃ­as. Todo extraÃ­do directamente de oyishi.es."
 
-Borrar la búsqueda para volver al catálogo completo.
+SeÃ±alar:
+- Las tarjetas de producto con nombre, precio y fotografÃ­a.
+- Los filtros por categorÃ­a en la parte superior.
 
 ---
 
-### ⏱ 3:00 — Filtros y Carrito (30 segundos)
+### â± 2:30 â€” Buscador (30 segundos)
 
-**Acción:** Hacer clic en una categoría (por ejemplo, "MAKIS"). Luego añadir un producto al carrito.
+**AcciÃ³n:** Escribir "salmÃ³n" o "California" en el buscador.
 
-**Qué decir:**
-> "El cliente puede filtrar por tipo de producto y construir su comanda antes de llamar o llegar. Esto facilita el pedido y reduce el tiempo de atención."
+**QuÃ© decir:**
+> "El cliente puede buscar cualquier plato o ingrediente. El resultado es inmediato, sin esperas, sin recargar la pÃ¡gina."
+
+Borrar la bÃºsqueda para volver al catÃ¡logo completo.
+
+---
+
+### â± 3:00 â€” Filtros y Carrito (30 segundos)
+
+**AcciÃ³n:** Hacer clic en una categorÃ­a (por ejemplo, "MAKIS"). Luego aÃ±adir un producto al carrito.
+
+**QuÃ© decir:**
+> "El cliente puede filtrar por tipo de producto y construir su comanda antes de llamar o llegar. Esto facilita el pedido y reduce el tiempo de atenciÃ³n."
 
 Mostrar brevemente el modal del carrito.
 
 ---
 
-### ⏱ 3:30 — Quiénes Somos (30 segundos)
+### â± 3:30 â€” QuiÃ©nes Somos (30 segundos)
 
-**Acción:** Navegar a `/quienes-somos`.
+**AcciÃ³n:** Navegar a `/quienes-somos`.
 
-**Qué decir:**
-> "Esta sección cuenta la historia de OYISHI. Para muchos clientes, conocer quién está detrás de un restaurante es clave en la decisión de visitarlo."
-
----
-
-### ⏱ 4:00 — Reservas y Contacto (30 segundos)
-
-**Acción:** Navegar a `/reservas`, mostrar el formulario. Luego navegar a `/contacto`.
-
-**Qué decir:**
-> "El formulario de reservas es claro y funciona en cualquier dispositivo. En Contacto, el cliente encuentra todo de forma inmediata: teléfono, email, horario y mapa."
+**QuÃ© decir:**
+> "Esta secciÃ³n cuenta la historia de OYISHI. Para muchos clientes, conocer quiÃ©n estÃ¡ detrÃ¡s de un restaurante es clave en la decisiÃ³n de visitarlo."
 
 ---
 
-### ⏱ 4:30 — Mobile (30 segundos)
+### â± 4:00 â€” Reservas y Contacto (30 segundos)
 
-**Acción:** Reducir el navegador a tamaño móvil (o abrir en el teléfono).
+**AcciÃ³n:** Navegar a `/reservas`, mostrar el formulario. Luego navegar a `/contacto`.
 
-**Qué decir:**
-> "Y esto es lo más importante: la gran mayoría de tus clientes llegan desde el móvil. La web funciona igual de bien en cualquier pantalla."
-
-Mostrar el Home, la Carta y el menú hamburguesa en móvil.
+**QuÃ© decir:**
+> "El formulario de reservas es claro y funciona en cualquier dispositivo. En Contacto, el cliente encuentra todo de forma inmediata: telÃ©fono, email, horario y mapa."
 
 ---
 
-### ⏱ 5:00 — Cierre
+### â± 4:30 â€” Mobile (30 segundos)
 
-**Qué decir:**
-> "Todo lo que has visto está listo para publicarse. Solo necesitamos confirmar algunos detalles de entrega que vemos juntos ahora."
+**AcciÃ³n:** Reducir el navegador a tamaÃ±o mÃ³vil (o abrir en el telÃ©fono).
+
+**QuÃ© decir:**
+> "Y esto es lo mÃ¡s importante: la gran mayorÃ­a de tus clientes llegan desde el mÃ³vil. La web funciona igual de bien en cualquier pantalla."
+
+Mostrar el Home, la Carta y el menÃº hamburguesa en mÃ³vil.
+
+---
+
+### â± 5:00 â€” Cierre
+
+**QuÃ© decir:**
+> "Todo lo que has visto estÃ¡ listo para publicarse. Solo necesitamos confirmar algunos detalles de entrega que vemos juntos ahora."
 
 ---
 
 ## 5. Desarrollos Futuros
 
-Las funcionalidades que se describen a continuación **no forman parte del proyecto actual**. Son extensiones posibles que pueden incorporarse en fases posteriores, una vez consolidada la base actual.
+Las funcionalidades que se describen a continuaciÃ³n **no forman parte del proyecto actual**. Son extensiones posibles que pueden incorporarse en fases posteriores, una vez consolidada la base actual.
 
-Se presentan aquí como hoja de ruta potencial para que el propietario pueda planificar la evolución digital del restaurante con perspectiva.
+Se presentan aquÃ­ como hoja de ruta potencial para que el propietario pueda planificar la evoluciÃ³n digital del restaurante con perspectiva.
 
 ---
 
-### 🗓 Reserva nativa con backend
+### ðŸ—“ Reserva nativa con backend
 
-Sistema de reservas propio con confirmación automática por email o SMS, gestión del aforo y calendario de disponibilidad en tiempo real. Actualmente el formulario de reservas dirige la solicitud al restaurante, pero no gestiona disponibilidad de forma automática.
+Sistema de reservas propio con confirmaciÃ³n automÃ¡tica por email o SMS, gestiÃ³n del aforo y calendario de disponibilidad en tiempo real. Actualmente el formulario de reservas dirige la solicitud al restaurante, pero no gestiona disponibilidad de forma automÃ¡tica.
 
-### 🛒 Pedido online completo
+### ðŸ›’ Pedido online completo
 
-Integración de un flujo de pedido end-to-end: selección de productos, confirmación del pedido, comunicación directa con cocina y gestión de estados (recibido, en preparación, listo). Diferente al carrito actual, que es una herramienta de comanda orientativa.
+IntegraciÃ³n de un flujo de pedido end-to-end: selecciÃ³n de productos, confirmaciÃ³n del pedido, comunicaciÃ³n directa con cocina y gestiÃ³n de estados (recibido, en preparaciÃ³n, listo). Diferente al carrito actual, que es una herramienta de comanda orientativa.
 
-### 💳 Pago online
+### ðŸ’³ Pago online
 
-Integración de pasarela de pago para permitir el pago anticipado de pedidos o reservas. Requiere desarrollo de backend y alta en un proveedor de pago (Stripe, Redsys, etc.).
+IntegraciÃ³n de pasarela de pago para permitir el pago anticipado de pedidos o reservas. Requiere desarrollo de backend y alta en un proveedor de pago (Stripe, Redsys, etc.).
 
-### 🎁 Fidelización y puntos
+### ðŸŽ FidelizaciÃ³n y puntos
 
-Sistema de puntos por consumo que recompense a los clientes habituales. La web anterior ya tenía una sección `/points.php` que indica que es una funcionalidad deseada por el negocio, pero que requiere un backend completo para gestionarse correctamente.
+Sistema de puntos por consumo que recompense a los clientes habituales. La web anterior ya tenÃ­a una secciÃ³n `/points.php` que indica que es una funcionalidad deseada por el negocio, pero que requiere un backend completo para gestionarse correctamente.
 
-### 👤 Área de cliente
+### ðŸ‘¤ Ãrea de cliente
 
-Registro e inicio de sesión de clientes para acceder a su historial de pedidos, puntos acumulados y preferencias. Requiere sistema de autenticación e infraestructura de base de datos.
+Registro e inicio de sesiÃ³n de clientes para acceder a su historial de pedidos, puntos acumulados y preferencias. Requiere sistema de autenticaciÃ³n e infraestructura de base de datos.
 
-### 📊 CRM básico
+### ðŸ“Š CRM bÃ¡sico
 
-Panel de administración para gestionar clientes registrados, reservas recibidas y pedidos. Herramienta de gestión interna para el equipo del restaurante.
+Panel de administraciÃ³n para gestionar clientes registrados, reservas recibidas y pedidos. Herramienta de gestiÃ³n interna para el equipo del restaurante.
 
-### 📣 Campañas y comunicaciones
+### ðŸ“£ CampaÃ±as y comunicaciones
 
 Sistema para enviar comunicaciones segmentadas a la base de clientes: novedades de carta, promociones, eventos especiales. Puede integrarse con herramientas como Mailchimp, Brevo o similares.
 
-### ⚙️ Automatizaciones
+### âš™ï¸ Automatizaciones
 
-Flujos automáticos que respondan a acciones del cliente: confirmación de reserva, recordatorio 24 horas antes, encuesta de satisfacción post-visita. Ahorro de tiempo en gestión y mejora de la experiencia del cliente.
+Flujos automÃ¡ticos que respondan a acciones del cliente: confirmaciÃ³n de reserva, recordatorio 24 horas antes, encuesta de satisfacciÃ³n post-visita. Ahorro de tiempo en gestiÃ³n y mejora de la experiencia del cliente.
 
 ---
 
 ## 6. Propuesta de Soporte y Mantenimiento
 
-Una vez publicada la web, se propone un servicio de mantenimiento mensual que garantice el correcto funcionamiento del sitio y su evolución gradual.
+Una vez publicada la web, se propone un servicio de mantenimiento mensual que garantice el correcto funcionamiento del sitio y su evoluciÃ³n gradual.
 
-### Qué puede incluir
+### QuÃ© puede incluir
 
-**Soporte técnico**
-Resolución de incidencias, revisión del funcionamiento del sitio y atención a consultas del equipo del restaurante sobre el uso de la web.
+**Soporte tÃ©cnico**
+ResoluciÃ³n de incidencias, revisiÃ³n del funcionamiento del sitio y atenciÃ³n a consultas del equipo del restaurante sobre el uso de la web.
 
-**Cambios pequeños de contenido**
-Actualización de textos, horarios, información de contacto, imágenes de sección u otros contenidos del sitio que puedan cambiar a lo largo del tiempo.
+**Cambios pequeÃ±os de contenido**
+ActualizaciÃ³n de textos, horarios, informaciÃ³n de contacto, imÃ¡genes de secciÃ³n u otros contenidos del sitio que puedan cambiar a lo largo del tiempo.
 
-**Actualización de la carta**
-Alta, baja o modificación de productos en el catálogo de 155 platos. Actualización de categorías, descripciones o fotografías de producto.
+**ActualizaciÃ³n de la carta**
+Alta, baja o modificaciÃ³n de productos en el catÃ¡logo de 155 platos. ActualizaciÃ³n de categorÃ­as, descripciones o fotografÃ­as de producto.
 
-**Actualización de precios**
-Cambio de precios en el catálogo cuando el restaurante actualice su tarifa.
+**ActualizaciÃ³n de precios**
+Cambio de precios en el catÃ¡logo cuando el restaurante actualice su tarifa.
 
-**Actualización de fotografías**
-Sustitución o incorporación de nuevas imágenes de producto o de la sección de marca (Home, Quiénes Somos).
+**ActualizaciÃ³n de fotografÃ­as**
+SustituciÃ³n o incorporaciÃ³n de nuevas imÃ¡genes de producto o de la secciÃ³n de marca (Home, QuiÃ©nes Somos).
 
-**Supervisión técnica**
-Revisión periódica del estado de la web: velocidad de carga, errores en consola, disponibilidad del sitio y comportamiento en diferentes dispositivos.
+**SupervisiÃ³n tÃ©cnica**
+RevisiÃ³n periÃ³dica del estado de la web: velocidad de carga, errores en consola, disponibilidad del sitio y comportamiento en diferentes dispositivos.
 
 **Analytics mensual**
-Revisión de los datos de Google Analytics: visitas, páginas más visitadas, tráfico por canal, comportamiento en la carta y conversiones hacia reservas y contacto. Informe breve con los datos más relevantes para el negocio.
+RevisiÃ³n de los datos de Google Analytics: visitas, pÃ¡ginas mÃ¡s visitadas, trÃ¡fico por canal, comportamiento en la carta y conversiones hacia reservas y contacto. Informe breve con los datos mÃ¡s relevantes para el negocio.
 
-**SEO técnico básico**
-Mantenimiento de la configuración técnica de SEO: revisión de indexación en Google Search Console, corrección de posibles errores de rastreo y actualización del sitemap si se incorporan nuevas secciones.
+**SEO tÃ©cnico bÃ¡sico**
+Mantenimiento de la configuraciÃ³n tÃ©cnica de SEO: revisiÃ³n de indexaciÃ³n en Google Search Console, correcciÃ³n de posibles errores de rastreo y actualizaciÃ³n del sitemap si se incorporan nuevas secciones.
 
-> Las condiciones económicas específicas de este servicio se acordarán por separado.
+> Las condiciones econÃ³micas especÃ­ficas de este servicio se acordarÃ¡n por separado.
 
 ---
 
 ## 7. Checklist de Entrega al Cliente
 
-Este checklist recoge todos los elementos necesarios para publicar la web en producción y traspasar la titularidad digital al propietario de OYISHI.
+Este checklist recoge todos los elementos necesarios para publicar la web en producciÃ³n y traspasar la titularidad digital al propietario de OYISHI.
 
-### 🌐 Dominio
+### ðŸŒ Dominio
 
-- [ ] Confirmar dominio de publicación (oyishi.es u otro)
-- [ ] Verificar titularidad y datos de renovación del dominio
+- [ ] Confirmar dominio de publicaciÃ³n (oyishi.es u otro)
+- [ ] Verificar titularidad y datos de renovaciÃ³n del dominio
 - [ ] Configurar DNS para apuntar al nuevo hosting
 
-### 🖥 Hosting
+### ðŸ–¥ Hosting
 
-- [ ] Seleccionar plataforma de publicación (Cloudflare Pages, Vercel, Netlify u otra)
-- [ ] Alta y configuración del servicio de hosting
+- [ ] Seleccionar plataforma de publicaciÃ³n (Cloudflare Pages, Vercel, Netlify u otra)
+- [ ] Alta y configuraciÃ³n del servicio de hosting
 - [ ] Configurar dominio personalizado en el hosting
 - [ ] Verificar certificado SSL (HTTPS) activo
 
-### 🔑 Accesos
+### ðŸ”‘ Accesos
 
 - [ ] Entregar credenciales de acceso al panel de hosting
 - [ ] Entregar acceso al registro de dominio
-- [ ] Documentar qué accesos existen y a qué corresponden
+- [ ] Documentar quÃ© accesos existen y a quÃ© corresponden
 
-### 📊 Google Analytics
+### ðŸ“Š Google Analytics
 
-- [ ] Alta o verificación de cuenta de Google Analytics (GA4)
-- [ ] Configurar propiedad para el dominio de producción
-- [ ] Verificar que el código de seguimiento está activo en la web publicada
+- [ ] Alta o verificaciÃ³n de cuenta de Google Analytics (GA4)
+- [ ] Configurar propiedad para el dominio de producciÃ³n
+- [ ] Verificar que el cÃ³digo de seguimiento estÃ¡ activo en la web publicada
 - [ ] Conceder acceso de propietario a la cuenta del cliente
 
-### 🔍 Google Search Console
+### ðŸ” Google Search Console
 
 - [ ] Alta o acceso a Google Search Console
-- [ ] Verificar propiedad del dominio (DNS o archivo de verificación)
+- [ ] Verificar propiedad del dominio (DNS o archivo de verificaciÃ³n)
 - [ ] Enviar sitemap (sitemap.xml) a Google
-- [ ] Comprobar que no hay errores de indexación
+- [ ] Comprobar que no hay errores de indexaciÃ³n
 
-### ⚖️ Aprobación de textos legales
+### âš–ï¸ AprobaciÃ³n de textos legales
 
-- [ ] Revisión y aprobación del Aviso Legal por parte del cliente
-- [ ] Revisión y aprobación de la Política de Privacidad
-- [ ] Revisión y aprobación de la Política de Cookies
-- [ ] Si el cliente tiene abogado o asesoría, validación con ellos antes de publicar
+- [ ] RevisiÃ³n y aprobaciÃ³n del Aviso Legal por parte del cliente
+- [ ] RevisiÃ³n y aprobaciÃ³n de la PolÃ­tica de Privacidad
+- [ ] RevisiÃ³n y aprobaciÃ³n de la PolÃ­tica de Cookies
+- [ ] Si el cliente tiene abogado o asesorÃ­a, validaciÃ³n con ellos antes de publicar
 
-### 📱 Redes sociales oficiales
+### ðŸ“± Redes sociales oficiales
 
 - [ ] Verificar que el enlace a Instagram en el Footer es el perfil oficial de OYISHI
 - [ ] Verificar que el enlace a Facebook (si aplica) es correcto
-- [ ] Confirmar que el botón de WhatsApp usa el número correcto
+- [ ] Confirmar que el botÃ³n de WhatsApp usa el nÃºmero correcto
 
-### 🖼 Material gráfico
+### ðŸ–¼ Material grÃ¡fico
 
-- [ ] Confirmar que el logotipo en la web es la versión oficial y actualizada
-- [ ] Confirmar que las imágenes de la sección Quiénes Somos son las definitivas
-- [ ] Confirmar que las fotografías de producto en la carta son las aprobadas
-- [ ] Verificar que no hay imágenes de placeholder en producción
+- [ ] Confirmar que el logotipo en la web es la versiÃ³n oficial y actualizada
+- [ ] Confirmar que las imÃ¡genes de la secciÃ³n QuiÃ©nes Somos son las definitivas
+- [ ] Confirmar que las fotografÃ­as de producto en la carta son las aprobadas
+- [ ] Verificar que no hay imÃ¡genes de placeholder en producciÃ³n
 
-### 🚀 Puesta en producción
+### ðŸš€ Puesta en producciÃ³n
 
-- [ ] Build de producción generado y validado sin errores
+- [ ] Build de producciÃ³n generado y validado sin errores
 - [ ] Subida de archivos a la plataforma de hosting
-- [ ] Verificación manual de todas las rutas: `/`, `/carta`, `/quienes-somos`, `/reservas`, `/contacto`, `/aviso-legal`, `/privacidad`, `/cookies`
-- [ ] Verificación en móvil (iOS y Android) y en escritorio (Chrome, Safari, Firefox)
+- [ ] VerificaciÃ³n manual de todas las rutas: `/`, `/carta`, `/quienes-somos`, `/reservas`, `/contacto`, `/aviso-legal`, `/privacidad`, `/cookies`
+- [ ] VerificaciÃ³n en mÃ³vil (iOS y Android) y en escritorio (Chrome, Safari, Firefox)
 - [ ] Verificar que los formularios de reserva y contacto funcionan correctamente
-- [ ] Verificar que el teléfono y el correo de contacto son los correctos
-- [ ] Verificar que el enlace de Google Maps apunta a la dirección correcta
-- [ ] Confirmación formal de go-live por parte del cliente
+- [ ] Verificar que el telÃ©fono y el correo de contacto son los correctos
+- [ ] Verificar que el enlace de Google Maps apunta a la direcciÃ³n correcta
+- [ ] ConfirmaciÃ³n formal de go-live por parte del cliente
 
 ---
 
-*Documento preparado por el equipo de desarrollo · OYISHI Gastronomía Japonesa · Agosto 2026*
+*Documento preparado por el equipo de desarrollo Â· OYISHI GastronomÃ­a Japonesa Â· Agosto 2026*

@@ -6,6 +6,7 @@ import App from './App.tsx';
 declare global {
   interface Window {
     dataLayer: any[];
+    gtag?: (...args: any[]) => void;
   }
 }
 
@@ -18,11 +19,11 @@ if (gaId) {
   document.head.appendChild(script);
 
   window.dataLayer = window.dataLayer || [];
-  function gtag(...args: any[]) {
+  window.gtag = function gtag(...args: any[]) {
     window.dataLayer.push(args);
-  }
-  gtag('js', new Date());
-  gtag('config', gaId);
+  };
+  window.gtag('js', new Date());
+  window.gtag('config', gaId);
 }
 
 createRoot(document.getElementById('root')!).render(

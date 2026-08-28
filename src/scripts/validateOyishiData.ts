@@ -50,7 +50,7 @@ products.forEach((p: any) => {
     errors++;
     console.error(`Missing sourceUrl for product ${p.name}`);
   }
-  
+
   if (!p.source) {
     errors++;
     console.error(`Missing source for product ${p.name}`);

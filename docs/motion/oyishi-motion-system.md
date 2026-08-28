@@ -1,288 +1,419 @@
-# OYISHI — Sistema de Movimiento & Animaciones (Motion Design System)
+# OYISHI â€” EspecificaciÃ³n TÃ©cnica del Sistema de Motion y Microinteracciones
 
-> **Autor:** AGENTE 3 — MOTION DIRECTOR  
-> **Fecha:** Agosto 2026  
-> **Proyecto:** OYISHI — Restaurante Japonés Premium (Fuenlabrada)  
-> **Stack de Animación:** Framer Motion + Tailwind CSS + GPU Acceleration  
-> **Estado:** Documento de Especificación (Fase 1: Diseño del Sistema — Pendiente de Aprobación)
-
----
-
-## 1. MANIFIESTO DE MOVIMIENTO: "LA RITMIA DEL SUSHI"
-
-El sistema de movimiento de OYISHI no es una colección inconexa de efectos estéticos o animaciones decorativas. Se concibe como una **extensión cinemática y gastronómica de la marca**: el movimiento imita la cadencia pausada, intencionada y exacta del corte de un maestro itamae.
-
-### Criterios Sensoriales:
-* **Preciso y Gastronómico:** Las transiciones sugieren fluidez y calidez, sin sobresaltos visuales ni distracciones.
-* **Lento e Intencionado:** Duraciones prolongadas (0.5s – 1.4s) con curvas de frenado orgánicas (`cubic-bezier(0.16, 1, 0.3, 1)` — Luxe Ease Out).
-* **Cinematográfico:** Transiciones sostenidas que otorgan protagonismo al producto real (155 platos) y a la atmósfera nocturna `#14100E`.
-
-### Reglas Prohibitivas (Lo que NO se usa en OYISHI):
-* ❌ **Sin Bounce / Spring exagerado:** Cero rebotes de tipo caricatura o aplicados a elementos de interfaz comercial.
-* ❌ **Sin Glitch / Cyberpunk:** Cero efectos de distorsión digital o artefactos visuales.
-* ❌ **Sin Scroll-Jacking:** Cero secuestro del scroll nativo del usuario. El rendimiento del scroll se mantiene a 60fps constantes.
-* ❌ **Sin Rotaciones Absurdas:** Cero elementos girando 360° o desalineándose de la cuadrícula visual.
-* ❌ **Sin Partículas Excesivas:** Cero nieve, chispas o partículas flotantes en segundo plano que saturen la CPU/GPU.
-* ❌ **Sin Hover Exagerado:** No se permite que los elementos aumenten desmedidamente de tamaño provocando desplazamiento del layout (`layout shift`).
+> **Rol:** AGENTE 3 â€” MOTION DIRECTOR
+> **Proyecto:** OYISHI â€” Restaurante JaponÃ©s Premium (Fuenlabrada)
+> **URL:** https://oyishi.pages.dev/
+> **Stack Objetivo:** Framer Motion 10+ / Tailwind CSS 3.4+ / React 18+
+> **Estado:** Documento de EspecificaciÃ³n TÃ©cnica Completa (Para Agente de ImplementaciÃ³n)
+> **Regla de Oro:** **NO MODIFICAR CÃ“DIGO EN ESTA FASE.** Animaciones sutiles, elegantes, orientadas al rendimiento y accesibilidad.
 
 ---
 
-## 2. REGLAS TÉCNICAS Y ACCESIBILIDAD
+## 1. FILOSOFÃA Y DIRECTRICES DE DISEÃ‘O DE MOVIMIENTO
 
-1. **Aceleración por Hardware (GPU Only):**
-   * Se restringen las animaciones continuas a propiedades compuestas por GPU: `transform` (`translate3d`, `scale`, `rotate`) y `opacity`.
-   * Se evita animar propiedades de maquetación (`width`, `height`, `margin`, `padding`, `top`, `left`) para erradicar el *Reflow* y el *Repaint*.
+El lenguaje de movimiento de OYISHI representa el concepto **"JapÃ³n ContemporÃ¡neo Sensorial"** (*Wabi-Sabi Moderno*).
 
-2. **Protección Absoluta del Hero:**
-   * El vídeo real `public/images/hero/oyishi-sushi-build.mp4` se mantiene intacto. El sistema de motion únicamente controla la entrada de los contenidos superpuestos y la integración del degradado radial inferior (`mix-blend-lighten` y máscaras).
-
-3. **Cumplimiento Estricto de `prefers-reduced-motion`:**
-   * Todas las animaciones cuentan con un estado alternativo simplificado de cambio de opacidad rápido (0.1s) sin desplazamientos vectoriales para proteger a usuarios con desórdenes vestibulares o preferencias de accesibilidad activas.
-
----
-
-## 3. TABLA MAESTRA DEL SISTEMA DE MOVIMIENTO
-
-La siguiente tabla consolida la especificación técnica de las **15 animaciones del sistema OYISHI**:
-
-| Elemento | Trigger | Animación | Duración | Easing | Mobile | Reduced Motion |
-|---|---|---|---|---|---|---|
-| **1. Entrada Hero** | Page Mount | Fade-in atmosférico con escalado ambiental de luz (`scale 1.05 -> 1`) | 1.4s (Delay 0s) | `cubic-bezier(0.16, 1, 0.3, 1)` | Fade-in lineal simple (1.0s) sin blur | Fade-in estático (0.2s) |
-| **2. Aparición OYISHI** | Page Mount | Revelado vertical por letra con clip-path mask (`polygon`) y ciclo continuo de color | 1.2s (Stagger 0.08s, Delay 0.2s) | `cubic-bezier(0.16, 1, 0.3, 1)` | Fade-up en bloque completo de la palabra | Transición rápida de opacidad (0.1s) |
-| **3. Transición Hero -> Explora** | Viewport Scroll | Parallax inverso sutil en texto (`y: -60px`) y fundido continuo a `#14100E` | 1.0s | `cubic-bezier(0.25, 1, 0.5, 1)` | Scroll nativo directo sin parallax | Scroll estático sin transformación Y |
-| **4. Categorías ("Explora OYISHI")** | Viewport / Hover | Entry: Cascade stagger. Hover: Photo zoom (`scale 1.05`), Arrow slide (`x: +4px`) | Entry: 0.6s (Stagger 0.05s). Hover: 0.4s | `cubic-bezier(0.16, 1, 0.3, 1)` | Grid 2 col con fade-in, sin efecto hover zoom | Fade-in directo sin stagger ni zoom |
-| **5. Fotografías Gastronómicas** | Image Load / Hover | Entry: Fade-in desde placeholder. Hover: Micro-zoom cinematográfico (`scale 1.04`) | Entry: 0.6s. Hover: 0.7s | `cubic-bezier(0.16, 1, 0.3, 1)` | Carga con fade-in directo sin zoom al tacto | Opacidad inmediata sin zoom |
-| **6. Product Cards (Home & Carta)** | Viewport / Hover | Entry: Fade-up (`y: 25px -> 0`). Hover: Elevación (`y: -4px`), borde oro Wasabi (`#D8B36A/40`) | Entry: 0.7s (Stagger 0.06s). Hover: 0.35s | `cubic-bezier(0.16, 1, 0.3, 1)` | Grid con fade-in suave, sin elevación al scroll | Fade-in estático sin desplazamiento Y |
-| **7. Bandejas y Combinados** | Viewport / Hover | Entry: Fade con scale inverso (`scale 1.02 -> 1`). Hover: Expansion foto (`scale 1.05`) | Entry: 0.9s. Hover: 0.8s | `cubic-bezier(0.16, 1, 0.3, 1)` | Bloque vertical full-width sin zoom hover | Fade estático sin escala |
-| **8. Menú del Día** | Viewport Scroll | Revelado centrado con fade-up y destaque del badge "Mediodía" | 0.8s (Delay 0.2s) | `easeOut` | Revelado vertical estándar | Aparición inmediata |
-| **9. Reserva (Formulario)** | Viewport / Submit | Entry: Fade-in con sombra. Submit: Checkmark scaling solidario (`scale 0.5 -> 1`) | Entry: 0.8s. Submit: 0.6s | `cubic-bezier(0.16, 1, 0.3, 1)` | Formulario adaptado 100% sin re-layouts | Cambio directo de estado sin scaling |
-| **10. Header Fijo** | Scroll > 50px | Transición a cristal esmerilado (`bg-[#140f0c]/85` + `backdrop-blur-md`), pulso verde | 0.5s | `cubic-bezier(0.16, 1, 0.3, 1)` | Compactado con blur optimizado | Cambio instantáneo de color de fondo |
-| **11. Botones Principales** | Hover / Interval | Hover: Elevación `-2px` + Shimmer barriendo en diagonal. Icon: `rotate 90°` / `translate` | Hover: 0.3s. Shimmer loop: 4.0s | `cubic-bezier(0.16, 1, 0.3, 1)` | Active state feedback (`scale 0.98`), sin shimmer | Cambio directo de tono de color |
-| **12. Cambio Home -> /carta** | Route Change | Disolución cruzada (*Cross-fade*) con desplazamiento vertical sutil (`y: 10px -> 0`) | Exit: 0.25s. Enter: 0.4s | `easeOut` | Fade-in limpio ultra-rápido (0.2s) | Cambio directo sin transición entre rutas |
-| **13. Buscador en Carta** | Focus / Input | Focus: Resplandor sutil Wasabi Gold. Filter: Reorganización fluida de la rejilla | Focus: 0.25s. Layout: 0.3s | `easeOut` | Foco nativo con teclado táctil directo | Sin animación de layout, filtrado instantáneo |
-| **14. Filtros de Categorías** | Click Filtro | Desplazamiento fluido de la píldora dorada de fondo (`layoutId`) al chip activo | 0.3s | `cubic-bezier(0.16, 1, 0.3, 1)` | Scroll horizontal táctil con píldora fija | Cambio de clase CSS estático |
-| **15. Carrito (Drawer)** | Open / Add Item | Backdrop: Fade (0.3s). Drawer: Spring slide (`x: 100% -> 0`). Badge pop: `scale 1.3` | Drawer: 0.4s. Badge: 0.3s | `spring(stiffness: 250, damping: 25)` | Drawer a pantalla completa con swipe-to-close | Fade-in estático del panel (0.15s) |
+### Principios Fundamentales:
+1. **Sutileza y RestricciÃ³n Elegante:** Cero sobrecarga visual. Las animaciones acompaÃ±an la experiencia sin robar protagonismo a los 155 platos reales ni al apetito visual del cliente.
+2. **Cadencia GastronÃ³mica:** Movimientos pausados, fluidos y fluidos en entradas de contenido (0.4s a 0.8s); microinteracciones inmediatas y precisas en respuesta tÃ¡ctil/cursor (0.15s a 0.3s).
+3. **Curvas de Easing Curadas (Luxe Bezier):**
+   - **Entradas y Revelados:** `cubic-bezier(0.16, 1, 0.3, 1)` (*Luxe Ease Out* â€” desaceleraciÃ³n suave estilo Apple/Hospitality Premium).
+   - **Salidas y Modales:** `cubic-bezier(0.7, 0, 0.84, 0)` (*Fast Ease In*).
+   - **Interacciones TÃ¡ctiles / Drawer:** `spring` controlado sin rebote (*Stiffness: 250, Damping: 28, Mass: 1*).
+4. **Presupuesto de Rendimiento (Performance Budget):**
+   - **Framerate:** 60 FPS garantizados tanto en desktop como en dispositivos mÃ³viles.
+   - **Hardware Acceleration:** Uso exclusivo de propiedades compuestas en GPU: `transform` (`translate3d`, `scale`) y `opacity`. Cero animaciÃ³n de propiedades con reflow (`width`, `height`, `margin`, `padding`, `top`, `left`).
+   - **Composite Layers:** Utilizar `transform-gpu` y `will-change: transform, opacity` en elementos crÃ­ticos.
 
 ---
 
-## 4. ESPECIFICACIÓN DETALLADA DE LAS 15 ANIMACIONES
+## 2. REQUISITOS DE ACCESIBILIDAD Y RENDIMIENTO MÃ“VIL
 
-### 1. Entrada del Hero
-* **Elemento:** Contenedor e iluminación atmosférica del Hero.
-* **Trigger:** Montaje inicial de la página (`mount`).
-* **Propiedad:** `opacity`, `transform (scale)`.
-* **Duración:** 1.4s | **Delay:** 0s | **Easing:** `cubic-bezier(0.16, 1, 0.3, 1)`.
-* **Desktop:** Transición progresiva del ambiente de penumbra `#191310` a `#14100E` con un leve ajuste de escala del foco ambiental radial (`scale 1.05 -> 1.0`).
-* **Mobile:** Fade-in de opacidad directo en 1.0s.
-* **Reduced Motion:** Fade-in plano en 0.2s sin variación de escala.
-* **Coste aproximado:** Muy Bajo (GPU Layer).
+### A. Soporte Obligatorio `prefers-reduced-motion`
+Cualquier componente animado debe consultar `useReducedMotion()` de Framer Motion o aplicar la regla global CSS:
 
-### 2. Aparición de OYISHI
-* **Elemento:** Marca editorial "OYISHI" en `Hero.tsx`.
-* **Trigger:** Montaje inicial de la página.
-* **Propiedad:** `clip-path` (`polygon(0 0, 100% 0, 100% 100%, 0 100%)`), `translateY`, `opacity`, `color`.
-* **Duración:** 1.2s por carácter | **Delay:** 0.2s (stagger 0.08s entre letras) | **Easing:** `cubic-bezier(0.16, 1, 0.3, 1)`.
-* **Desktop:** Cada letra emerge desde la parte inferior tras una máscara de recorte invisible, acompañada por una modulación armónica continua de color (`#F6F1E8` -> `#D8B36A` -> `#E67A61`).
-* **Mobile:** Revelado por bloque completo del titular mediante `translateY(20px -> 0px)` y `opacity(0 -> 1)` para evitar recálculos cromáticos por letra.
-* **Reduced Motion:** Aparición fija instantánea con color estático `#F6F1E8`.
-* **Coste aproximado:** Bajo.
-
-### 3. Transición Hero → Explora
-* **Elemento:** Gradiente inferior del Hero y cabecera de la sección "EXPLORA OYISHI".
-* **Trigger:** Scroll en pantalla (`whileInView`).
-* **Propiedad:** `opacity`, `translateY`.
-* **Duración:** 1.0s | **Delay:** 0.1s | **Easing:** `cubic-bezier(0.25, 1, 0.5, 1)`.
-* **Desktop:** El contenido de texto del Hero se desplaza ligeramente en dirección opuesta al scroll (`y: -60px`), mientras la máscara del vídeo se funde de forma imperceptible con la primera sección.
-* **Mobile:** Scroll nativo del navegador sin efecto parallax.
-* **Reduced Motion:** Movimiento parallax desactivado por completo.
-* **Coste aproximado:** Bajo.
-
-### 4. Categorías ("EXPLORA OYISHI")
-* **Elemento:** Bloques visuales de 8 categorías principales en la Home.
-* **Trigger:** Viewport / Hover.
-* **Propiedad:** `opacity`, `transform (scale, translateX)`.
-* **Duración:** Scroll Entry: 0.6s (Stagger 0.05s). Hover: 0.4s | **Easing:** `cubic-bezier(0.16, 1, 0.3, 1)`.
-* **Desktop:** Entrada en cascada de los 8 bloques. Al pasar el cursor, la imagen de fondo escala suavemente a `1.05` y la flecha indicadora dorada se desplaza `+4px` a la derecha.
-* **Mobile:** Carga en rejilla de 2 columnas con fade-in. Feedback táctil de opacidad al pulsar (`active:opacity-80`).
-* **Reduced Motion:** Sin efecto de escala ni desplazamiento de flecha.
-* **Coste aproximado:** Bajo.
-
-### 5. Fotografías Gastronómicas
-* **Elemento:** Imágenes de productos (Nigiris, Uramakis, Sashimis, etc.).
-* **Trigger:** Carga de imagen / Hover.
-* **Propiedad:** `opacity`, `transform (scale)`.
-* **Duración:** Entry: 0.6s. Hover: 0.7s | **Easing:** `cubic-bezier(0.16, 1, 0.3, 1)`.
-* **Desktop:** Transición de opacidad al completar la carga WebP desde el contenedor carbón `#1A1A1A`. Al hacer hover, la imagen realiza un micro-zoom cinematográfico pausado (`scale(1.04)`).
-* **Mobile:** Fade-in de carga sin micro-zoom interactivo.
-* **Reduced Motion:** Carga inmediata sin transición de opacidad prolongada.
-* **Coste aproximado:** Muy Bajo (Propiedad `transform: scale` nativa).
-
-### 6. Product Cards ("SELECCIÓN OYISHI" & Rejilla de Carta)
-* **Elemento:** Tarjetas contenedoras de producto.
-* **Trigger:** Entry Viewport / Hover.
-* **Propiedad:** `opacity`, `translateY`, `border-color`, `box-shadow`.
-* **Duración:** Entry: 0.7s (Stagger 0.06s). Hover: 0.35s | **Easing:** `cubic-bezier(0.16, 1, 0.3, 1)`.
-* **Desktop:** Entrada progresiva desde abajo (`y: 25px -> 0`). Al pasar el cursor, la tarjeta se eleva `-4px`, el borde evoluciona a un tono bronce sutil (`rgba(216,179,106,0.3)`) y el título adopta el color Wasabi Gold.
-* **Mobile:** Entrada en scroll simple sin desplazamiento en eje Y ni elevación.
-* **Reduced Motion:** Aparición plana mediante opacidad (0.1s).
-* **Coste aproximado:** Bajo.
-
-### 7. Bandejas y Combinados
-* **Elemento:** Tarjetas de gran formato (400px) para la sección de Bandejas.
-* **Trigger:** Viewport Scroll / Hover.
-* **Propiedad:** `opacity`, `transform (scale)`.
-* **Duración:** Entry: 0.9s. Hover: 0.8s | **Easing:** `cubic-bezier(0.16, 1, 0.3, 1)`.
-* **Desktop:** Revelado de tarjeta con ligero escalado inverso (`scale 1.02 -> 1.0`). Al pasar el cursor, la foto soplada se expande con extrema suavidad (`scale 1.05`).
-* **Mobile:** Formato adaptable vertical sin expansión en hover.
-* **Reduced Motion:** Sin alteración de escala.
-* **Coste aproximado:** Medio (Fotografía de alta definición).
-
-### 8. Menú del Día
-* **Elemento:** Sección promocional de almuerzos de mediodía.
-* **Trigger:** Viewport Scroll.
-* **Propiedad:** `opacity`, `translateY`.
-* **Duración:** 0.8s | **Delay:** 0.2s | **Easing:** `easeOut`.
-* **Desktop:** Revelado vertical sobrio del bloque centrado con destello dorado gradual en el subtítulo "Mediodía".
-* **Mobile:** Revelado estándar en scroll.
-* **Reduced Motion:** Fade estático directo.
-* **Coste aproximado:** Muy Bajo.
-
-### 9. Reserva (Formulario de Reservas)
-* **Elemento:** Formulario `ReservationForm.tsx` y estado de confirmación.
-* **Trigger:** Entry / Form Submit.
-* **Propiedad:** `opacity`, `transform (scale, translateY)`.
-* **Duración:** Entry: 0.8s. Submit: 0.6s | **Easing:** `cubic-bezier(0.16, 1, 0.3, 1)`.
-* **Desktop:** El formulario emerge con una sombra difuminada profunda. Tras enviar, el icono de confirmación se manifiesta con un escalado sólido (`scale 0.5 -> 1.0`) sin rebotes plásticos.
-* **Mobile:** Transición limpia de pantalla de formulario a confirmación sin desplazar el foco visual.
-* **Reduced Motion:** Sustitución directa de vistas sin animación de escala.
-* **Coste aproximado:** Muy Bajo.
-
-### 10. Header Fijo (Navegación Principal)
-* **Elemento:** Header flotante (`Header.tsx`).
-* **Trigger:** Evento de scroll (distancia `scrollY > 50px`).
-* **Propiedad:** `background-color`, `backdrop-filter`, `padding`, `box-shadow`.
-* **Duración:** 0.5s | **Easing:** `cubic-bezier(0.16, 1, 0.3, 1)`.
-* **Desktop:** El header pasa de un estado transparente inicial a un fondo cristalino carbón esmerilado (`rgba(20,15,12,0.85)` + `backdrop-blur-md`) reduciendo su acolchado vertical de `py-5` a `py-3`. El indicador "Abierto ahora" emite un pulso verde natural sutil.
-* **Mobile:** Mismo cambio cromático con menor densidad de desenfoque para asegurar fluidez táctil.
-* **Reduced Motion:** Transición directa de color sin animación de acolchado/altura.
-* **Coste aproximado:** Medio (GPU Backdrop Blur).
-
-### 11. Botones Principales (CTAs Comercial)
-* **Elemento:** Botones "VER CARTA", "RESERVAR MESA", "PEDIDO ONLINE", "AÑADIR".
-* **Trigger:** Interaction (Hover / Active) e intervalo pasivo.
-* **Propiedad:** `transform (translateY, rotate)`, `box-shadow`, `background-position` (*shimmer effect*).
-* **Duración:** Hover: 0.3s. Shimmer: 4.0s (bucle) | **Easing:** `cubic-bezier(0.16, 1, 0.3, 1)`.
-* **Desktop:** Elevación sutil de `-2px`, incremento de resplandor dorado/coral en la base. Un destello diagonal de luz metálica (*metallic shimmer*) cruza el botón suavemente cada 4 segundos. El icono `Plus` dentro de los botones de añade rota 90°.
-* **Mobile:** Micro-compresión al toque (`scale 0.98` durante 100ms) sin shimmer pasivo para ahorro energético.
-* **Reduced Motion:** Sin elevación Y ni shimmer diagonal; cambio directo de color de fondo.
-* **Coste aproximado:** Bajo.
-
-### 12. Cambio Home → /carta (Transición entre Páginas)
-* **Elemento:** Envoltorio principal de vistas (`App.tsx` / React Router).
-* **Trigger:** Navegación por clic en enlace o cambio de ruta.
-* **Propiedad:** `opacity`, `translateY`.
-* **Duración:** Exit: 0.25s / Enter: 0.4s | **Easing:** `easeOut`.
-* **Desktop:** La página saliente se disuelve suavemente (`opacity: 1 -> 0`), mientras la vista entrante emerge con un leve deslizamiento vertical (`y: 10px -> 0px`, `opacity: 0 -> 1`), recreando la fluidez de un software nativo.
-* **Mobile:** Fade-in rápido de 0.2s.
-* **Reduced Motion:** Transición instantánea de páginas sin fade ni desplazamiento.
-* **Coste aproximado:** Bajo.
-
-### 13. Buscador en Carta
-* **Elemento:** Input de búsqueda interactiva en `CartaPage.tsx`.
-* **Trigger:** Foco en el campo / Modificación de texto.
-* **Propiedad:** `border-color`, `box-shadow`, `layout` (reordenación de rejilla).
-* **Duración:** Focus: 0.25s. Layout Grid: 0.3s | **Easing:** `easeOut`.
-* **Desktop:** Al enfocar, el borde cambia a Wasabi Gold con resplandor difuminado. Al filtrar, Framer Motion reordena suavemente los productos de la rejilla mediante `layout`.
-* **Mobile:** Foco inmediato sin animación pesada de reposicionamiento de rejilla.
-* **Reduced Motion:** Reordenación instantánea sin transiciones `layout`.
-* **Coste aproximado:** Bajo.
-
-### 14. Filtros de Categorías
-* **Elemento:** Píldoras de las 17 categorías en `CartaPage.tsx`.
-* **Trigger:** Clic en categoría.
-* **Propiedad:** `background-color`, `color`, `box-shadow`, `layoutId` (indicador activo).
-* **Duración:** 0.3s | **Easing:** `cubic-bezier(0.16, 1, 0.3, 1)`.
-* **Desktop:** El fondo dorado de selección se desplaza de forma fluida entre botones utilizando la propiedad `layoutId` de Framer Motion.
-* **Mobile:** Desplazamiento horizontal táctil nativo sin animación de píldora deslizante.
-* **Reduced Motion:** Cambio directo de clase CSS sin desplazamiento de píldora.
-* **Coste aproximado:** Bajo.
-
-### 15. Carrito (Drawer Lateral & Modal)
-* **Elemento:** Panel emergente `CartModal.tsx` y contador de comanda.
-* **Trigger:** Clic en icono de carrito / Añadir producto al carrito.
-* **Propiedad:** `transform (translateX)`, `opacity`, `scale` (badge de contador).
-* **Duración:** Backdrop: 0.3s. Drawer: 0.4s. Badge Pop: 0.3s | **Easing:** `cubic-bezier(0.16, 1, 0.3, 1)` / `spring(stiffness: 250, damping: 25)`.
-* **Desktop:** El telón de fondo oscuro se activa con `opacity: 0 -> 1` y desenfoque de fondo. El drawer lateral se desliza desde la derecha con inercia precisa. Al añadir un ítem, el badge numérico del header realiza un micro-pop (`scale: 1.0 -> 1.35 -> 1.0`).
-* **Mobile:** Se despliega como panel a pantalla completa o 95% con soporte de cierre por arrastre vertical.
-* **Reduced Motion:** Aparece de forma estática en 0.15s sin deslizamiento horizontal.
-* **Coste aproximado:** Bajo.
-
----
-
-## 5. TOP 10 ANIMACIONES RECOMENDADAS
-
-De las 15 animaciones diseñadas, se clasifican las **10 más determinantes** para la transformación sensorial de OYISHI:
-
+```css
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 ```
-+-------------------------------------------------------------------------------------------------------------+
-|                                    TOP 10 ANIMACIONES RECOMENDADAS OYISHI                                   |
-+----+--------------------------------------------+-----------------+-----------------------+-----------------+
-| #  | ANIMACIÓN                                  | CLASIFICACIÓN   | IMPACTO EN USUARIO    | COSTE TÉCNICO   |
-+----+--------------------------------------------+-----------------+-----------------------+-----------------+
-| 1  | 1. Revelado por Letra Titular OYISHI       | HIGH IMPACT     | WOW Instantáneo       | Bajo            |
-| 2  | 2. Transición Cristal Header Fijo         | HIGH IMPACT     | Percepción Luxe       | Medio           |
-| 3  | 3. Entradas Staggered en Product Cards     | HIGH IMPACT     | Ritmo Gastronómico    | Bajo            |
-| 4  | 4. Shimmer Metálico en CTAs Comerciales    | HIGH IMPACT     | Conversión (+Clicks)  | Bajo            |
-| 5  | 5. Drawer de Carrito Lateral con Inercia   | HIGH IMPACT     | UX Compras Fluida     | Bajo            |
-| 6  | 6. Micro-Zoom Cinematográfico en Fotos     | MEDIUM IMPACT   | Apetitosidad Visceral | Muy Bajo        |
-| 7  | 7. Desplazamiento Píldora Filtro layoutId  | MEDIUM IMPACT   | Interactividad Premium| Bajo            |
-| 8  | 8. Cross-Fade Navegación (Home -> Carta)  | MEDIUM IMPACT   | Sentido de App Nativa | Bajo            |
-| 9  | 9. Elevación Sutil y Borde Dorado en Cards | MEDIUM IMPACT   | Feedback Elegante     | Bajo            |
-| 10 | 10. Checkmark Solidario Formulario Reserva | OPTIONAL        | Confirmación Limpia   | Muy Bajo        |
-+----+--------------------------------------------+-----------------+-----------------------+-----------------+
+
+### B. OptimizaciÃ³n EspecÃ­fica para MÃ³vil
+- DesactivaciÃ³n de efectos Parallax y micro-zooms en pantallas con ancho `< 768px` para evitar lag y sobrecalentamiento de procesadores mÃ³viles.
+- SustituciÃ³n de animaciones por letra o por Ã­tem individual por apariciones en bloque agrupado.
+- Reemplazo de hovers de cursor por feedback tÃ¡ctil al pulsar (`:active` con `scale(0.98)` durante 100ms).
+
+---
+
+## 3. ESPECIFICACIÃ“N DETALLADA POR COMPONENTE Y SECCIÃ“N
+
+A continuaciÃ³n se detallan las **14 Ã¡reas del sistema de motion** con cÃ³digo tÃ©cnico listo para ser consumido por el agente de implementaciÃ³n.
+
+---
+
+### 3.1. HERO SECTION (`Hero.tsx`)
+* **VÃ­deo Background:** Mantiene reproducciÃ³n nativa silenciada (`oyishi-sushi-build.mp4`). El contenedor aplica un fundido de entrada inicial.
+* **Titular "OYISHI" (Editorial Display):** Revelado progresivo con mÃ¡scara `clip-path` y escalonamiento (*stagger*) sutil.
+* **SubtÃ­tulo & CTAs:** Fade-up vertical pausado.
+
+#### EspecificaciÃ³n Framer Motion (Variantes):
+```typescript
+// Contenedor principal con stagger
+export const heroContainerVariant = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+// Revelado de caracteres (Desktop)
+export const heroLetterVariant = {
+  hidden: {
+    y: '100%',
+    opacity: 0,
+    clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)'
+  },
+  visible: {
+    y: '0%',
+    opacity: 1,
+    clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+    transition: {
+      duration: 1.2,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
+// Fade-up para subtÃ­tulo y CTAs
+export const heroFadeUp = {
+  hidden: { opacity: 0, y: 15 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+```
+* **Reduced Motion:** El texto aparece de forma estÃ¡tica con `opacity: 1` en 0.2s sin `clip-path` ni `y`.
+
+---
+
+### 3.2. NAVEGACIÃ“N (`Header.tsx`)
+* **Header Sticky Scroll:** Pasa de transparente a cristal esmerilado al superar 50px de scroll.
+* **Links de MenÃº:** Subrayado sutil central que se expande horizontalmente en hover (`scaleX: 0 -> 1`).
+* **MenÃº MÃ³vil Overlay:** TransiciÃ³n de cortina sutil desde arriba con desenfoque de fondo.
+
+#### EspecificaciÃ³n TÃ©cnica:
+```typescript
+// TransiciÃ³n de Header al hacer scroll
+// CSS / Tailwind: transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]
+// Estado Scrolled: bg-[#140F0C]/85 backdrop-blur-md py-3 border-b border-white/[0.04] shadow-2xl
+
+// MenÃº MÃ³vil AnimatePresence
+export const mobileMenuVariant = {
+  hidden: { opacity: 0, height: 0 },
+  visible: {
+    opacity: 1,
+    height: 'auto',
+    transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] }
+  },
+  exit: {
+    opacity: 0,
+    height: 0,
+    transition: { duration: 0.3, ease: 'easeIn' }
+  }
+};
 ```
 
 ---
 
-### Análisis Justificativo del TOP 10:
+### 3.3. APARICIÃ“N DE SECCIONES (Scroll Viewport Reveal)
+* **Trigger:** Las secciones clave ("EXPLORA OYISHI", "SELECCIÃ“N OYISHI", "BANDEJAS", "MENÃš DEL DÃA", "RESERVAS") aparecen suavemente al entrar en el viewport.
+* **ConfiguraciÃ³n Viewport:** `whileInView="visible" viewport={{ once: true, amount: 0.2 }}`.
 
-#### 1. Revelado por Letra del Titular OYISHI (HIGH IMPACT)
-* **Por qué:** Establece la primera impresión del usuario con categoría editorial de alta costura, diferenciando a OYISHI de cualquier web de restaurante convencional en Fuenlabrada.
-
-#### 2. Transición Cristal del Header Fijo (HIGH IMPACT)
-* **Por qué:** Mantiene la sobriedad durante el scroll y proporciona legibilidad constante sin invadir las fotografías del catálogo.
-
-#### 3. Entradas Staggered en Product Cards (HIGH IMPACT)
-* **Por qué:** Crea una cadencia de lectura pausada y elegante a medida que el usuario hace scroll, simulando la presentación secuencial de un menú degustación.
-
-#### 4. Shimmer Metálico en CTAs Comerciales (HIGH IMPACT)
-* **Por qué:** Captura la atención visual del ojo hacia los botones "VER CARTA", "RESERVAR MESA" y "PEDIDO ONLINE" de forma no invasiva, elevando la tasa de conversión.
-
-#### 5. Drawer de Carrito Lateral con Inercia (HIGH IMPACT)
-* **Por qué:** Permite revisar la comanda sin perder la ubicación actual en el menú, proporcionando una experiencia e-commerce de máxima calidad.
-
-#### 6. Micro-Zoom Cinematográfico en Fotografías (MEDIUM IMPACT)
-* **Por qué:** Hace que el salmón, atún y nigiris cobren vida al pasar el cursor, aumentando el deseo y la apetitosidad visual.
-
-#### 7. Desplazamiento Píldora Filtro `layoutId` (MEDIUM IMPACT)
-* **Por qué:** Convierte la exploración de las 17 categorías de la carta en una experiencia interactiva suave y gratificante.
-
-#### 8. Cross-Fade Navegación entre Vistas (MEDIUM IMPACT)
-* **Por qué:** Elimina los saltos bruscos y los parpadeos blancos de recarga de página al navegar entre la Home y `/carta`.
-
-#### 9. Elevación Sutil y Borde Dorado en Cards (MEDIUM IMPACT)
-* **Por qué:** Ofrece un feedback interactivo claro y refinado en equipos de escritorio.
-
-#### 10. Checkmark Solidario Formulario Reserva (OPTIONAL)
-* **Por qué:** Transmite tranquilidad y solidez al cliente cuando completa su solicitud de reserva de mesa.
+#### EspecificaciÃ³n Framer Motion:
+```typescript
+export const sectionFadeUp = {
+  hidden: { opacity: 0, y: 25 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+```
 
 ---
 
-## 6. PRÓXIMOS PASOS (FASE SIGUIENTE)
+### 3.4. CARDS DE PRODUCTOS Y BANDEJAS
+* **Grid de Productos ("SELECCIÃ“N OYISHI" y `/carta`):** Entrada escalonada (*stagger*) para los Ã­tems visibles en pantalla.
+* **Contenedor:** ElevaciÃ³n sutil de la tarjeta (`translateY(-4px)`), cambio de borde a dorado Wasabi sutil (`rgba(216,179,106,0.3)`).
 
-1. **Revisión y Aprobación:** Presentar este sistema de movimiento al usuario/cliente para validación del manfiesto y la tabla de especificaciones.
-2. **Implementación Gradual (Tras aprobación):**
-   * Crear el archivo de utilidades compartidas `src/utils/motionVariants.ts`.
-   * Integrar animaciones stagger y hover en `src/pages/HomePage.tsx` y `src/pages/CartaPage.tsx`.
-   * Pulir interacciones en `Header.tsx`, `CartModal.tsx` y `ReservationForm.tsx`.
-3. **Control QA & Performance:** Validar con Chrome DevTools que el framerate permanezca en 60fps constantes en dispositivos móviles y de escritorio.
+#### EspecificaciÃ³n Framer Motion:
+```typescript
+export const cardGridStagger = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.06,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+export const cardItemVariant = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+```
+
+---
+
+### 3.5. HOVER DE PRODUCTOS E IMÃGENES
+* **Efecto Foto:** Micro-zoom cinematogrÃ¡fico muy lento y pausado al colocar el cursor sobre el contenedor de imagen.
+* **TransformaciÃ³n:** `scale(1.04)` con `duration-700 ease-out`.
+
+#### EspecificaciÃ³n CSS / Tailwind:
+```html
+<div className="overflow-hidden">
+  <img
+    src="..."
+    alt="..."
+    className="w-full h-full object-cover transform-gpu transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+  />
+</div>
+```
+
+---
+
+### 3.6. BOTONES Y ACCIONES (`CTA Buttons`)
+* **MicrointeracciÃ³n Hover:** ElevaciÃ³n de 2px (`translateY(-2px)`), brillo de resplandor en sombra.
+* **Iconos Intermediarios:** El icono `Plus` de aÃ±adir rota 90Â° suavemente (`rotate-90 duration-300`). Flechas de navegaciÃ³n se desplazan 4px a la derecha (`group-hover:translate-x-1`).
+* **Active Feedback (MÃ³vil):** `active:scale-[0.98] transition-transform duration-100`.
+
+#### EspecificaciÃ³n CSS / Motion:
+```css
+/* RÃ¡faga Shimmer MetÃ¡lica Sutil (Para CTAs Primarios como "VER CARTA" / "RESERVAR") */
+@keyframes shimmerSweep {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  100% { transform: translateX(200%) rotate(25deg); }
+}
+
+.btn-shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer-effect::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transform: rotate(25deg);
+  animation: shimmerSweep 4s infinite ease-in-out;
+}
+```
+
+---
+
+### 3.7. AÃ‘ADIR A COMANDA (MicrointeracciÃ³n de AcciÃ³n)
+* **Comportamiento:** Al pulsar "+ AÃ±adir":
+  1. El botÃ³n de la tarjeta emite un breve pulso de escala `scale(0.96) -> scale(1.0)`.
+  2. El badge del icono de carrito en la cabecera realiza un efecto *Pop* (`scale(1) -> scale(1.35) -> scale(1)`).
+  3. Muestra una micro-notificaciÃ³n flotante (Toast) en la esquina inferior izquierda: *"AÃ±adido: [Nombre del plato]"*.
+
+#### EspecificaciÃ³n Framer Motion (Badge Counter):
+```typescript
+export const cartBadgePop = {
+  initial: { scale: 1 },
+  animate: {
+    scale: [1, 1.35, 1],
+    transition: { duration: 0.35, ease: 'easeOut' }
+  }
+};
+```
+
+---
+
+### 3.8. CARRITO Y DRAWER (`CartModal.tsx`)
+* **Backdrop (TelÃ³n de fondo):** Fade-in suave de `opacity: 0 -> 1` con `backdrop-blur-sm` (0.3s).
+* **Drawer Lateral:** Deslizamiento horizontal desde la derecha con fÃ­sica de muelle amortiguado.
+* **EliminaciÃ³n de Elemento:** DisoluciÃ³n en altura y opacidad (`opacity: 0`, `height: 0`, `marginBottom: 0`).
+
+#### EspecificaciÃ³n Framer Motion:
+```typescript
+export const drawerVariant = {
+  hidden: { x: '100%' },
+  visible: {
+    x: 0,
+    transition: { type: 'spring', stiffness: 260, damping: 28 }
+  },
+  exit: {
+    x: '100%',
+    transition: { duration: 0.3, ease: [0.7, 0, 0.84, 0] }
+  }
+};
+
+export const cartItemRemoveVariant = {
+  initial: { opacity: 1, height: 'auto' },
+  exit: {
+    opacity: 0,
+    height: 0,
+    transition: { duration: 0.25, ease: 'easeOut' }
+  }
+};
+```
+
+---
+
+### 3.9. CAMBIO DE CATEGORÃAS (Filtros en `/carta`)
+* **TransiciÃ³n de PÃ­ldora Activa:** Utiliza `layoutId="activeCategoryPill"` de Framer Motion para deslizar el fondo dorado Wasabi entre botones de categorÃ­a con suavidad perfecta.
+* **ReorganizaciÃ³n del Grid:** La cuadrÃ­cula de productos filtra los elementos manteniendo las animaciones de `layout`.
+
+#### EspecificaciÃ³n Framer Motion:
+```tsx
+// Ejemplo de botÃ³n de filtro
+<button onClick={() => setActiveCategory(cat)} className="relative px-6 py-2">
+  {activeCategory === cat && (
+    <motion.div
+      layoutId="activeCategoryPill"
+      className="absolute inset-0 bg-oyishi-gold rounded-full shadow-[0_0_15px_rgba(216,179,106,0.3)]"
+      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+    />
+  )}
+  <span className="relative z-10 font-mono text-sm">{cat}</span>
+</button>
+```
+
+---
+
+### 3.10. FORMULARIO DE RESERVAS (`ReservationForm.tsx`)
+* **Foco en Campos Input:** Resplandor progresivo del borde (`border-oyishi-gold` con `shadow-[0_0_10px_rgba(216,179,106,0.15)]`).
+* **ConfirmaciÃ³n de EnvÃ­o:** TransiciÃ³n suave al estado de Ã©xito mediante `AnimatePresence`. El icono de verificaciÃ³n `âœ“` se escala desde `0.5` a `1.0` con fade-in.
+
+#### EspecificaciÃ³n Framer Motion:
+```typescript
+export const reservationSuccessVariant = {
+  hidden: { opacity: 0, scale: 0.92 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] }
+  }
+};
+
+export const checkmarkScale = {
+  hidden: { scale: 0, opacity: 0 },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: { delay: 0.2, duration: 0.4, type: 'spring', stiffness: 200 }
+  }
+};
+```
+
+---
+
+### 3.11. SCROLL Y PARALLAX CONTROLADO
+* **Scroll Nativo:** Se prohÃ­be el uso de scroll-jacking. El scroll principal es 100% nativo del navegador.
+* **Parallax Suave (Desktop):** Ãšnicamente en elementos decorativos ligeros (como el texto del Hero con `useTransform(scrollY, [0, 400], [0, -50])`). Deshabilitado en dispositivos mÃ³viles.
+
+---
+
+### 3.12. TRATAMIENTO Y CARGA DE IMÃGENES
+* **Carga Progresiva (Blur-Up):** Las tarjetas de producto muestran un contenedor `#191310` con efecto Skeleton sutil mientras se descarga la imagen WebP.
+* **Entrada de Imagen:** Al completarse la carga (`onLoad`), la imagen pasa de `opacity: 0` a `opacity: 1` en 0.4s.
+
+#### EspecificaciÃ³n React Component Pattern:
+```tsx
+const [isLoaded, setIsLoaded] = useState(false);
+
+<div className="relative bg-[#191310] overflow-hidden">
+  {!isLoaded && <div className="absolute inset-0 animate-pulse bg-white/5" />}
+  <img
+    src={imageUrl}
+    alt={name}
+    onLoad={() => setIsLoaded(true)}
+    className={`w-full h-full object-cover transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+  />
+</div>
+```
+
+---
+
+### 3.13. ESTADOS DE CARGA (Skeletons & Loaders)
+* **Skeleton Pulse:** AnimaciÃ³n de respiraciÃ³n muy tenue sobre contenedores neutros `#1F1815`:
+  `animate-pulse` con opacidad variante entre `0.4` y `0.8`.
+* **Loader de BÃºsqueda / BotÃ³n "Cargar MÃ¡s":** Spinner circular fino en tono Wasabi Gold (`border-2 border-oyishi-gold/20 border-t-oyishi-gold animate-spin`).
+
+---
+
+### 3.14. CONFIRMACIONES Y NOTIFICACIONES (Feedback System)
+* **Toast de ConfirmaciÃ³n de Comanda:** Aparece en la parte inferior central (`translateY(20px -> 0px)`, `opacity: 0 -> 1`).
+* **Auto-DesapariciÃ³n:** Permanece visible 2.5 segundos y se retira mediante fade-out.
+
+#### EspecificaciÃ³n Framer Motion (Toast):
+```typescript
+export const toastNotificationVariant = {
+  hidden: { opacity: 0, y: 20, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] }
+  },
+  exit: {
+    opacity: 0,
+    y: 10,
+    scale: 0.95,
+    transition: { duration: 0.2, ease: 'easeIn' }
+  }
+};
+```
+
+---
+
+## 4. MATRIZ RESUMEN DE TIEMPOS Y EASINGS
+
+| CategorÃ­a | DuraciÃ³n Entrada | DuraciÃ³n Salida | Easing Predeterminado |
+|---|---|---|---|
+| **PÃ¡ginas / Secciones** | 0.7s â€“ 1.0s | N/A | `cubic-bezier(0.16, 1, 0.3, 1)` |
+| **Tarjetas / Grids** | 0.5s â€“ 0.6s | 0.3s | `cubic-bezier(0.16, 1, 0.3, 1)` |
+| **Modales / Drawer** | 0.4s | 0.3s | `spring` / `easeIn` |
+| **Microinteracciones Botones** | 0.15s â€“ 0.3s | 0.15s | `easeOut` |
+| **Toasts & Badges** | 0.3s | 0.2s | `cubic-bezier(0.16, 1, 0.3, 1)` |
+
+---
+
+## 5. INSTRUCCIONES PARA EL AGENTE DE IMPLEMENTACIÃ“N
+
+Cuando se inicie la fase de codificaciÃ³n:
+1. Crear el archivo `src/utils/motionVariants.ts` exportando todas las constantes de animaciÃ³n definidas en este documento.
+2. Aplicar `motion.div` / `motion.section` en `HomePage.tsx` y `CartaPage.tsx` integrando los triggers `whileInView` con `viewport={{ once: true }}`.
+3. Actualizar `Header.tsx`, `CartModal.tsx` y `ReservationForm.tsx` con las especificaciones de Framer Motion.
+4. Verificar en Google Chrome Lighthouse que los indicadores Core Web Vitals (LCP, INP, CLS) permanezcan intactos.
