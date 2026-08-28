@@ -19,7 +19,8 @@ import {
   X,
   Bot,
   Trash2,
-  FileSpreadsheet
+  FileSpreadsheet,
+  Download
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSEO } from '../hooks/useSEO';
