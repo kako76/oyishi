@@ -134,5 +134,34 @@ export const adminOrdersService = {
     }
 
     return false;
+  },
+
+  async deleteOrder(id: string): Promise<{ success: boolean; error?: string }> {
+    const token = this.getToken();
+    if (!token) return { success: false, error: 'No autenticado' };
+
+    try {
+      const res = await fetch(`/api/admin/orders/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+
+      if (res.status === 401 || res.status === 403) {
+        this.logout();
+        window.location.reload();
+        return { success: false, error: 'Sesión caducada' };
+      }
+
+      if (res.ok) {
+        return { success: true };
+      }
+      
+      const data = await res.json();
+      return { success: false, error: data.error || 'Error al eliminar el pedido' };
+    } catch {
+      return { success: false, error: 'Error de red al conectar con el servidor' };
+    }
   }
 };

@@ -17,10 +17,15 @@ import {
   PackageCheck,
   ChevronRight,
   X,
-  Bot
+  Bot,
+  Trash2,
+  FileSpreadsheet
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSEO } from '../hooks/useSEO';
+import * as XLSX from 'xlsx';
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable';
 
 type DateFilter = 'hoy' | 'ayer' | 'semana' | 'todos';
 type StatusFilter = 'TODOS' | 'NUEVO' | 'CONFIRMADO' | 'PREPARANDO' | 'LISTO' | 'COMPLETADO';
@@ -132,6 +137,90 @@ export const AdminOrdersPage: React.FC = () => {
       if (selectedOrder && selectedOrder.id === id) {
         setSelectedOrder(prev => prev ? { ...prev, status: newStatus } : null);
       }
+    }
+  };
+
+  const [isDeleting, setIsDeleting] = useState<string | null>(null);
+
+  const handleDeleteOrder = async (id: string, e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    if (window.confirm('¿Seguro que quieres eliminar este pedido? Esta acción no se puede deshacer.')) {
+      setIsDeleting(id);
+      const result = await adminOrdersService.deleteOrder(id);
+      if (result.success) {
+        setOrders(prev => prev.filter(o => o.id !== id));
+        if (selectedOrder?.id === id) {
+          setSelectedOrder(null);
+        }
+        // Minimal visual feedback is handled by state update automatically removing it
+      } else {
+        alert(result.error || 'No se pudo eliminar el pedido');
+      }
+      setIsDeleting(null);
+    }
+  };
+
+  const handleExportExcel = () => {
+    try {
+      const dataToExport = orders.map(order => ({
+        ID: order.id,
+        Fecha: order.date,
+        Hora: order.time,
+        Cliente: order.customer_name,
+        Teléfono: order.phone,
+        Personas: order.party_size,
+        Productos: order.order_items ? order.order_items.map((item: any) => `${item.quantity}x ${item.name}`).join(', ') : '',
+        Notas: order.notes,
+        Estado: order.status,
+        Total: order.total
+      }));
+
+      const worksheet = XLSX.utils.json_to_sheet(dataToExport);
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, "Pedidos");
+      
+      const dateStr = new Date().toISOString().split('T')[0];
+      XLSX.writeFile(workbook, `oyishi-pedidos-${dateStr}.xlsx`);
+    } catch (error) {
+      console.error("Error al exportar Excel:", error);
+      alert("Se produjo un error al exportar el archivo Excel.");
+    }
+  };
+
+  const handleExportPDF = () => {
+    try {
+      const doc = new jsPDF('landscape');
+      
+      const dateStr = new Date().toISOString().split('T')[0];
+      doc.setFontSize(18);
+      doc.text('OYISHI - Listado de pedidos', 14, 22);
+      doc.setFontSize(11);
+      doc.text(`Generado el: ${dateStr}`, 14, 30);
+
+      const tableData = orders.map(order => [
+        order.date,
+        order.time,
+        order.customer_name,
+        order.phone,
+        order.party_size,
+        order.order_items ? order.order_items.map((item: any) => `${item.quantity}x ${item.name}`).join(', ') : '',
+        order.notes || '',
+        order.status,
+        `${order.total}€`
+      ]);
+
+      autoTable(doc, {
+        startY: 36,
+        head: [['Fecha', 'Hora', 'Cliente', 'Teléfono', 'Personas', 'Productos', 'Notas', 'Estado', 'Total']],
+        body: tableData,
+        styles: { fontSize: 8 },
+        headStyles: { fillColor: [216, 179, 106] } // Color oyishi-gold
+      });
+
+      doc.save(`oyishi-pedidos-${dateStr}.pdf`);
+    } catch (error) {
+      console.error("Error al exportar PDF:", error);
+      alert("Se produjo un error al exportar el archivo PDF.");
     }
   };
 
@@ -416,6 +505,24 @@ export const AdminOrdersPage: React.FC = () => {
               </button>
             ))}
           </div>
+          
+          {/* Botones de Exportación */}
+          <div className="flex items-center gap-2 ml-auto">
+            <button
+              onClick={handleExportExcel}
+              className="px-3 py-1.5 rounded-lg bg-[#1D6F42]/20 border border-[#1D6F42]/50 text-[#21A366] hover:bg-[#1D6F42]/40 transition-colors text-xs font-sans font-medium flex items-center gap-1.5"
+            >
+              <FileSpreadsheet size={14} />
+              <span>Descargar Excel</span>
+            </button>
+            <button
+              onClick={handleExportPDF}
+              className="px-3 py-1.5 rounded-lg bg-red-950/40 border border-red-900/50 text-red-400 hover:bg-red-900/60 transition-colors text-xs font-sans font-medium flex items-center gap-1.5"
+            >
+              <Download size={14} />
+              <span>Descargar PDF</span>
+            </button>
+          </div>
         </div>
 
         {/* Lista de Pedidos */}
@@ -544,9 +651,19 @@ export const AdminOrdersPage: React.FC = () => {
 
                 {/* Footer Tarjeta */}
                 <div className="pt-4 border-t border-oyishi-border/60 flex items-center justify-between">
-                  <span className="text-[10px] font-mono text-oyishi-textSec/60">
-                    ID: {order.agent_call_id.substring(0, 14)}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-mono text-oyishi-textSec/60">
+                      ID: {order.agent_call_id.substring(0, 14)}
+                    </span>
+                    <button
+                      onClick={(e) => handleDeleteOrder(order.id, e)}
+                      disabled={isDeleting === order.id}
+                      className="text-red-400 hover:text-red-300 transition-colors p-1.5 rounded-lg hover:bg-red-900/30 disabled:opacity-50"
+                      title="Eliminar pedido"
+                    >
+                      {isDeleting === order.id ? <RefreshCw size={14} className="animate-spin" /> : <Trash2 size={14} />}
+                    </button>
+                  </div>
 
                   <button
                     onClick={() => setSelectedOrder(order)}
@@ -654,8 +771,19 @@ export const AdminOrdersPage: React.FC = () => {
               )}
 
               <div className="pt-4 border-t border-oyishi-border/60 flex items-center justify-between">
-                <div className="text-[10px] font-mono text-oyishi-textSec/60">
-                  Retell Call ID: {selectedOrder.agent_call_id}
+                <div className="flex items-center gap-3">
+                  <div className="text-[10px] font-mono text-oyishi-textSec/60">
+                    Retell Call ID: {selectedOrder.agent_call_id}
+                  </div>
+                  <button
+                    onClick={() => handleDeleteOrder(selectedOrder.id)}
+                    disabled={isDeleting === selectedOrder.id}
+                    className="text-red-400 hover:text-red-300 transition-colors p-1.5 rounded-lg hover:bg-red-900/30 disabled:opacity-50 flex items-center gap-1.5 text-xs font-sans font-medium"
+                    title="Eliminar pedido"
+                  >
+                    {isDeleting === selectedOrder.id ? <RefreshCw size={14} className="animate-spin" /> : <Trash2 size={14} />}
+                    <span>Eliminar</span>
+                  </button>
                 </div>
 
                 <div className="flex items-center gap-2">
