@@ -18,48 +18,7 @@ export interface RetellOrder {
   status: 'NUEVO' | 'CONFIRMADO' | 'PREPARANDO' | 'LISTO' | 'COMPLETADO';
 }
 
-const STORAGE_KEY = 'oyishi_admin_orders_db';
 const AUTH_TOKEN_KEY = 'oyishi_admin_token';
-
-// Demostración de estructura de comanda si aún no existen registros recibidos
-const INITIAL_DEMO_ORDERS: RetellOrder[] = [
-  {
-    id: 'ord_rt_901',
-    customer_name: 'Carlos Mendoza',
-    phone: '+34 612 345 678',
-    date: new Date().toISOString().split('T')[0],
-    time: '21:30',
-    party_size: 2,
-    order_items: [
-      { name: 'California Salmón Roll (8p)', quantity: 2, price: 7.85 },
-      { name: 'Sopa Miso', quantity: 2, price: 2.90 },
-      { name: 'Mochis de Mango (2p)', quantity: 1, price: 2.95 }
-    ],
-    notes: 'Alergia al sésamo. Mesa cerca de la ventana a ser posible.',
-    total: 24.45,
-    agent_call_id: 'call_retell_8f921a4',
-    created_at: new Date(Date.now() - 15 * 60 * 1000).toISOString(),
-    status: 'NUEVO'
-  },
-  {
-    id: 'ord_rt_902',
-    customer_name: 'Laura Fernández',
-    phone: '+34 689 112 233',
-    date: new Date().toISOString().split('T')[0],
-    time: '22:00',
-    party_size: 4,
-    order_items: [
-      { name: 'F10. Bandeja maki sushi sashimi', quantity: 1, price: 58.80 },
-      { name: 'Edamame', quantity: 2, price: 4.50 },
-      { name: 'Vino Blanco Rueda', quantity: 1, price: 11.00 }
-    ],
-    notes: 'Reserva telefónica con pedido anticipado de bandeja.',
-    total: 78.80,
-    agent_call_id: 'call_retell_3c19b02',
-    created_at: new Date(Date.now() - 45 * 60 * 1000).toISOString(),
-    status: 'CONFIRMADO'
-  }
-];
 
 export const adminOrdersService = {
   getToken(): string | null {
@@ -105,27 +64,24 @@ export const adminOrdersService = {
         }
       });
 
+      if (res.status === 401 || res.status === 403) {
+        this.logout();
+        window.location.reload(); // Force reload to show login
+        return [];
+      }
+
       if (res.ok) {
         const data = await res.json();
-        if (Array.isArray(data.orders) && data.orders.length > 0) {
+        if (Array.isArray(data.orders)) {
+          // Si todo ha ido bien, guardamos una copia para cache (opcional) pero priorizamos siempre red
           return data.orders;
         }
       }
     } catch {
-      // Si la API aún no tiene BD conectada o está en desarrollo offline
+      // Offline fallback only if network failed completely, not on 401
     }
 
-    const localData = localStorage.getItem(STORAGE_KEY);
-    if (localData) {
-      try {
-        return JSON.parse(localData);
-      } catch {
-        // parsing error
-      }
-    }
-
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(INITIAL_DEMO_ORDERS));
-    return INITIAL_DEMO_ORDERS;
+    return [];
   },
 
   async updateOrderStatus(id: string, newStatus: RetellOrder['status']): Promise<boolean> {
@@ -142,16 +98,19 @@ export const adminOrdersService = {
         body: JSON.stringify({ id, status: newStatus })
       });
 
+      if (res.status === 401 || res.status === 403) {
+        this.logout();
+        window.location.reload();
+        return false;
+      }
+
       if (res.ok) {
         return true;
       }
     } catch {
-      // Fallback local update
+      // Network error
     }
 
-    const currentOrders = await this.getOrders();
-    const updated = currentOrders.map(o => o.id === id ? { ...o, status: newStatus } : o);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
-    return true;
+    return false;
   }
 };
