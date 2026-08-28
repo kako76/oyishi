@@ -100,6 +100,14 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   try {
     const payload = JSON.parse(rawBody);
 
+    // Modo diagnóstico manual para pruebas
+    if (payload.diagnostic) {
+      return new Response(JSON.stringify({ diagnostic: true, payload }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+
     if (payload.event && payload.event !== 'call_analyzed') {
       return new Response(JSON.stringify({ success: true, message: 'Evento ignorado' }), {
         status: 200,
@@ -107,23 +115,88 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       });
     }
 
-    // Retell envía de forma estructurada los datos del agente telefónico o custom arguments
+    // Extracción robusta de cualquier estructura
     const callData = payload.data || payload.call || payload;
     const args = payload.args || callData.call_analysis?.custom_analysis_data || callData.custom_analysis_data || {};
 
+    const customer_name = args.customer_name || payload.customer_name;
+    const phone = args.phone || callData.from_number || payload.phone;
+    const date = args.date || payload.date;
+    const time = args.time || payload.time;
+    const party_size = args.party_size || payload.party_size;
+    const rawItems = args.order_items || payload.order_items;
+    const notes = args.notes || payload.notes || '';
+    const total = args.total || payload.total || 0;
+    // IDs y Estados
+    const call_id = callData.call_id || payload.call_id || `unknown_${Date.now()}`;
+    const call_successful = callData.call_analysis?.call_successful ?? payload.call_successful ?? false;
+
+    // Validar campos obligatorios (NO inventar datos)
+    const missingFields = [];
+    if (!customer_name) missingFields.push('customer_name');
+    if (!phone) missingFields.push('phone');
+    if (!date) missingFields.push('date');
+    if (!time) missingFields.push('time');
+    if (!party_size) missingFields.push('party_size');
+
+    if (missingFields.length > 0) {
+      // Devolvemos 200 para no forzar reintentos infinitos, pero adjuntamos el diagnóstico
+      return new Response(JSON.stringify({
+        success: false,
+        message: 'Faltan campos obligatorios. Pedido descartado para no inyectar datos falsos.',
+        missing_fields: missingFields,
+        extracted_keys: Object.keys(args),
+        debug_payload: payload
+      }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+
+    // Normalización de order_items a [{ name, quantity, price }]
+    let normalizedItems: Array<{name: string, quantity: number, price?: number}> = [];
+    if (Array.isArray(rawItems)) {
+      normalizedItems = rawItems.map(item => ({
+        name: item?.name || String(item || 'Producto desconocido'),
+        quantity: Number(item?.quantity) || 1,
+        price: item?.price ? Number(item.price) : undefined
+      }));
+    } else if (typeof rawItems === 'string') {
+      try {
+        const parsed = JSON.parse(rawItems);
+        if (Array.isArray(parsed)) {
+          normalizedItems = parsed.map(item => ({
+            name: item?.name || String(item || 'Producto desconocido'),
+            quantity: Number(item?.quantity) || 1,
+            price: item?.price ? Number(item.price) : undefined
+          }));
+        } else {
+          normalizedItems = [{ name: rawItems, quantity: 1 }];
+        }
+      } catch {
+        normalizedItems = [{ name: rawItems, quantity: 1 }];
+      }
+    } else if (rawItems && typeof rawItems === 'object') {
+      normalizedItems = [{
+        name: rawItems.name || JSON.stringify(rawItems),
+        quantity: Number(rawItems.quantity) || 1,
+        price: rawItems.price ? Number(rawItems.price) : undefined
+      }];
+    }
+
     const orderRecord = {
-      id: `ord_${callData.call_id || Date.now()}`,
-      customer_name: args.customer_name || payload.customer_name || 'Cliente Telefónico',
-      phone: args.phone || callData.from_number || payload.phone || 'Desconocido',
-      date: args.date || payload.date || new Date().toISOString().split('T')[0],
-      time: args.time || payload.time || 'A confirmar',
-      party_size: Number(args.party_size || payload.party_size || 2),
-      order_items: args.order_items || payload.order_items || [],
-      notes: args.notes || payload.notes || 'Pedido registrado desde agente telefónico Retell AI',
-      total: Number(args.total || payload.total || 0),
-      agent_call_id: callData.call_id || payload.agent_call_id || `retell_${Date.now()}`,
+      id: `ord_${call_id}`,
+      customer_name: String(customer_name),
+      phone: String(phone),
+      date: String(date),
+      time: String(time),
+      party_size: Number(party_size),
+      order_items: JSON.stringify(normalizedItems),
+      notes: String(notes),
+      total: Number(total),
+      agent_call_id: String(call_id),
       created_at: new Date().toISOString(),
-      status: callData.call_analysis?.call_successful ? 'CONFIRMADO' : 'NUEVO'
+      status: call_successful ? 'CONFIRMADO' : 'NUEVO'
     };
 
     // Guardar en Cloudflare D1
@@ -138,7 +211,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         orderRecord.date,
         orderRecord.time,
         orderRecord.party_size,
-        typeof orderRecord.order_items === 'string' ? orderRecord.order_items : JSON.stringify(orderRecord.order_items),
+        orderRecord.order_items,
         orderRecord.notes,
         orderRecord.total,
         orderRecord.agent_call_id,
@@ -147,7 +220,14 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       ).run();
     }
 
-    return new Response(JSON.stringify({ success: true, order_id: orderRecord.id }), {
+    return new Response(JSON.stringify({
+      success: true,
+      order_id: orderRecord.id,
+      diagnostic: {
+        received_args: Object.keys(args),
+        status_assigned: orderRecord.status
+      }
+    }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' }
     });
