@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, CalendarCheck } from 'lucide-react';
 import { useIsReducedMotion } from '../utils/motionVariants';
@@ -43,7 +43,7 @@ const colorAnimation: any = {
 
 export const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
+
   const isReduced = useIsReducedMotion();
 
   const { scrollY } = useScroll();
@@ -58,26 +58,7 @@ export const Hero: React.FC = () => {
   const textY = isReduced ? 0 : textYScroll;
   const videoY = isReduced ? 0 : videoYScroll;
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-      video.defaultMuted = true;
-      video.muted = true;
-      video.play().catch(e => console.error("OYISHI HERO NATIVE PLAY ERROR", e));
-    }
-  }, []);
 
-  const handleCanPlay = async () => {
-    const video = videoRef.current;
-    if (!video) return;
-    try {
-      video.defaultMuted = true;
-      video.muted = true;
-      await video.play();
-    } catch (error) {
-      console.error("OYISHI HERO VIDEO PLAY ERROR", error);
-    }
-  };
 
   const word = "OYISHI";
 
@@ -210,29 +191,17 @@ export const Hero: React.FC = () => {
           style={{ y: videoY }}
           className="w-[100vw] lg:w-[50%] xl:w-[60%] h-[50vh] lg:h-full relative flex items-center justify-center lg:justify-end lg:-ml-12 overflow-hidden"
         >
-          <div className="relative w-full h-full lg:max-h-[100%] lg:w-[125%] flex items-center justify-center overflow-visible pointer-events-none">
-
-            {/* Máscara sutil lateral izquierda para fundir suavemente la transición sin cubrir la animación del vídeo */}
-            <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-[#16100E] via-[#16100E]/40 to-transparent z-10 pointer-events-none"></div>
-
+          <div className="relative w-full h-full lg:max-h-[100%] lg:w-[125%] flex items-center justify-center overflow-visible">
             <video
-              ref={videoRef}
+              src="/images/hero/oyishi-sushi-build.mp4"
               autoPlay
               muted
+              loop
               playsInline
               preload="auto"
-              loop={true}
-              onCanPlay={handleCanPlay}
               poster="/images/hero/oyishi-sushi-poster.webp"
-              className="w-full h-full object-cover object-center scale-100 transform-gpu opacity-100 drop-shadow-[0_20px_50px_rgba(0,0,0,0.6)]"
-              style={{
-                maskImage: 'radial-gradient(ellipse at 55% 50%, black 70%, transparent 98%)',
-                WebkitMaskImage: 'radial-gradient(ellipse at 55% 50%, black 70%, transparent 98%)'
-              }}
-            >
-              <source src="/images/hero/oyishi-sushi-build.mp4" type="video/mp4" />
-            </video>
-
+              className="w-full h-full object-cover object-center"
+            />
           </div>
         </motion.div>
       </motion.div>

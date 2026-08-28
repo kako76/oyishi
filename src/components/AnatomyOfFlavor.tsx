@@ -5,18 +5,7 @@ import { JapaneseVerticalDivider, KanjiWatermark, WashiOverlay } from './Japanes
 
 export const AnatomyOfFlavor: React.FC = () => {
   const isReduced = useIsReducedMotion();
-  const videoRef = React.useRef<HTMLVideoElement>(null);
 
-  const handleCanPlay = async () => {
-    const video = videoRef.current;
-    if (!video) return;
-    try {
-      video.muted = true;
-      await video.play();
-    } catch (error) {
-      console.error("OYISHI ITAMAE VIDEO PLAY ERROR", error);
-    }
-  };
 
   return (
     <section id="filosofia" className="py-28 bg-oyishi-bgSec relative overflow-hidden border-b border-oyishi-border/60">
@@ -56,22 +45,14 @@ export const AnatomyOfFlavor: React.FC = () => {
               className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.85)] border border-oyishi-border/80 group"
             >
               <video
-                ref={videoRef}
                 autoPlay
                 loop
                 muted
                 playsInline
-                preload="metadata"
-                onCanPlay={handleCanPlay}
-                poster="/images/hero/oyishi-sushi-poster.webp"
+                preload="auto"
+                src="/images/hero/Eliminar_letras_y_completar_sushi_202608282022.mp4"
                 className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
-              >
-                <source src="/images/hero/oyishi-itamae-tradition.mp4" type="video/mp4" />
-                <source src="/images/hero/Eliminar_letras_y_completar_sushi_202608281705.mp4" type="video/mp4" />
-              </video>
-
-              {/* Overlay suave para legibilidad */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0F0B09]/90 via-[#0F0B09]/20 to-transparent pointer-events-none" />
+              />
 
               <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between z-10">
                 <span className="text-xs font-sans text-oyishi-gold tracking-[0.2em] uppercase font-medium bg-oyishi-bg/85 px-4 py-1.5 rounded-full border border-oyishi-gold/30 backdrop-blur-md shadow-md">
