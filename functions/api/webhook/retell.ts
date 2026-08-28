@@ -116,7 +116,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       total: Number(args.total || payload.total || 0),
       agent_call_id: callData.call_id || payload.agent_call_id || `retell_${Date.now()}`,
       created_at: new Date().toISOString(),
-      status: 'NUEVO'
+      status: callData.call_analysis?.call_successful ? 'CONFIRMADO' : 'NUEVO'
     };
 
     // Guardar en Cloudflare D1
