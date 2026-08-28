@@ -3,22 +3,102 @@ interface Env {
   DB?: D1Database;
 }
 
+function hexToUint8Array(hex: string): Uint8Array {
+  const bytes = new Uint8Array(Math.ceil(hex.length / 2));
+  for (let i = 0; i < bytes.length; i++) {
+    bytes[i] = parseInt(hex.substring(i * 2, i * 2 + 2), 16);
+  }
+  return bytes;
+}
+
 export const onRequestPost: PagesFunction<Env> = async (context) => {
   const { request, env } = context;
 
-  // Autenticación de seguridad mediante secreto de Webhook
-  const retellSecret = request.headers.get('x-retell-secret');
   const expectedSecret = env.RETELL_WEBHOOK_SECRET;
-
-  if (!expectedSecret || retellSecret !== expectedSecret) {
-    return new Response(JSON.stringify({ error: 'Webhook Secret no configurado o inválido' }), {
+  if (!expectedSecret) {
+    return new Response(JSON.stringify({ error: 'Webhook Secret no configurado' }), {
       status: 401,
       headers: { 'Content-Type': 'application/json' }
     });
   }
 
+  const signatureHeader = request.headers.get('x-retell-signature');
+  if (!signatureHeader) {
+    return new Response(JSON.stringify({ error: 'Firma requerida' }), {
+      status: 401,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
+  const parts = signatureHeader.split(',');
+  let timestamp = '';
+  let digest = '';
+
+  for (const part of parts) {
+    if (part.startsWith('v=')) timestamp = part.slice(2);
+    if (part.startsWith('d=')) digest = part.slice(2);
+  }
+
+  if (!timestamp || !digest) {
+    return new Response(JSON.stringify({ error: 'Formato de firma inválido' }), {
+      status: 401,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
+  const tsNum = parseInt(timestamp, 10);
+  if (isNaN(tsNum)) {
+    return new Response(JSON.stringify({ error: 'Timestamp inválido' }), {
+      status: 401,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
+  if (Math.abs(Date.now() - tsNum) > 5 * 60 * 1000) {
+    return new Response(JSON.stringify({ error: 'Firma expirada' }), {
+      status: 401,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
+  const rawBody = await request.text();
+  const encoder = new TextEncoder();
+
   try {
-    const payload = await request.json() as any;
+    const key = await crypto.subtle.importKey(
+      'raw',
+      encoder.encode(expectedSecret),
+      { name: 'HMAC', hash: 'SHA-256' },
+      false,
+      ['verify']
+    );
+
+    const digestBytes = hexToUint8Array(digest);
+    const dataToVerify = encoder.encode(rawBody + timestamp);
+
+    const isValid = await crypto.subtle.verify(
+      'HMAC',
+      key,
+      digestBytes,
+      dataToVerify
+    );
+
+    if (!isValid) {
+      return new Response(JSON.stringify({ error: 'Firma inválida' }), {
+        status: 401,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+  } catch (err) {
+    return new Response(JSON.stringify({ error: 'Error verificando firma' }), {
+      status: 401,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
+  // A partir de aquí, la firma es correcta
+  try {
+    const payload = JSON.parse(rawBody);
 
     // Retell envía de forma estructurada los datos del agente telefónico o custom arguments
     const callData = payload.call || payload;
@@ -71,4 +151,3 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     });
   }
 };
-

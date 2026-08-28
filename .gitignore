@@ -26,3 +26,4 @@ dist-ssr
 # Cloudflare and Wrangler
 .wrangler/
 worker-configuration.d.ts
+.dev.vars
