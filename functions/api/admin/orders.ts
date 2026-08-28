@@ -5,6 +5,28 @@ interface Env {
   JWT_SECRET?: string;
 }
 
+function normalizeOrderItems(value: any): any[] {
+  if (Array.isArray(value)) return value;
+  if (typeof value === 'string') {
+    if (!value.trim()) return [];
+    try {
+      let parsed = JSON.parse(value);
+      if (typeof parsed === 'string') {
+        // En caso de doble serialización
+        parsed = JSON.parse(parsed);
+      }
+      if (Array.isArray(parsed)) return parsed;
+      if (parsed && typeof parsed === 'object') return [parsed];
+      return [];
+    } catch (err) {
+      console.warn("Aviso: order_items no es un JSON válido en D1:", value);
+      return [{ name: value, quantity: 1 }];
+    }
+  }
+  if (value && typeof value === 'object') return [value];
+  return [];
+}
+
 export const onRequestGet: PagesFunction<Env> = async (context) => {
   const { request, env } = context;
   const authHeader = request.headers.get('Authorization');
@@ -42,7 +64,13 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
   try {
     if (env.DB) {
       const { results } = await env.DB.prepare("SELECT * FROM retell_orders ORDER BY created_at DESC LIMIT 100").all();
-      return new Response(JSON.stringify({ orders: results }), {
+      
+      const normalizedOrders = results.map((order: any) => ({
+        ...order,
+        order_items: normalizeOrderItems(order.order_items)
+      }));
+
+      return new Response(JSON.stringify({ orders: normalizedOrders }), {
         status: 200,
         headers: { 'Content-Type': 'application/json' }
       });

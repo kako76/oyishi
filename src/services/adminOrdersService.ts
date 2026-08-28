@@ -74,19 +74,24 @@ export const adminOrdersService = {
         const data = await res.json();
         if (Array.isArray(data.orders)) {
           return data.orders.map((order: any) => {
-            let items = [];
-            if (Array.isArray(order.order_items)) {
-              items = order.order_items;
-            } else if (typeof order.order_items === 'string') {
-              try {
-                const parsed = JSON.parse(order.order_items);
-                if (Array.isArray(parsed)) {
-                  items = parsed;
+            let items = order.order_items;
+            
+            // Fallback por si la API falla en normalizar o devuelve algo raro
+            if (!Array.isArray(items)) {
+              if (typeof items === 'string') {
+                try {
+                  const parsed = JSON.parse(items);
+                  items = Array.isArray(parsed) ? parsed : (parsed ? [parsed] : []);
+                } catch {
+                  items = [{ name: items, quantity: 1 }];
                 }
-              } catch {
-                // Si falla el parseo, items se queda como []
+              } else if (items && typeof items === 'object') {
+                items = [items];
+              } else {
+                items = [];
               }
             }
+            
             return {
               ...order,
               order_items: items
