@@ -100,9 +100,16 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   try {
     const payload = JSON.parse(rawBody);
 
+    if (payload.event && payload.event !== 'call_analyzed') {
+      return new Response(JSON.stringify({ success: true, message: 'Evento ignorado' }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+
     // Retell envía de forma estructurada los datos del agente telefónico o custom arguments
-    const callData = payload.call || payload;
-    const args = payload.args || callData.custom_analysis_data || {};
+    const callData = payload.data || payload.call || payload;
+    const args = payload.args || callData.call_analysis?.custom_analysis_data || callData.custom_analysis_data || {};
 
     const orderRecord = {
       id: `ord_${callData.call_id || Date.now()}`,
@@ -122,7 +129,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     // Guardar en Cloudflare D1
     if (env.DB) {
       await env.DB.prepare(`
-        INSERT INTO retell_orders (id, customer_name, phone, date, time, party_size, order_items, notes, total, agent_call_id, created_at, status)
+        INSERT OR REPLACE INTO retell_orders (id, customer_name, phone, date, time, party_size, order_items, notes, total, agent_call_id, created_at, status)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `).bind(
         orderRecord.id,
