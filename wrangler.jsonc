@@ -6,19 +6,13 @@
   "compatibility_flags": [
     "nodejs_compat"
   ],
-  "kv_namespaces": [
-    {
-      "binding": "ORDERS_KV",
-      "id": "oyishi_orders_kv_id",
-      "comment": "Binding para la lista de pedidos del panel administrativo"
-    }
-  ],
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "oyishi_db",
-      "database_id": "oyishi_d1_database_id",
-      "comment": "Base de datos SQL serverless D1 para persistencia de comandas Retell AI"
+      "database_id": "1cec021b-2859-41df-b143-366b5fa4b245"
     }
   ]
 }
+
+

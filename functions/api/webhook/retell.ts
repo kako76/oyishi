@@ -1,6 +1,5 @@
 interface Env {
   RETELL_WEBHOOK_SECRET?: string;
-  ORDERS_KV?: KVNamespace;
   DB?: D1Database;
 }
 
@@ -52,21 +51,13 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         orderRecord.date,
         orderRecord.time,
         orderRecord.party_size,
-        JSON.stringify(orderRecord.order_items),
+        typeof orderRecord.order_items === 'string' ? orderRecord.order_items : JSON.stringify(orderRecord.order_items),
         orderRecord.notes,
         orderRecord.total,
         orderRecord.agent_call_id,
         orderRecord.created_at,
         orderRecord.status
       ).run();
-    }
-
-    // Guardar en Cloudflare KV como lista
-    if (env.ORDERS_KV) {
-      const raw = await env.ORDERS_KV.get('orders_list');
-      const currentList = raw ? JSON.parse(raw) : [];
-      currentList.unshift(orderRecord);
-      await env.ORDERS_KV.put('orders_list', JSON.stringify(currentList));
     }
 
     return new Response(JSON.stringify({ success: true, order_id: orderRecord.id }), {
@@ -80,3 +71,4 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     });
   }
 };
+

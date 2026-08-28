@@ -1,5 +1,4 @@
 interface Env {
-  ORDERS_KV?: KVNamespace;
   DB?: D1Database;
 }
 
@@ -15,7 +14,6 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
   }
 
   try {
-    // Si D1 está configurado:
     if (env.DB) {
       const { results } = await env.DB.prepare("SELECT * FROM retell_orders ORDER BY created_at DESC LIMIT 100").all();
       return new Response(JSON.stringify({ orders: results }), {
@@ -24,17 +22,6 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
       });
     }
 
-    // Si KV está configurado:
-    if (env.ORDERS_KV) {
-      const raw = await env.ORDERS_KV.get('orders_list');
-      const orders = raw ? JSON.parse(raw) : [];
-      return new Response(JSON.stringify({ orders }), {
-        status: 200,
-        headers: { 'Content-Type': 'application/json' }
-      });
-    }
-
-    // Respuesta por defecto si la BD aún no ha sido conectada vía wrangler bindings
     return new Response(JSON.stringify({ orders: [] }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' }
@@ -76,17 +63,6 @@ export const onRequestPatch: PagesFunction<Env> = async (context) => {
       });
     }
 
-    if (env.ORDERS_KV) {
-      const raw = await env.ORDERS_KV.get('orders_list');
-      const orders = raw ? JSON.parse(raw) : [];
-      const updated = orders.map((o: any) => o.id === id ? { ...o, status } : o);
-      await env.ORDERS_KV.put('orders_list', JSON.stringify(updated));
-      return new Response(JSON.stringify({ success: true }), {
-        status: 200,
-        headers: { 'Content-Type': 'application/json' }
-      });
-    }
-
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' }
@@ -98,3 +74,4 @@ export const onRequestPatch: PagesFunction<Env> = async (context) => {
     });
   }
 };
+
