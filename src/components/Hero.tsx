@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, CalendarCheck } from 'lucide-react';
 import { useIsReducedMotion } from '../utils/motionVariants';
@@ -58,11 +58,20 @@ export const Hero: React.FC = () => {
   const textY = isReduced ? 0 : textYScroll;
   const videoY = isReduced ? 0 : videoYScroll;
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.defaultMuted = true;
+      video.muted = true;
+      video.play().catch(e => console.error("OYISHI HERO NATIVE PLAY ERROR", e));
+    }
+  }, []);
+
   const handleCanPlay = async () => {
     const video = videoRef.current;
     if (!video) return;
     try {
-      video.playbackRate = 1.0;
+      video.defaultMuted = true;
       video.muted = true;
       await video.play();
     } catch (error) {
