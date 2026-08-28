@@ -73,8 +73,25 @@ export const adminOrdersService = {
       if (res.ok) {
         const data = await res.json();
         if (Array.isArray(data.orders)) {
-          // Si todo ha ido bien, guardamos una copia para cache (opcional) pero priorizamos siempre red
-          return data.orders;
+          return data.orders.map((order: any) => {
+            let items = [];
+            if (Array.isArray(order.order_items)) {
+              items = order.order_items;
+            } else if (typeof order.order_items === 'string') {
+              try {
+                const parsed = JSON.parse(order.order_items);
+                if (Array.isArray(parsed)) {
+                  items = parsed;
+                }
+              } catch {
+                // Si falla el parseo, items se queda como []
+              }
+            }
+            return {
+              ...order,
+              order_items: items
+            };
+          });
         }
       }
     } catch {
