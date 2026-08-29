@@ -31,38 +31,48 @@ function extractOrderFromRetellPayload(payload: any) {
   if (isNaN(party_size) || party_size <= 0) party_size = 2;
 
   let rawItems = customData.order_items || payload.order_items || [];
-  let normalizedItems: Array<{name: string, quantity: number, price?: number}> = [];
+  let normalizedItems: Array<{reference?: string, name: string, quantity: number, price?: number}> = [];
   
+  const normalizeItem = (item: any) => ({
+    reference: item?.reference ? String(item.reference) : undefined,
+    name: item?.name || String(item || 'Producto sin nombre'),
+    quantity: Number(item?.quantity) || 1,
+    price: item?.price ? Number(item.price) : undefined
+  });
+
   if (Array.isArray(rawItems)) {
-    normalizedItems = rawItems.map((item: any) => ({
-      name: item?.name || String(item || 'Producto sin nombre'),
-      quantity: Number(item?.quantity) || 1,
-      price: item?.price ? Number(item.price) : undefined
-    }));
+    normalizedItems = rawItems.map(normalizeItem);
   } else if (typeof rawItems === 'string') {
     try {
       const parsed = JSON.parse(rawItems);
       if (Array.isArray(parsed)) {
-        normalizedItems = parsed.map((item: any) => ({
-          name: item?.name || String(item || 'Producto sin nombre'),
-          quantity: Number(item?.quantity) || 1,
-          price: item?.price ? Number(item.price) : undefined
-        }));
+        normalizedItems = parsed.map(normalizeItem);
       } else {
-        normalizedItems = [{ name: rawItems, quantity: 1 }];
+        normalizedItems = [normalizeItem(rawItems)];
       }
     } catch {
-      normalizedItems = [{ name: rawItems, quantity: 1 }];
+      normalizedItems = [normalizeItem(rawItems)];
     }
   } else if (rawItems && typeof rawItems === 'object') {
-    normalizedItems = [{
-      name: rawItems.name || JSON.stringify(rawItems),
-      quantity: Number(rawItems.quantity) || 1,
-      price: rawItems.price ? Number(rawItems.price) : undefined
-    }];
+    normalizedItems = [normalizeItem(rawItems)];
   }
 
+  const tipo_pedido = String(customData.tipo_pedido || customData.order_type || payload.tipo_pedido || payload.order_type || 'recoger');
+  const direccion = String(customData.direccion || customData.address || payload.direccion || payload.address || '');
+  const localidad = String(customData.localidad || customData.city || payload.localidad || payload.city || '');
+  const codigo_postal = String(customData.codigo_postal || customData.zip_code || payload.codigo_postal || payload.zip_code || '');
+
+  let deliveryInfo = `[ TIPO DE PEDIDO: ${tipo_pedido.toUpperCase()} ]\n`;
+  if (tipo_pedido.toLowerCase().includes('domicilio') || tipo_pedido.toLowerCase().includes('delivery')) {
+    if (direccion) deliveryInfo += `Dirección: ${direccion}\n`;
+    if (localidad) deliveryInfo += `Localidad: ${localidad}\n`;
+    if (codigo_postal) deliveryInfo += `C.P.: ${codigo_postal}\n`;
+  }
+  deliveryInfo += `\n`;
+
   let notes = customData.notes || payload.notes || '';
+  notes = deliveryInfo + notes;
+
   if (analysisData.call_summary) {
     const summaryHeader = '=== RESUMEN LLAMADA (RETELL AI) ===';
     notes = notes ? `${notes}\n\n${summaryHeader}\n${analysisData.call_summary}` : `${summaryHeader}\n${analysisData.call_summary}`;
@@ -84,6 +94,7 @@ function extractOrderFromRetellPayload(payload: any) {
     found_phone: !!(customData.phone || callData.from_number),
     found_date: !!customData.date,
     found_time: !!customData.time,
+    found_tipo_pedido: !!(customData.tipo_pedido || customData.order_type),
     found_party_size: customData.party_size !== undefined,
     found_order_items: normalizedItems.length > 0,
     final_status: status
@@ -184,25 +195,27 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     const { orderRecord, debug_info } = extractOrderFromRetellPayload(payload);
 
     // Guardar en Cloudflare D1
-    if (env.DB) {
-      await env.DB.prepare(`
-        INSERT OR REPLACE INTO retell_orders (id, customer_name, phone, date, time, party_size, order_items, notes, total, agent_call_id, created_at, status)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-      `).bind(
-        orderRecord.id,
-        orderRecord.customer_name,
-        orderRecord.phone,
-        orderRecord.date,
-        orderRecord.time,
-        orderRecord.party_size,
-        orderRecord.order_items,
-        orderRecord.notes,
-        orderRecord.total,
-        orderRecord.agent_call_id,
-        orderRecord.created_at,
-        orderRecord.status
-      ).run();
+    if (!env.DB) {
+      throw new Error('La base de datos D1 no está vinculada. No se puede guardar el pedido.');
     }
+
+    await env.DB.prepare(`
+      INSERT OR REPLACE INTO retell_orders (id, customer_name, phone, date, time, party_size, order_items, notes, total, agent_call_id, created_at, status)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `).bind(
+      orderRecord.id,
+      orderRecord.customer_name,
+      orderRecord.phone,
+      orderRecord.date,
+      orderRecord.time,
+      orderRecord.party_size,
+      orderRecord.order_items,
+      orderRecord.notes,
+      orderRecord.total,
+      orderRecord.agent_call_id,
+      orderRecord.created_at,
+      orderRecord.status
+    ).run();
 
     return new Response(JSON.stringify({ 
       success: true, 
