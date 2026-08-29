@@ -3,3 +3,5 @@
 /contact.php /contacto 301
 /points.php / 301
 /pedidos /carta 301
+/api/* /api/:splat 200
+/* /index.html 200
