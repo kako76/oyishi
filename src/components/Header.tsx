@@ -37,9 +37,10 @@ export const Header: React.FC = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between w-full">
-          {/* Logo (Left) */}
-          <div className="flex flex-1 justify-start min-w-0">
+        <div className="grid grid-cols-[auto_1fr_auto] w-full items-center gap-4 lg:gap-8">
+          
+          {/* Column 1: Logo & Horario */}
+          <div className="flex flex-col gap-1 lg:gap-2">
             <a href="/" className="group flex items-center gap-3 focus-ring rounded-sm p-1">
               <div className="w-9 h-9 rounded-sm border border-oyishi-gold/40 bg-oyishi-gold/10 text-oyishi-gold flex items-center justify-center font-display text-lg font-bold shadow-[0_0_12px_rgba(216,179,106,0.2)] group-hover:scale-105 transition-transform duration-300">
                 和
@@ -53,71 +54,68 @@ export const Header: React.FC = () => {
                 </span>
               </div>
             </a>
-          </div>
-
-          {/* Status Indicator (Center) */}
-          <div className="hidden xl:flex flex-shrink-0 justify-center px-4">
-            <div className="flex items-center gap-2 px-4 py-1.5 rounded-sm bg-oyishi-card/60 border border-oyishi-border/80 text-[11px] font-sans backdrop-blur-sm shadow-sm whitespace-nowrap">
+            
+            {/* Horario bajo el logo (Solo visible en LG+) */}
+            <div className="hidden lg:flex items-center gap-2 px-1 text-[10px] font-sans text-oyishi-textSec/80 pt-1">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/90 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
-              <span className="text-oyishi-textSec tracking-wide">Abierto · {restaurantInfo.schedule.replace('De Lunes a Domingo: ', '')}</span>
+              <span className="tracking-wide">Abierto · {restaurantInfo.schedule.replace('De Lunes a Domingo: ', '')}</span>
             </div>
           </div>
 
-          {/* Nav & Actions (Right) */}
-          <div className="flex flex-1 justify-end items-center gap-4 lg:gap-6 min-w-0">
-            {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="relative focus-ring text-[12px] uppercase tracking-[0.22em] font-sans font-medium text-oyishi-textSec hover:text-oyishi-text transition-colors py-1.5 group"
-              >
-                {link.name}
-                <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-oyishi-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ease-out" />
-              </a>
-            ))}
+          {/* Column 2: Navegación */}
+          <div className="flex justify-end items-center">
+            <nav className="hidden lg:flex items-center justify-end gap-5 xl:gap-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="relative focus-ring text-[12px] uppercase tracking-[0.22em] font-sans font-medium text-oyishi-textSec hover:text-oyishi-text transition-colors py-1.5 group whitespace-nowrap"
+                >
+                  {link.name}
+                  <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-oyishi-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ease-out" />
+                </a>
+              ))}
             </nav>
+          </div>
 
-            {/* Actions */}
-            <div className="flex items-center gap-3">
-              <a
-                href={`tel:+34${restaurantInfo.phones[0].replace(/\s+/g, '')}`}
-                className="hidden sm:flex items-center gap-2 text-[11px] font-sans font-medium text-oyishi-textSec hover:text-oyishi-text transition-all duration-300 focus-ring px-4 py-2.5 rounded-sm border border-oyishi-border/80 bg-oyishi-card/60 group hover:border-oyishi-gold/60 hover:shadow-[0_0_12px_rgba(216,179,106,0.15)]"
-                title="Llamar a OYISHI Fuenlabrada"
-              >
-                <PhoneCall size={14} className="text-oyishi-gold shrink-0 group-hover:rotate-12 transition-transform duration-300" />
-                <span className="tracking-wider">{restaurantInfo.phones[0]}</span>
-              </a>
+          {/* Column 3: Teléfono & Carrito */}
+          <div className="flex items-center justify-end gap-3 xl:gap-4">
+            <a
+              href={`tel:+34${restaurantInfo.phones[0].replace(/\s+/g, '')}`}
+              className="hidden sm:flex items-center gap-2 text-[11px] font-sans font-medium text-oyishi-textSec hover:text-oyishi-text transition-all duration-300 focus-ring px-4 py-2.5 rounded-sm border border-oyishi-border/80 bg-oyishi-card/60 group hover:border-oyishi-gold/60 hover:shadow-[0_0_12px_rgba(216,179,106,0.15)] whitespace-nowrap"
+              title="Llamar a OYISHI Fuenlabrada"
+            >
+              <PhoneCall size={14} className="text-oyishi-gold shrink-0 group-hover:rotate-12 transition-transform duration-300" />
+              <span className="tracking-wider">{restaurantInfo.phones[0]}</span>
+            </a>
 
-              <button
-                onClick={() => setIsCartOpen(true)}
-                className="relative min-w-[44px] min-h-[44px] flex items-center justify-center p-2.5 text-oyishi-text hover:text-oyishi-gold transition-colors focus-ring rounded-sm bg-oyishi-card/80 border border-oyishi-border/80 hover:border-oyishi-gold/60"
-                aria-label={`Ver cesta con ${totalItems} productos`}
-              >
-                <ShoppingBag size={18} />
-                {totalItems > 0 && (
-                  <motion.span
-                    key={badgeAnimationKey}
-                    initial={isReduced ? { scale: 1 } : { scale: 0.8 }}
-                    animate={isReduced ? { scale: 1 } : { scale: [1, 1.25, 1] }}
-                    transition={{ duration: 0.3, ease: 'easeOut' }}
-                    className="absolute -top-1 -right-1 w-5 h-5 bg-oyishi-coral rounded-full flex items-center justify-center text-[10px] font-bold text-white shadow-lg"
-                  >
-                    {totalItems}
-                  </motion.span>
-                )}
-              </button>
+            <button
+              onClick={() => setIsCartOpen(true)}
+              className="relative min-w-[44px] min-h-[44px] flex items-center justify-center p-2.5 text-oyishi-text hover:text-oyishi-gold transition-colors focus-ring rounded-sm bg-oyishi-card/80 border border-oyishi-border/80 hover:border-oyishi-gold/60 shrink-0"
+              aria-label={`Ver cesta con ${totalItems} productos`}
+            >
+              <ShoppingBag size={18} />
+              {totalItems > 0 && (
+                <motion.span
+                  key={badgeAnimationKey}
+                  initial={isReduced ? { scale: 1 } : { scale: 0.8 }}
+                  animate={isReduced ? { scale: 1 } : { scale: [1, 1.25, 1] }}
+                  transition={{ duration: 0.3, ease: 'easeOut' }}
+                  className="absolute -top-1 -right-1 w-5 h-5 bg-oyishi-coral rounded-full flex items-center justify-center text-[10px] font-bold text-white shadow-lg"
+                >
+                  {totalItems}
+                </motion.span>
+              )}
+            </button>
 
-              <button
-                className="lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center p-2.5 text-oyishi-text hover:text-oyishi-gold focus-ring rounded-sm bg-oyishi-card/40 border border-transparent hover:border-oyishi-border/80 transition-all"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                aria-label={isMobileMenuOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
-                aria-expanded={isMobileMenuOpen}
-              >
-                {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-              </button>
-            </div>
+            <button
+              className="lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center p-2.5 text-oyishi-text hover:text-oyishi-gold focus-ring rounded-sm bg-oyishi-card/40 border border-transparent hover:border-oyishi-border/80 transition-all shrink-0"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
+              aria-expanded={isMobileMenuOpen}
+            >
+              {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
           </div>
         </div>
       </div>
