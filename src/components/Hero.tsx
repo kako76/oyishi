@@ -29,17 +29,6 @@ const letterVisibleVariant: any = {
   },
 };
 
-// Animación de color continuo sutil
-const colorAnimation: any = {
-  animate: {
-    color: ['#F6F1E8', '#D8B36A', '#E67A61', '#F6F1E8'],
-    transition: {
-      duration: 14,
-      ease: "linear",
-      repeat: Infinity,
-    }
-  }
-};
 
 export const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -52,13 +41,19 @@ export const Hero: React.FC = () => {
   const textYScroll = useTransform(scrollY, [0, 400], [0, -50]);
   const videoYScroll = useTransform(scrollY, [0, 400], [0, 45]);
 
+  // Scroll animations specific to OYISHI text
+  const oyishiColorScroll = useTransform(scrollY, [0, 300], ['#F6F1E8', '#D8B36A']);
+  const oyishiXScroll = useTransform(scrollY, [0, 500], [0, -40]);
+  const oyishiScaleScroll = useTransform(scrollY, [0, 500], [1, 0.96]);
+
   // Disable scroll parallax when reduced motion is preferred
   const y = isReduced ? 0 : yScroll;
   const opacity = isReduced ? 1 : opacityScroll;
   const textY = isReduced ? 0 : textYScroll;
   const videoY = isReduced ? 0 : videoYScroll;
-
-
+  const textColor = isReduced ? '#F6F1E8' : oyishiColorScroll;
+  const oyishiX = isReduced ? 0 : oyishiXScroll;
+  const oyishiScale = isReduced ? 1 : oyishiScaleScroll;
 
   const word = "OYISHI";
 
@@ -106,12 +101,13 @@ export const Hero: React.FC = () => {
         >
           <div className="flex flex-col relative w-full">
 
-            {/* OYISHI GIGANTE CON ANIMACIÓN DE COLOR */}
+            {/* OYISHI GIGANTE CON ANIMACIÓN DE COLOR Y SCROLL */}
             <motion.div
               variants={containerVariant}
               initial="hidden"
               animate="visible"
-              className="relative -ml-1 md:-ml-2 overflow-visible"
+              style={{ x: oyishiX, scale: oyishiScale }}
+              className="relative -ml-1 md:-ml-2 overflow-visible origin-left"
             >
               <h1 className="text-[clamp(4.5rem,10.5vw,12.5rem)] leading-[0.8] font-serif flex overflow-visible drop-shadow-[0_15px_35px_rgba(0,0,0,0.5)] tracking-[-0.03em]">
                 {word.split('').map((letter, index) => (
@@ -122,15 +118,10 @@ export const Hero: React.FC = () => {
                     style={{
                       fontFamily: "'Playfair Display', 'Cormorant Garamond', serif",
                       fontWeight: letter === 'O' || letter === 'S' ? 400 : 300,
+                      color: textColor
                     }}
                   >
-                    <motion.span
-                      variants={isReduced ? undefined : colorAnimation}
-                      animate={isReduced ? undefined : "animate"}
-                      className="inline-block"
-                    >
-                      {letter}
-                    </motion.span>
+                    {letter}
                   </motion.span>
                 ))}
               </h1>
