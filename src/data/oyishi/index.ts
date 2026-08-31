@@ -3,6 +3,7 @@ import oyishiData from './products.json';
 export interface OyishiProduct {
   id: string;
   originalId?: string;
+  reference?: string;
   name: string;
   category: string;
   description?: string;
@@ -28,8 +29,12 @@ export const categories: string[] = oyishiData.categories.map(c =>
    .replace('EXLUSIVOS TARTAS', 'EXCLUSIVOS TARTAS')
 );
 
-export const menuData: OyishiProduct[] = oyishiData.products.map(p => ({
+// Local type that matches the JSON shape (products.json includes reference)
+type RawProduct = (typeof oyishiData.products)[number] & { reference?: string };
+
+export const menuData: OyishiProduct[] = (oyishiData.products as RawProduct[]).map(p => ({
   ...p,
+  reference: p.reference,
   source: p.source as 'oyishi.es',
   allergenStatus: p.allergenStatus as 'verified' | 'unknown',
   imageStatus: p.imageStatus as 'official' | 'missing' | 'decorative',
