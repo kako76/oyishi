@@ -7,6 +7,6 @@ export const restaurantInfo = {
   schedule: "De Lunes a Domingo: 12:00-16:30 | 19:30-24:00",
   reservationUrl: "/reservas",
   orderUrl: "/carta",
-  pointsUrl: "/",
+
   mapsUrl: "https://maps.google.com/?q=Calle+Leganes+42,+28945+Fuenlabrada"
 };

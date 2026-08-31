@@ -24,7 +24,7 @@ export const Header: React.FC = () => {
     { name: 'Carta', href: '/carta' },
     { name: 'Quiénes Somos', href: '/quienes-somos' },
     { name: 'Reservas', href: '/reservas' },
-    { name: 'Puntos', href: restaurantInfo.pointsUrl },
+
     { name: 'Contacto', href: '/contacto' },
   ];
 
