@@ -203,7 +203,7 @@ export const AdminOrdersPage: React.FC = () => {
         order.time,
         order.customer_name,
         order.phone,
-        order.party_size,
+        order.party_size === 0 && (!order.notes || !order.notes.includes('MESA')) ? '—' : order.party_size,
         order.order_items ? order.order_items.map((item: any) => `${item.quantity}x ${item.name}`).join(', ') : '',
         order.notes || '',
         order.status,
@@ -565,10 +565,12 @@ export const AdminOrdersPage: React.FC = () => {
                         order.status === 'CONFIRMADO' ? 'bg-blue-950/80 border-blue-500 text-blue-300' :
                         order.status === 'PREPARANDO' ? 'bg-orange-950/80 border-orange-500 text-orange-300' :
                         order.status === 'LISTO' ? 'bg-emerald-950/80 border-emerald-500 text-emerald-300' :
+                        order.status === 'REVISIÓN' ? 'bg-red-950/80 border-red-500 text-red-300' :
                         'bg-slate-900 border-slate-700 text-slate-300'
                       }`}
                     >
                       <option value="NUEVO">NUEVO</option>
+                      <option value="REVISIÓN">REVISIÓN</option>
                       <option value="CONFIRMADO">CONFIRMADO</option>
                       <option value="PREPARANDO">PREPARANDO</option>
                       <option value="LISTO">LISTO</option>
@@ -614,7 +616,7 @@ export const AdminOrdersPage: React.FC = () => {
                       <span className="text-[9px] font-mono text-oyishi-textSec/70 block uppercase">Personas</span>
                       <span className="font-mono text-oyishi-text font-medium flex items-center gap-1">
                         <Users size={12} className="text-oyishi-gold" />
-                        {order.party_size} p.
+                        {order.party_size === 0 && (!order.notes || !order.notes.includes('MESA')) ? '—' : `${order.party_size} p.`}
                       </span>
                     </div>
                   </div>
@@ -732,7 +734,9 @@ export const AdminOrdersPage: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-[10px] font-mono text-oyishi-textSec block uppercase">Comensales</span>
-                  <span className="font-mono text-oyishi-text font-bold">{selectedOrder.party_size} personas</span>
+                  <span className="font-mono text-oyishi-text font-bold">
+                    {selectedOrder.party_size === 0 && (!selectedOrder.notes || !selectedOrder.notes.includes('MESA')) ? '—' : `${selectedOrder.party_size} personas`}
+                  </span>
                 </div>
               </div>
 

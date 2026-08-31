@@ -163,7 +163,8 @@ export const FeaturedProductsSection: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
                   <div className="md:col-span-6 order-2 md:order-1">
-                    <h4 className="font-display text-2xl md:text-3xl text-oyishi-text mb-3 leading-snug">
+                    <h4 className="font-display text-2xl md:text-3xl text-oyishi-text mb-3 leading-snug select-all">
+                      {heroDish.reference && <span className="text-oyishi-gold font-bold">{heroDish.reference}. </span>}
                       {heroDish.name}
                     </h4>
                     {heroDish.description && (
@@ -220,7 +221,10 @@ export const FeaturedProductsSection: React.FC = () => {
                     </div>
                     <div className="flex-1 min-w-0">
                       <span className="text-[10px] font-sans text-oyishi-gold uppercase tracking-wider block mb-1">{dish.category}</span>
-                      <h5 className="font-display text-base text-oyishi-text truncate mb-1 group-hover:text-oyishi-gold transition-colors">{dish.name}</h5>
+                      <h5 className="font-display text-base text-oyishi-text truncate mb-1 group-hover:text-oyishi-gold transition-colors select-all">
+                        {dish.reference && <span className="text-oyishi-gold font-bold">{dish.reference}. </span>}
+                        {dish.name}
+                      </h5>
                       <span className="font-mono text-sm font-semibold text-oyishi-gold block mb-3">{dish.price.toFixed(2)}€</span>
                       <button
                         onClick={() => addToCart(dish)}
@@ -286,7 +290,8 @@ export const FeaturedProductsSection: React.FC = () => {
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
                     <div className="flex justify-between items-start mb-2 gap-3">
-                      <h4 className="font-display text-lg text-oyishi-text group-hover:text-oyishi-gold transition-colors leading-snug">
+                      <h4 className="font-display text-lg text-oyishi-text group-hover:text-oyishi-gold transition-colors leading-snug select-all">
+                        {item.reference && <span className="text-oyishi-gold font-bold">{item.reference}. </span>}
                         {item.name}
                       </h4>
                       <span className="font-mono text-base font-semibold text-oyishi-gold whitespace-nowrap">
@@ -405,7 +410,10 @@ export const FeaturedProductsSection: React.FC = () => {
                       </span>
                     </div>
 
-                    <h4 className="font-display text-3xl md:text-4xl text-white mb-3">{bandejasProducts[0].name}</h4>
+                    <h4 className="font-display text-3xl md:text-4xl text-white mb-3 select-all">
+                      {bandejasProducts[0].reference && <span className="text-oyishi-gold font-bold">{bandejasProducts[0].reference}. </span>}
+                      {bandejasProducts[0].name}
+                    </h4>
                     {bandejasProducts[0].description && (
                       <p className="text-oyishi-textSec text-sm md:text-base mb-6 max-w-xl font-light leading-relaxed">
                         {bandejasProducts[0].description}
@@ -452,7 +460,10 @@ export const FeaturedProductsSection: React.FC = () => {
                       )}
                     </div>
 
-                    <h4 className="font-display text-2xl md:text-3xl text-white mb-2">{bandejasProducts[1].name}</h4>
+                    <h4 className="font-display text-2xl md:text-3xl text-white mb-2 select-all">
+                      {bandejasProducts[1].reference && <span className="text-oyishi-gold font-bold">{bandejasProducts[1].reference}. </span>}
+                      {bandejasProducts[1].name}
+                    </h4>
                     {bandejasProducts[1].description && (
                       <p className="text-oyishi-textSec text-sm mb-6 font-light leading-relaxed line-clamp-3">
                         {bandejasProducts[1].description}

@@ -15,7 +15,7 @@ export interface RetellOrder {
   total: number;
   agent_call_id: string;
   created_at: string;
-  status: 'NUEVO' | 'CONFIRMADO' | 'PREPARANDO' | 'LISTO' | 'COMPLETADO';
+  status: 'NUEVO' | 'REVISIÓN' | 'CONFIRMADO' | 'PREPARANDO' | 'LISTO' | 'COMPLETADO';
 }
 
 const AUTH_TOKEN_KEY = 'oyishi_admin_token';

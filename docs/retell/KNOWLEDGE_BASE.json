@@ -1,0 +1,2860 @@
+[
+  {
+    "reference": "1",
+    "category": "ENTRANTE",
+    "name": "Rollitos vegetales",
+    "description": "Rollitos rellenos ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 3.5,
+    "allergens": [
+      "Gluten",
+      "Pescado",
+      "Lácteos"
+    ],
+    "aliases": [
+      "1",
+      "el 1",
+      "numero 1",
+      "rollitos vegetales"
+    ]
+  },
+  {
+    "reference": "1A",
+    "category": "ENTRANTE",
+    "name": "Minirollitos",
+    "description": "(10 unidades)",
+    "ingredients": [],
+    "pieces": 10,
+    "price": 3,
+    "allergens": [
+      "Gluten"
+    ],
+    "aliases": [
+      "1A",
+      "el 1A",
+      "numero 1A",
+      "minirollitos"
+    ]
+  },
+  {
+    "reference": "2",
+    "category": "ENTRANTE",
+    "name": "Rollitos de gambas",
+    "description": "Rellenos de gamba ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4.5,
+    "allergens": [
+      "Gluten",
+      "Crustáceos",
+      "Cacahuetes"
+    ],
+    "aliases": [
+      "2",
+      "el 2",
+      "numero 2",
+      "rollitos de gambas"
+    ]
+  },
+  {
+    "reference": "2A",
+    "category": "ENTRANTE",
+    "name": "Langostino tempura estilo japonesa",
+    "description": "(4 unidades)",
+    "ingredients": [],
+    "pieces": 4,
+    "price": 5.95,
+    "allergens": [
+      "Gluten",
+      "Crustáceos",
+      "Cacahuetes"
+    ],
+    "aliases": [
+      "2A",
+      "el 2A",
+      "numero 2A",
+      "langostino tempura estilo japonesa"
+    ]
+  },
+  {
+    "reference": "3",
+    "category": "ENTRANTE",
+    "name": "Rollitos de queso",
+    "description": "Rellenos de queso ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 3.5,
+    "allergens": [
+      "Gluten",
+      "Huevos",
+      "Cacahuetes"
+    ],
+    "aliases": [
+      "3",
+      "el 3",
+      "numero 3",
+      "rollitos de queso"
+    ]
+  },
+  {
+    "reference": "4",
+    "category": "ENTRANTE",
+    "name": "Gyozas de carne y verduras",
+    "description": "Empanadillas a la ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 5.8,
+    "allergens": [
+      "Gluten",
+      "Pescado",
+      "Lácteos"
+    ],
+    "aliases": [
+      "4",
+      "el 4",
+      "numero 4",
+      "gyozas de carne y verduras"
+    ]
+  },
+  {
+    "reference": "5",
+    "category": "ENTRANTE",
+    "name": "Shumai",
+    "description": "(masa transparent ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4.5,
+    "allergens": [
+      "Gluten",
+      "Pescado"
+    ],
+    "aliases": [
+      "5",
+      "el 5",
+      "numero 5",
+      "shumai"
+    ]
+  },
+  {
+    "reference": "6",
+    "category": "ENTRANTE",
+    "name": "Jiaozi de gambas",
+    "description": "(masa de almidon d...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 5,
+    "allergens": [
+      "Gluten",
+      "Crustáceos"
+    ],
+    "aliases": [
+      "6",
+      "el 6",
+      "numero 6",
+      "jiaozi de gambas"
+    ]
+  },
+  {
+    "reference": "7",
+    "category": "ENTRANTE",
+    "name": "Jiaozi peonies",
+    "description": "(Came se cerdo cam...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4.9,
+    "allergens": [
+      "Gluten",
+      "Crustáceos"
+    ],
+    "aliases": [
+      "7",
+      "el 7",
+      "numero 7",
+      "jiaozi peonies"
+    ]
+  },
+  {
+    "reference": "8",
+    "category": "ENTRANTE",
+    "name": "Gyozas vegetarianas",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 5.5,
+    "allergens": [
+      "Gluten",
+      "Pescado"
+    ],
+    "aliases": [
+      "8",
+      "el 8",
+      "numero 8",
+      "gyozas vegetarianas"
+    ]
+  },
+  {
+    "reference": "10",
+    "category": "ENTRANTE",
+    "name": "Xiao long bao",
+    "description": "(con un relleno ju...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 5,
+    "allergens": [
+      "Gluten"
+    ],
+    "aliases": [
+      "10",
+      "el 10",
+      "numero 10",
+      "xiao long bao"
+    ]
+  },
+  {
+    "reference": "11",
+    "category": "ENTRANTE",
+    "name": "Dim-sum variado",
+    "description": "(5 piezas)",
+    "ingredients": [],
+    "pieces": 5,
+    "price": 5.5,
+    "allergens": [
+      "Gluten",
+      "Huevos",
+      "Pescado",
+      "Soja"
+    ],
+    "aliases": [
+      "11",
+      "el 11",
+      "numero 11",
+      "dim-sum variado"
+    ]
+  },
+  {
+    "reference": "12",
+    "category": "ENTRANTE",
+    "name": "Ensalada de algas",
+    "description": "( algas pepino agu...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4,
+    "allergens": [
+      "Crustáceos",
+      "Pescado",
+      "Sésamo"
+    ],
+    "aliases": [
+      "12",
+      "el 12",
+      "numero 12",
+      "ensalada de algas"
+    ]
+  },
+  {
+    "reference": "13",
+    "category": "ENTRANTE",
+    "name": "Goma wakame",
+    "description": "(algas finas)",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4,
+    "allergens": [
+      "Sésamo"
+    ],
+    "aliases": [
+      "13",
+      "el 13",
+      "numero 13",
+      "goma wakame"
+    ]
+  },
+  {
+    "reference": "14",
+    "category": "ENTRANTE",
+    "name": "Ensalada sesar",
+    "description": "(Lechuga,tomate,za...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 8.5,
+    "allergens": [
+      "Gluten",
+      "Cacahuetes"
+    ],
+    "aliases": [
+      "14",
+      "el 14",
+      "numero 14",
+      "ensalada sesar"
+    ]
+  },
+  {
+    "reference": "15",
+    "category": "ENTRANTE",
+    "name": "Ensalada aguacate",
+    "description": "( aguacate pepino ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 9,
+    "allergens": [],
+    "aliases": [
+      "15",
+      "el 15",
+      "numero 15",
+      "ensalada aguacate"
+    ]
+  },
+  {
+    "reference": "16",
+    "category": "ENTRANTE",
+    "name": "Edamame",
+    "description": "(habas al vapor)",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4.5,
+    "allergens": [],
+    "aliases": [
+      "16",
+      "el 16",
+      "numero 16",
+      "edamame"
+    ]
+  },
+  {
+    "reference": "17",
+    "category": "ENTRANTE",
+    "name": "Sopa miso",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 2.9,
+    "allergens": [
+      "Crustáceos",
+      "Pescado"
+    ],
+    "aliases": [
+      "17",
+      "el 17",
+      "numero 17",
+      "sopa miso"
+    ]
+  },
+  {
+    "reference": "160",
+    "category": "MENÚS",
+    "name": "MENÚ PARA 2 PERSONAS",
+    "description": "4 Maki salmón4 Ma...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 32.95,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "160",
+      "el 160",
+      "numero 160",
+      "menú para 2 personas"
+    ]
+  },
+  {
+    "reference": "161",
+    "category": "MENÚS",
+    "name": "MENU PARA 4 PERSONAS",
+    "description": "4 Rollitos4 Xiao L...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 48,
+    "allergens": [
+      "Pescado"
+    ],
+    "aliases": [
+      "161",
+      "el 161",
+      "numero 161",
+      "menu para 4 personas"
+    ]
+  },
+  {
+    "reference": "18",
+    "category": "ROLL(8piezas)",
+    "name": "California roll",
+    "description": "(gambas, pepino y ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 6.95,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "18",
+      "el 18",
+      "numero 18",
+      "california roll"
+    ]
+  },
+  {
+    "reference": "19",
+    "category": "ROLL(8piezas)",
+    "name": "California salmón roll",
+    "description": "(salmón, pepino y...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 7.85,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "19",
+      "el 19",
+      "numero 19",
+      "california salmón roll"
+    ]
+  },
+  {
+    "reference": "19A",
+    "category": "ROLL(8piezas)",
+    "name": "Sésamo salmón roll",
+    "description": "(Salmón, pepino y...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 7.5,
+    "allergens": [
+      "Frutos de cáscara",
+      "Sésamo"
+    ],
+    "aliases": [
+      "19A",
+      "el 19A",
+      "numero 19A",
+      "sésamo salmón roll"
+    ]
+  },
+  {
+    "reference": "20",
+    "category": "ROLL(8piezas)",
+    "name": "California Atún roll",
+    "description": "(atún pepino y ag...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 8.45,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "20",
+      "el 20",
+      "numero 20",
+      "california atún roll"
+    ]
+  },
+  {
+    "reference": "21",
+    "category": "ROLL(8piezas)",
+    "name": "Gambas roll",
+    "description": "(gambas,pepino y a...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 6.5,
+    "allergens": [
+      "Crustáceos",
+      "Sésamo"
+    ],
+    "aliases": [
+      "21",
+      "el 21",
+      "numero 21",
+      "gambas roll"
+    ]
+  },
+  {
+    "reference": "22",
+    "category": "ROLL(8piezas)",
+    "name": "Maki Almendra",
+    "description": "(salmón, aguacate...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 8.5,
+    "allergens": [
+      "Cacahuetes",
+      "Soja"
+    ],
+    "aliases": [
+      "22",
+      "el 22",
+      "numero 22",
+      "maki almendra"
+    ]
+  },
+  {
+    "reference": "23",
+    "category": "ROLL(8piezas)",
+    "name": "Sésamo roll",
+    "description": "(surimi, pepino y ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 6,
+    "allergens": [
+      "Crustáceos",
+      "Sésamo"
+    ],
+    "aliases": [
+      "23",
+      "el 23",
+      "numero 23",
+      "sésamo roll"
+    ]
+  },
+  {
+    "reference": "24",
+    "category": "ROLL(8piezas)",
+    "name": "Maki dragón",
+    "description": "( Langostinos en t...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 6.95,
+    "allergens": [
+      "Crustáceos"
+    ],
+    "aliases": [
+      "24",
+      "el 24",
+      "numero 24",
+      "maki dragón"
+    ]
+  },
+  {
+    "reference": "25",
+    "category": "ROLL(8piezas)",
+    "name": "Spicy salmon crunch",
+    "description": "(salmón, aguacate...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 7.95,
+    "allergens": [
+      "Gluten",
+      "Cacahuetes",
+      "Frutos de cáscara",
+      "Sésamo"
+    ],
+    "aliases": [
+      "25",
+      "el 25",
+      "numero 25",
+      "spicy salmon crunch"
+    ]
+  },
+  {
+    "reference": "26",
+    "category": "ROLL(8piezas)",
+    "name": "Spicy tuna crunch",
+    "description": "(atún, aguante, m...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 7.95,
+    "allergens": [
+      "Gluten",
+      "Pescado",
+      "Cacahuetes",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "26",
+      "el 26",
+      "numero 26",
+      "spicy tuna crunch"
+    ]
+  },
+  {
+    "reference": "27",
+    "category": "ROLL(8piezas)",
+    "name": "Spicy gamba crunch",
+    "description": "(gambas, aguante, ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 7.5,
+    "allergens": [
+      "Gluten",
+      "Crustáceos",
+      "Pescado",
+      "Cacahuetes"
+    ],
+    "aliases": [
+      "27",
+      "el 27",
+      "numero 27",
+      "spicy gamba crunch"
+    ]
+  },
+  {
+    "reference": "28",
+    "category": "URAMAKI(8piezas)",
+    "name": "Aguacate uramaki",
+    "description": "(gambas, aguacate,...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 8.5,
+    "allergens": [
+      "Crustáceos",
+      "Cacahuetes"
+    ],
+    "aliases": [
+      "28",
+      "el 28",
+      "numero 28",
+      "aguacate uramaki"
+    ]
+  },
+  {
+    "reference": "28A",
+    "category": "URAMAKI(8piezas)",
+    "name": "Uramaki mango",
+    "description": "(Salmón, aguacate...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 8.9,
+    "allergens": [
+      "Cacahuetes",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "28A",
+      "el 28A",
+      "numero 28A",
+      "uramaki mango"
+    ]
+  },
+  {
+    "reference": "29",
+    "category": "URAMAKI(8piezas)",
+    "name": "Cheese bamboo roll",
+    "description": "(aguacate y queso ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 6.75,
+    "allergens": [
+      "Cacahuetes"
+    ],
+    "aliases": [
+      "29",
+      "el 29",
+      "numero 29",
+      "cheese bamboo roll"
+    ]
+  },
+  {
+    "reference": "30",
+    "category": "URAMAKI(8piezas)",
+    "name": "Sake cheese bamboo roll",
+    "description": "(salmón, queso Ph...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 8.5,
+    "allergens": [
+      "Cacahuetes",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "30",
+      "el 30",
+      "numero 30",
+      "sake cheese bamboo roll"
+    ]
+  },
+  {
+    "reference": "31",
+    "category": "URAMAKI(8piezas)",
+    "name": "Dinamita roll",
+    "description": "(gambas, queso Phi...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 8.9,
+    "allergens": [
+      "Crustáceos",
+      "Cacahuetes",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "31",
+      "el 31",
+      "numero 31",
+      "dinamita roll"
+    ]
+  },
+  {
+    "reference": "32",
+    "category": "URAMAKI(8piezas)",
+    "name": "Salmón uramaki",
+    "description": "(salmón, queso Ph...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 8.9,
+    "allergens": [
+      "Cacahuetes",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "32",
+      "el 32",
+      "numero 32",
+      "salmón uramaki"
+    ]
+  },
+  {
+    "reference": "33",
+    "category": "URAMAKI(8piezas)",
+    "name": "Atún uramaki",
+    "description": "(atún, queso Phil...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 8.9,
+    "allergens": [
+      "Cacahuetes",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "33",
+      "el 33",
+      "numero 33",
+      "atún uramaki"
+    ]
+  },
+  {
+    "reference": "34",
+    "category": "TEMPURIZADOS(8 piezas)",
+    "name": "Rock roll",
+    "description": "(pepino, aguacate,...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 8.5,
+    "allergens": [
+      "Gluten",
+      "Crustáceos",
+      "Pescado"
+    ],
+    "aliases": [
+      "34",
+      "el 34",
+      "numero 34",
+      "rock roll"
+    ]
+  },
+  {
+    "reference": "35",
+    "category": "TEMPURIZADOS(8 piezas)",
+    "name": "Maki crispy salmón",
+    "description": "(salmón y salsa c...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 9,
+    "allergens": [
+      "Gluten",
+      "Pescado",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "35",
+      "el 35",
+      "numero 35",
+      "maki crispy salmón"
+    ]
+  },
+  {
+    "reference": "35A",
+    "category": "TEMPURIZADOS(8 piezas)",
+    "name": "Tempurizados maki de pez mantequilla",
+    "description": "(cebolla crujiente...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 9,
+    "allergens": [
+      "Gluten",
+      "Pescado",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "35A",
+      "el 35A",
+      "numero 35A",
+      "tempurizados maki de pez mantequilla"
+    ]
+  },
+  {
+    "reference": "36",
+    "category": "TEMPURIZADOS(8 piezas)",
+    "name": "Maki crispy pato",
+    "description": "(pato y salsa, ceb...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 8.5,
+    "allergens": [
+      "Gluten",
+      "Pescado"
+    ],
+    "aliases": [
+      "36",
+      "el 36",
+      "numero 36",
+      "maki crispy pato"
+    ]
+  },
+  {
+    "reference": "37",
+    "category": "TEMPURIZADOS(8 piezas)",
+    "name": "Sésamo roll en crispy",
+    "description": "(pepino, aguacate,...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 8,
+    "allergens": [
+      "Gluten",
+      "Crustáceos",
+      "Pescado"
+    ],
+    "aliases": [
+      "37",
+      "el 37",
+      "numero 37",
+      "sésamo roll en crispy"
+    ]
+  },
+  {
+    "reference": "38",
+    "category": "NIGIRI SUSHI(2 piezas)",
+    "name": "Sushi atun",
+    "description": "(Arroz y atún)",
+    "ingredients": [],
+    "pieces": null,
+    "price": 3.9,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "38",
+      "el 38",
+      "numero 38",
+      "sushi atun"
+    ]
+  },
+  {
+    "reference": "38A",
+    "category": "NIGIRI SUSHI(2 piezas)",
+    "name": "Sushi atún flameado",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4.5,
+    "allergens": [
+      "Pescado",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "38A",
+      "el 38A",
+      "numero 38A",
+      "sushi atún flameado"
+    ]
+  },
+  {
+    "reference": "39",
+    "category": "NIGIRI SUSHI(2 piezas)",
+    "name": "Sushi salmon",
+    "description": "(Arroz y salmón)",
+    "ingredients": [],
+    "pieces": null,
+    "price": 3.5,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "39",
+      "el 39",
+      "numero 39",
+      "sushi salmon"
+    ]
+  },
+  {
+    "reference": "39A",
+    "category": "NIGIRI SUSHI(2 piezas)",
+    "name": "Sushi salmón flameado",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4,
+    "allergens": [
+      "Pescado",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "39A",
+      "el 39A",
+      "numero 39A",
+      "sushi salmón flameado"
+    ]
+  },
+  {
+    "reference": "40",
+    "category": "NIGIRI SUSHI(2 piezas)",
+    "name": "Sushi gambas",
+    "description": "Arroz y gambas",
+    "ingredients": [],
+    "pieces": null,
+    "price": 3,
+    "allergens": [
+      "Crustáceos"
+    ],
+    "aliases": [
+      "40",
+      "el 40",
+      "numero 40",
+      "sushi gambas"
+    ]
+  },
+  {
+    "reference": "41",
+    "category": "NIGIRI SUSHI(2 piezas)",
+    "name": "Sushi lubina",
+    "description": "Arroz y lubina",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "41",
+      "el 41",
+      "numero 41",
+      "sushi lubina"
+    ]
+  },
+  {
+    "reference": "41A",
+    "category": "NIGIRI SUSHI(2 piezas)",
+    "name": "Sushi lubina flameado",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4,
+    "allergens": [
+      "Pescado",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "41A",
+      "el 41A",
+      "numero 41A",
+      "sushi lubina flameado"
+    ]
+  },
+  {
+    "reference": "41B",
+    "category": "NIGIRI SUSHI(2 piezas)",
+    "name": "Sushi de vieira",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 3.9,
+    "allergens": [
+      "Pescado",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "41B",
+      "el 41B",
+      "numero 41B",
+      "sushi de vieira"
+    ]
+  },
+  {
+    "reference": "42",
+    "category": "NIGIRI SUSHI(2 piezas)",
+    "name": "Sushi Anguila",
+    "description": "Arroz y anguila",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4,
+    "allergens": [
+      "Pescado",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "42",
+      "el 42",
+      "numero 42",
+      "sushi anguila"
+    ]
+  },
+  {
+    "reference": "43",
+    "category": "NIGIRI SUSHI(2 piezas)",
+    "name": "Pez mantequilla",
+    "description": "(arroz y pez mante...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 3.5,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "43",
+      "el 43",
+      "numero 43",
+      "pez mantequilla"
+    ]
+  },
+  {
+    "reference": "170",
+    "category": "NIGIRI SUSHI(2 piezas)",
+    "name": "Sushi pez mantequill  flameado",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4,
+    "allergens": [
+      "Pescado",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "170",
+      "el 170",
+      "numero 170",
+      "sushi pez mantequill  flameado"
+    ]
+  },
+  {
+    "reference": "44",
+    "category": "NIGIRI SUSHI(2 piezas)",
+    "name": "Sushi aguacate",
+    "description": "Arroz aguante y qu...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 2.8,
+    "allergens": [
+      "Cacahuetes"
+    ],
+    "aliases": [
+      "44",
+      "el 44",
+      "numero 44",
+      "sushi aguacate"
+    ]
+  },
+  {
+    "reference": "45",
+    "category": "NIGIRI SUSHI(2 piezas)",
+    "name": "Sushi pulpo",
+    "description": "arroz y pulpo",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4,
+    "allergens": [
+      "Moluscos"
+    ],
+    "aliases": [
+      "45",
+      "el 45",
+      "numero 45",
+      "sushi pulpo"
+    ]
+  },
+  {
+    "reference": "46",
+    "category": "NIGIRI SUSHI(2 piezas)",
+    "name": "Sushi tobiko",
+    "description": "Arroz y huevas de ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "46",
+      "el 46",
+      "numero 46",
+      "sushi tobiko"
+    ]
+  },
+  {
+    "reference": "47",
+    "category": "NIGIRI SUSHI(2 piezas)",
+    "name": "Sushi ikura",
+    "description": "Arroz y huevas de ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 6,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "47",
+      "el 47",
+      "numero 47",
+      "sushi ikura"
+    ]
+  },
+  {
+    "reference": "48",
+    "category": "NIGIRI SUSHI(2 piezas)",
+    "name": "Sushi tartar atún",
+    "description": "Arroz y atún",
+    "ingredients": [],
+    "pieces": null,
+    "price": 6.5,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "48",
+      "el 48",
+      "numero 48",
+      "sushi tartar atún"
+    ]
+  },
+  {
+    "reference": "49",
+    "category": "NIGIRI SUSHI(2 piezas)",
+    "name": "Sushi tartar salmón",
+    "description": "Arroz y salmón",
+    "ingredients": [],
+    "pieces": null,
+    "price": 5.9,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "49",
+      "el 49",
+      "numero 49",
+      "sushi tartar salmón"
+    ]
+  },
+  {
+    "reference": "50",
+    "category": "MAKI(8piezas)",
+    "name": "Maki atún",
+    "description": "Arroz y atún",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4.9,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "50",
+      "el 50",
+      "numero 50",
+      "maki atún"
+    ]
+  },
+  {
+    "reference": "51",
+    "category": "MAKI(8piezas)",
+    "name": "Maki salmón",
+    "description": "(arroz y salmón)",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4.5,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "51",
+      "el 51",
+      "numero 51",
+      "maki salmón"
+    ]
+  },
+  {
+    "reference": "52",
+    "category": "MAKI(8piezas)",
+    "name": "Maki anguila",
+    "description": "(arroz y anguila)",
+    "ingredients": [],
+    "pieces": null,
+    "price": 6,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "52",
+      "el 52",
+      "numero 52",
+      "maki anguila"
+    ]
+  },
+  {
+    "reference": "53",
+    "category": "MAKI(8piezas)",
+    "name": "Maki gambas",
+    "description": "(gambas y aguacate...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4.5,
+    "allergens": [
+      "Crustáceos"
+    ],
+    "aliases": [
+      "53",
+      "el 53",
+      "numero 53",
+      "maki gambas"
+    ]
+  },
+  {
+    "reference": "54",
+    "category": "MAKI(8piezas)",
+    "name": "Maki salmón con aguacate",
+    "description": "(arroz, salmón y ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4.5,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "54",
+      "el 54",
+      "numero 54",
+      "maki salmón con aguacate"
+    ]
+  },
+  {
+    "reference": "55",
+    "category": "MAKI(8piezas)",
+    "name": "Maki atún con aguacate",
+    "description": "(arroz, atún y ag...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4.9,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "55",
+      "el 55",
+      "numero 55",
+      "maki atún con aguacate"
+    ]
+  },
+  {
+    "reference": "56",
+    "category": "MAKI(8piezas)",
+    "name": "Maki surimi",
+    "description": "(surimi, aguacate ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4,
+    "allergens": [
+      "Crustáceos"
+    ],
+    "aliases": [
+      "56",
+      "el 56",
+      "numero 56",
+      "maki surimi"
+    ]
+  },
+  {
+    "reference": "57",
+    "category": "MAKI(8piezas)",
+    "name": "Maki vegetal",
+    "description": "(aguacate y pepino...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 3.5,
+    "allergens": [],
+    "aliases": [
+      "57",
+      "el 57",
+      "numero 57",
+      "maki vegetal"
+    ]
+  },
+  {
+    "reference": "58",
+    "category": "MAKI(8piezas)",
+    "name": "Maki pez mantequilla",
+    "description": "(arroz y pez mante...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4.5,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "58",
+      "el 58",
+      "numero 58",
+      "maki pez mantequilla"
+    ]
+  },
+  {
+    "reference": "59",
+    "category": "MAKI(8piezas)",
+    "name": "Maki aguacate",
+    "description": "(arroz y aguacate)",
+    "ingredients": [],
+    "pieces": null,
+    "price": 3.5,
+    "allergens": [],
+    "aliases": [
+      "59",
+      "el 59",
+      "numero 59",
+      "maki aguacate"
+    ]
+  },
+  {
+    "reference": "60",
+    "category": "MAKI(8piezas)",
+    "name": "Futomaki",
+    "description": "(relleno de salmó...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 10.9,
+    "allergens": [
+      "Crustáceos",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "60",
+      "el 60",
+      "numero 60",
+      "futomaki"
+    ]
+  },
+  {
+    "reference": "61",
+    "category": "TEMAKI(1 piezas)",
+    "name": "Temaki de atún y  aguacate",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4.25,
+    "allergens": [],
+    "aliases": [
+      "61",
+      "el 61",
+      "numero 61",
+      "temaki de atún y  aguacate"
+    ]
+  },
+  {
+    "reference": "62",
+    "category": "TEMAKI(1 piezas)",
+    "name": "Temaki de salmón y aguacate",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4,
+    "allergens": [],
+    "aliases": [
+      "62",
+      "el 62",
+      "numero 62",
+      "temaki de salmón y aguacate"
+    ]
+  },
+  {
+    "reference": "63",
+    "category": "TEMAKI(1 piezas)",
+    "name": "Temaki California",
+    "description": "(Gambas y aguacate...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4,
+    "allergens": [],
+    "aliases": [
+      "63",
+      "el 63",
+      "numero 63",
+      "temaki california"
+    ]
+  },
+  {
+    "reference": "64",
+    "category": "TEMAKI(1 piezas)",
+    "name": "Temaki de anguila",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4.65,
+    "allergens": [],
+    "aliases": [
+      "64",
+      "el 64",
+      "numero 64",
+      "temaki de anguila"
+    ]
+  },
+  {
+    "reference": "65",
+    "category": "TEMAKI(1 piezas)",
+    "name": "Temaki de pato",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4.5,
+    "allergens": [],
+    "aliases": [
+      "65",
+      "el 65",
+      "numero 65",
+      "temaki de pato"
+    ]
+  },
+  {
+    "reference": "66",
+    "category": "TEMAKI(1 piezas)",
+    "name": "Temaki mantequilla",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4.5,
+    "allergens": [],
+    "aliases": [
+      "66",
+      "el 66",
+      "numero 66",
+      "temaki mantequilla"
+    ]
+  },
+  {
+    "reference": "67",
+    "category": "EXLUSIVOS TARTAS",
+    "name": "Tartar salmón con aguacate",
+    "description": "(salmón y salsa...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 12,
+    "allergens": [
+      "Pescado",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "67",
+      "el 67",
+      "numero 67",
+      "tartar salmón con aguacate"
+    ]
+  },
+  {
+    "reference": "68",
+    "category": "EXLUSIVOS TARTAS",
+    "name": "Tartar atún con aguacate",
+    "description": "Atún aguante y sa...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 12.5,
+    "allergens": [
+      "Pescado",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "68",
+      "el 68",
+      "numero 68",
+      "tartar atún con aguacate"
+    ]
+  },
+  {
+    "reference": "69",
+    "category": "EXLUSIVOS TARTAS",
+    "name": "Yu-sen manguro",
+    "description": "(Atún poco picant...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 13,
+    "allergens": [
+      "Frutos de cáscara",
+      "Picante"
+    ],
+    "aliases": [
+      "69",
+      "el 69",
+      "numero 69",
+      "yu-sen manguro"
+    ]
+  },
+  {
+    "reference": "70",
+    "category": "EXLUSIVOS TARTAS",
+    "name": "Tartar salmón",
+    "description": "Salmón y salsa",
+    "ingredients": [],
+    "pieces": null,
+    "price": 12,
+    "allergens": [
+      "Pescado",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "70",
+      "el 70",
+      "numero 70",
+      "tartar salmón"
+    ]
+  },
+  {
+    "reference": "71",
+    "category": "SASHIMI(9 cortes)",
+    "name": "Sashimi salmón",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 10.9,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "71",
+      "el 71",
+      "numero 71",
+      "sashimi salmón"
+    ]
+  },
+  {
+    "reference": "72",
+    "category": "SASHIMI(9 cortes)",
+    "name": "Sashimi atún",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 11.9,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "72",
+      "el 72",
+      "numero 72",
+      "sashimi atún"
+    ]
+  },
+  {
+    "reference": "73",
+    "category": "SASHIMI(9 cortes)",
+    "name": "Sashimi pez mantequilla",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 10.9,
+    "allergens": [],
+    "aliases": [
+      "73",
+      "el 73",
+      "numero 73",
+      "sashimi pez mantequilla"
+    ]
+  },
+  {
+    "reference": "74",
+    "category": "SASHIMI(9 cortes)",
+    "name": "Tataki maguro",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 11.9,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "74",
+      "el 74",
+      "numero 74",
+      "tataki maguro"
+    ]
+  },
+  {
+    "reference": "75",
+    "category": "SASHIMI(9 cortes)",
+    "name": "Sashimi variado",
+    "description": "(9 Cortes)",
+    "ingredients": [],
+    "pieces": 9,
+    "price": 11,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "75",
+      "el 75",
+      "numero 75",
+      "sashimi variado"
+    ]
+  },
+  {
+    "reference": "76",
+    "category": "SASHIMI(9 cortes)",
+    "name": "Sashimi variado (24 cortes)",
+    "description": "(24 Cortes )",
+    "ingredients": [],
+    "pieces": null,
+    "price": 24,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "76",
+      "el 76",
+      "numero 76",
+      "sashimi variado (24 cortes)"
+    ]
+  },
+  {
+    "reference": "77",
+    "category": "KUSHIYAKI(2 piezas)",
+    "name": "Kushiyaki salmón",
+    "description": "Salmón y salsa",
+    "ingredients": [],
+    "pieces": null,
+    "price": 6,
+    "allergens": [
+      "Pescado",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "77",
+      "el 77",
+      "numero 77",
+      "kushiyaki salmón"
+    ]
+  },
+  {
+    "reference": "79",
+    "category": "KUSHIYAKI(2 piezas)",
+    "name": "Kushiyaki gambas",
+    "description": "Gambas y salsa",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4.9,
+    "allergens": [
+      "Crustáceos",
+      "Pescado"
+    ],
+    "aliases": [
+      "79",
+      "el 79",
+      "numero 79",
+      "kushiyaki gambas"
+    ]
+  },
+  {
+    "reference": "80",
+    "category": "KUSHIYAKI(2 piezas)",
+    "name": "Yakitori brocheta de pollo",
+    "description": "Pollo puerros y sa...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 4.5,
+    "allergens": [
+      "Pescado",
+      "Sésamo"
+    ],
+    "aliases": [
+      "80",
+      "el 80",
+      "numero 80",
+      "yakitori brocheta de pollo"
+    ]
+  },
+  {
+    "reference": "81",
+    "category": "KUSHIYAKI(2 piezas)",
+    "name": "Yakitori solomillo de buey",
+    "description": "Solomillo y salsa",
+    "ingredients": [],
+    "pieces": null,
+    "price": 5.9,
+    "allergens": [
+      "Pescado"
+    ],
+    "aliases": [
+      "81",
+      "el 81",
+      "numero 81",
+      "yakitori solomillo de buey"
+    ]
+  },
+  {
+    "reference": "82",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "Arroz de sushi",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 3,
+    "allergens": [],
+    "aliases": [
+      "82",
+      "el 82",
+      "numero 82",
+      "arroz de sushi"
+    ]
+  },
+  {
+    "reference": "83",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "Arroz blanco",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 2,
+    "allergens": [],
+    "aliases": [
+      "83",
+      "el 83",
+      "numero 83",
+      "arroz blanco"
+    ]
+  },
+  {
+    "reference": "84",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "Yakisoba con gambas",
+    "description": "(yakisoba con gamb...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 7.35,
+    "allergens": [
+      "Crustáceos",
+      "Pescado"
+    ],
+    "aliases": [
+      "84",
+      "el 84",
+      "numero 84",
+      "yakisoba con gambas"
+    ]
+  },
+  {
+    "reference": "84A",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "yakisoba vegetal",
+    "description": "(yakisoba y verdur...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 6.5,
+    "allergens": [
+      "Gluten",
+      "Pescado"
+    ],
+    "aliases": [
+      "84A",
+      "el 84A",
+      "numero 84A",
+      "yakisoba vegetal"
+    ]
+  },
+  {
+    "reference": "85",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "Yakiudon con gambas y  verduras",
+    "description": "(tallarines udon, ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 7.85,
+    "allergens": [
+      "Crustáceos",
+      "Pescado"
+    ],
+    "aliases": [
+      "85",
+      "el 85",
+      "numero 85",
+      "yakiudon con gambas y  verduras"
+    ]
+  },
+  {
+    "reference": "86",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "Yakifideo con gambas y verduras",
+    "description": "(fideos, gambas y ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 7.85,
+    "allergens": [
+      "Crustáceos",
+      "Pescado"
+    ],
+    "aliases": [
+      "86",
+      "el 86",
+      "numero 86",
+      "yakifideo con gambas y verduras"
+    ]
+  },
+  {
+    "reference": "87",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "Arroz con setas",
+    "description": "（Arroz seta huev...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 7.25,
+    "allergens": [
+      "Huevos",
+      "Pescado"
+    ],
+    "aliases": [
+      "87",
+      "el 87",
+      "numero 87",
+      "arroz con setas"
+    ]
+  },
+  {
+    "reference": "88",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "Kaisen yakimeshi",
+    "description": "(Arroz frito con m...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 8.25,
+    "allergens": [
+      "Crustáceos",
+      "Huevos",
+      "Sésamo",
+      "Moluscos"
+    ],
+    "aliases": [
+      "88",
+      "el 88",
+      "numero 88",
+      "kaisen yakimeshi"
+    ]
+  },
+  {
+    "reference": "89",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "Yakimeshi",
+    "description": "(Arroz frito con g...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 6.95,
+    "allergens": [
+      "Crustáceos",
+      "Huevos",
+      "Sésamo"
+    ],
+    "aliases": [
+      "89",
+      "el 89",
+      "numero 89",
+      "yakimeshi"
+    ]
+  },
+  {
+    "reference": "89A",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "Arroz frito con tres delicias",
+    "description": "(arroz, zanahoria,...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 5.95,
+    "allergens": [
+      "Huevos"
+    ],
+    "aliases": [
+      "89A",
+      "el 89A",
+      "numero 89A",
+      "arroz frito con tres delicias"
+    ]
+  },
+  {
+    "reference": "90",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "Yakimeshi piña",
+    "description": "(Arroz frito con g...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 7.5,
+    "allergens": [
+      "Crustáceos",
+      "Huevos"
+    ],
+    "aliases": [
+      "90",
+      "el 90",
+      "numero 90",
+      "yakimeshi piña"
+    ]
+  },
+  {
+    "reference": "91",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "Yakimeshi ternera",
+    "description": "(Arroz frito con t...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 7.35,
+    "allergens": [
+      "Huevos",
+      "Mostaza"
+    ],
+    "aliases": [
+      "91",
+      "el 91",
+      "numero 91",
+      "yakimeshi ternera"
+    ]
+  },
+  {
+    "reference": "91A",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "Yakimeshi pollo",
+    "description": "(Arroz frito con p...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 6.75,
+    "allergens": [
+      "Huevos",
+      "Pescado"
+    ],
+    "aliases": [
+      "91A",
+      "el 91A",
+      "numero 91A",
+      "yakimeshi pollo"
+    ]
+  },
+  {
+    "reference": "92",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "Pollo teppanyaki",
+    "description": "(pechuga de pollo ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 9.45,
+    "allergens": [
+      "Pescado",
+      "Soja"
+    ],
+    "aliases": [
+      "92",
+      "el 92",
+      "numero 92",
+      "pollo teppanyaki"
+    ]
+  },
+  {
+    "reference": "93",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "Ternera con setas",
+    "description": "Ternera y seta",
+    "ingredients": [],
+    "pieces": null,
+    "price": 8.5,
+    "allergens": [
+      "Gluten",
+      "Pescado"
+    ],
+    "aliases": [
+      "93",
+      "el 93",
+      "numero 93",
+      "ternera con setas"
+    ]
+  },
+  {
+    "reference": "94",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "Ternera con verduras",
+    "description": "Ternera y verduras...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 7.95,
+    "allergens": [
+      "Gluten",
+      "Pescado"
+    ],
+    "aliases": [
+      "94",
+      "el 94",
+      "numero 94",
+      "ternera con verduras"
+    ]
+  },
+  {
+    "reference": "95",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "Gambas con champiñones",
+    "description": "Gambas y champiño...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 8.5,
+    "allergens": [
+      "Crustáceos",
+      "Pescado"
+    ],
+    "aliases": [
+      "95",
+      "el 95",
+      "numero 95",
+      "gambas con champiñones"
+    ]
+  },
+  {
+    "reference": "96",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "Ebi teppanyaki",
+    "description": "(gambas a la planc...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 12.5,
+    "allergens": [
+      "Crustáceos"
+    ],
+    "aliases": [
+      "96",
+      "el 96",
+      "numero 96",
+      "ebi teppanyaki"
+    ]
+  },
+  {
+    "reference": "97",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "1/2 pato crujiente con salsa agripicante",
+    "description": "Pato y salsa",
+    "ingredients": [],
+    "pieces": null,
+    "price": 11.5,
+    "allergens": [
+      "Gluten",
+      "Pescado"
+    ],
+    "aliases": [
+      "97",
+      "el 97",
+      "numero 97",
+      "1/2 pato crujiente con salsa agripicante"
+    ]
+  },
+  {
+    "reference": "96",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "Pollo crujiente con  almendras",
+    "description": "pollo y almendras�...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 7.45,
+    "allergens": [
+      "Gluten",
+      "Soja"
+    ],
+    "aliases": [
+      "96",
+      "el 96",
+      "numero 96",
+      "pollo crujiente con  almendras"
+    ]
+  },
+  {
+    "reference": "99",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "Pollo crujiente al limón",
+    "description": "Pollo, pan ralland...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 6.95,
+    "allergens": [
+      "Gluten"
+    ],
+    "aliases": [
+      "99",
+      "el 99",
+      "numero 99",
+      "pollo crujiente al limón"
+    ]
+  },
+  {
+    "reference": "100",
+    "category": "PASTAS FRITAS Y PLANCHA",
+    "name": "Cerdo agridulce",
+    "description": "Carne de credo fri...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 6.75,
+    "allergens": [
+      "Gluten",
+      "Soja"
+    ],
+    "aliases": [
+      "100",
+      "el 100",
+      "numero 100",
+      "cerdo agridulce"
+    ]
+  },
+  {
+    "reference": "101",
+    "category": "BANDEJAS Y COMBINADOS",
+    "name": "Bandeja maki",
+    "description": "\" 8maki salmon 8ma...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 11.9,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "101",
+      "el 101",
+      "numero 101",
+      "bandeja maki"
+    ]
+  },
+  {
+    "reference": "102",
+    "category": "BANDEJAS Y COMBINADOS",
+    "name": "Bandeja roll",
+    "description": "\"8california roll ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 12.5,
+    "allergens": [
+      "Crustáceos",
+      "Frutos de cáscara",
+      "Sésamo"
+    ],
+    "aliases": [
+      "102",
+      "el 102",
+      "numero 102",
+      "bandeja roll"
+    ]
+  },
+  {
+    "reference": "103",
+    "category": "BANDEJAS Y COMBINADOS",
+    "name": "Bandeja omega",
+    "description": "\"8 sésamo roll 8 ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 15.9,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "103",
+      "el 103",
+      "numero 103",
+      "bandeja omega"
+    ]
+  },
+  {
+    "reference": "104",
+    "category": "BANDEJAS Y COMBINADOS",
+    "name": "Bandeja sushi",
+    "description": "\" 4sushi salmon 4s...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 11.5,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "104",
+      "el 104",
+      "numero 104",
+      "bandeja sushi"
+    ]
+  },
+  {
+    "reference": "105",
+    "category": "BANDEJAS Y COMBINADOS",
+    "name": "Bandeja sushi y maki",
+    "description": "\" 8 maki salmon 2s...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 13.9,
+    "allergens": [
+      "Cacahuetes",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "105",
+      "el 105",
+      "numero 105",
+      "bandeja sushi y maki"
+    ]
+  },
+  {
+    "reference": "106",
+    "category": "BANDEJAS Y COMBINADOS",
+    "name": "Bandeja",
+    "description": "\" 4 maki salmon 4 ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 16.5,
+    "allergens": [],
+    "aliases": [
+      "106",
+      "el 106",
+      "numero 106",
+      "bandeja"
+    ]
+  },
+  {
+    "reference": "159",
+    "category": "BANDEJAS Y COMBINADOS",
+    "name": "Bandeja",
+    "description": "(28 piezas)8 Spicy...",
+    "ingredients": [],
+    "pieces": 28,
+    "price": 24.9,
+    "allergens": [
+      "Pescado",
+      "Cacahuetes",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "159",
+      "el 159",
+      "numero 159",
+      "bandeja"
+    ]
+  },
+  {
+    "reference": "108",
+    "category": "BANDEJAS Y COMBINADOS",
+    "name": "Bandeja variada",
+    "description": "\" 4 sushi pez ment...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 29.5,
+    "allergens": [
+      "Huevos",
+      "Pescado",
+      "Cacahuetes",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "108",
+      "el 108",
+      "numero 108",
+      "bandeja variada"
+    ]
+  },
+  {
+    "reference": "109",
+    "category": "BANDEJAS Y COMBINADOS",
+    "name": "Bandeja",
+    "description": "\" 4 sashimi salmon...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 32.9,
+    "allergens": [
+      "Gluten",
+      "Crustáceos",
+      "Frutos de cáscara",
+      "Sésamo"
+    ],
+    "aliases": [
+      "109",
+      "el 109",
+      "numero 109",
+      "bandeja"
+    ]
+  },
+  {
+    "reference": "151",
+    "category": "BANDEJAS Y COMBINADOS",
+    "name": "Bandeja maki sushi sashimi",
+    "description": "8 maki salmon 8mak...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 58.8,
+    "allergens": [
+      "Cacahuetes",
+      "Frutos de cáscara",
+      "Sésamo"
+    ],
+    "aliases": [
+      "151",
+      "el 151",
+      "numero 151",
+      "bandeja maki sushi sashimi"
+    ]
+  },
+  {
+    "reference": "155",
+    "category": "BANDEJAS Y COMBINADOS",
+    "name": "Sushi Fusion",
+    "description": "2 Sushi atún flam...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 18,
+    "allergens": [
+      "Pescado",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "155",
+      "el 155",
+      "numero 155",
+      "sushi fusion"
+    ]
+  },
+  {
+    "reference": "156",
+    "category": "BANDEJAS Y COMBINADOS",
+    "name": "Bandeja",
+    "description": "4 Aguacate uramaki...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 21.9,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "156",
+      "el 156",
+      "numero 156",
+      "bandeja"
+    ]
+  },
+  {
+    "reference": "157",
+    "category": "BANDEJAS Y COMBINADOS",
+    "name": "Bandeja Vegetariana",
+    "description": "4 Maki aguacate4 M...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 13.95,
+    "allergens": [],
+    "aliases": [
+      "157",
+      "el 157",
+      "numero 157",
+      "bandeja vegetariana"
+    ]
+  },
+  {
+    "reference": "110",
+    "category": "BEBIDA",
+    "name": "Lata coca cola",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 2,
+    "allergens": [],
+    "aliases": [
+      "110",
+      "el 110",
+      "numero 110",
+      "lata coca cola"
+    ]
+  },
+  {
+    "reference": "111",
+    "category": "BEBIDA",
+    "name": "Lata coca cola zero",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 2,
+    "allergens": [],
+    "aliases": [
+      "111",
+      "el 111",
+      "numero 111",
+      "lata coca cola zero"
+    ]
+  },
+  {
+    "reference": "113",
+    "category": "BEBIDA",
+    "name": "Lata fanta naranja",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 2,
+    "allergens": [],
+    "aliases": [
+      "113",
+      "el 113",
+      "numero 113",
+      "lata fanta naranja"
+    ]
+  },
+  {
+    "reference": "114",
+    "category": "BEBIDA",
+    "name": "Lata fanta limon",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 2,
+    "allergens": [],
+    "aliases": [
+      "114",
+      "el 114",
+      "numero 114",
+      "lata fanta limon"
+    ]
+  },
+  {
+    "reference": "115",
+    "category": "BEBIDA",
+    "name": "Lata nestea",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 2,
+    "allergens": [],
+    "aliases": [
+      "115",
+      "el 115",
+      "numero 115",
+      "lata nestea"
+    ]
+  },
+  {
+    "reference": "116",
+    "category": "BEBIDA",
+    "name": "Lata aquarius",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 2,
+    "allergens": [],
+    "aliases": [
+      "116",
+      "el 116",
+      "numero 116",
+      "lata aquarius"
+    ]
+  },
+  {
+    "reference": "117",
+    "category": "BEBIDA",
+    "name": "Lata aquarius naranja",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 2,
+    "allergens": [],
+    "aliases": [
+      "117",
+      "el 117",
+      "numero 117",
+      "lata aquarius naranja"
+    ]
+  },
+  {
+    "reference": "118",
+    "category": "BEBIDA",
+    "name": "Agua",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 1.8,
+    "allergens": [],
+    "aliases": [
+      "118",
+      "el 118",
+      "numero 118",
+      "agua"
+    ]
+  },
+  {
+    "reference": "119",
+    "category": "BEBIDA",
+    "name": "Lata cerveza",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 2,
+    "allergens": [],
+    "aliases": [
+      "119",
+      "el 119",
+      "numero 119",
+      "lata cerveza"
+    ]
+  },
+  {
+    "reference": "123",
+    "category": "VINO",
+    "name": "Vino de la casa",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 6.5,
+    "allergens": [],
+    "aliases": [
+      "123",
+      "el 123",
+      "numero 123",
+      "vino de la casa"
+    ]
+  },
+  {
+    "reference": "124",
+    "category": "VINO",
+    "name": "Vino  tinto (La Rioja)",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 11,
+    "allergens": [],
+    "aliases": [
+      "124",
+      "el 124",
+      "numero 124",
+      "vino  tinto (la rioja)"
+    ]
+  },
+  {
+    "reference": "125",
+    "category": "VINO",
+    "name": "Vino tinto (ribera del Duero)",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 12,
+    "allergens": [],
+    "aliases": [
+      "125",
+      "el 125",
+      "numero 125",
+      "vino tinto (ribera del duero)"
+    ]
+  },
+  {
+    "reference": "126",
+    "category": "VINO",
+    "name": "Vino rosado señorío llanos",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 11,
+    "allergens": [],
+    "aliases": [
+      "126",
+      "el 126",
+      "numero 126",
+      "vino rosado señorío llanos"
+    ]
+  },
+  {
+    "reference": "127",
+    "category": "VINO",
+    "name": "Vino blanco rueda",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 11,
+    "allergens": [],
+    "aliases": [
+      "127",
+      "el 127",
+      "numero 127",
+      "vino blanco rueda"
+    ]
+  },
+  {
+    "reference": "130",
+    "category": "POSTRES",
+    "name": "Mochi sabor a soja rojo",
+    "description": "(2p)",
+    "ingredients": [],
+    "pieces": null,
+    "price": 2.95,
+    "allergens": [],
+    "aliases": [
+      "130",
+      "el 130",
+      "numero 130",
+      "mochi sabor a soja rojo"
+    ]
+  },
+  {
+    "reference": "131",
+    "category": "POSTRES",
+    "name": "Mochi sabor a cacahuete",
+    "description": "(2p)",
+    "ingredients": [],
+    "pieces": null,
+    "price": 2.95,
+    "allergens": [],
+    "aliases": [
+      "131",
+      "el 131",
+      "numero 131",
+      "mochi sabor a cacahuete"
+    ]
+  },
+  {
+    "reference": "132",
+    "category": "POSTRES",
+    "name": "Mochi sabor a sesamo",
+    "description": "(2p)",
+    "ingredients": [],
+    "pieces": null,
+    "price": 2.95,
+    "allergens": [],
+    "aliases": [
+      "132",
+      "el 132",
+      "numero 132",
+      "mochi sabor a sesamo"
+    ]
+  },
+  {
+    "reference": "133",
+    "category": "POSTRES",
+    "name": "Movhi sabor de mango",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 2.95,
+    "allergens": [],
+    "aliases": [
+      "133",
+      "el 133",
+      "numero 133",
+      "movhi sabor de mango"
+    ]
+  },
+  {
+    "reference": "134",
+    "category": "POSTRES",
+    "name": "Mochi sabor a taro",
+    "description": "(2p)",
+    "ingredients": [],
+    "pieces": null,
+    "price": 2.95,
+    "allergens": [],
+    "aliases": [
+      "134",
+      "el 134",
+      "numero 134",
+      "mochi sabor a taro"
+    ]
+  },
+  {
+    "reference": "141",
+    "category": "POSTRES",
+    "name": "Tarta  de queso con arandanos",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 2.9,
+    "allergens": [
+      "Gluten",
+      "Cacahuetes"
+    ],
+    "aliases": [
+      "141",
+      "el 141",
+      "numero 141",
+      "tarta  de queso con arandanos"
+    ]
+  },
+  {
+    "reference": "145",
+    "category": "POSTRES",
+    "name": "Tarta de tiramisu",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 2.9,
+    "allergens": [
+      "Gluten",
+      "Cacahuetes"
+    ],
+    "aliases": [
+      "145",
+      "el 145",
+      "numero 145",
+      "tarta de tiramisu"
+    ]
+  },
+  {
+    "reference": "143",
+    "category": "POSTRES",
+    "name": "tarta de san marcos",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 2.9,
+    "allergens": [
+      "Gluten",
+      "Cacahuetes"
+    ],
+    "aliases": [
+      "143",
+      "el 143",
+      "numero 143",
+      "tarta de san marcos"
+    ]
+  },
+  {
+    "reference": "144",
+    "category": "POSTRES",
+    "name": "Tarta de selva de trufa",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": 2.9,
+    "allergens": [
+      "Gluten",
+      "Cacahuetes"
+    ],
+    "aliases": [
+      "144",
+      "el 144",
+      "numero 144",
+      "tarta de selva de trufa"
+    ]
+  },
+  {
+    "reference": "135",
+    "category": "MENU DIA",
+    "name": "FORMULA 1",
+    "description": "De lunes a Viernes...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 14.5,
+    "allergens": [
+      "Soja",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "135",
+      "el 135",
+      "numero 135",
+      "formula 1"
+    ]
+  },
+  {
+    "reference": "136",
+    "category": "MENU DIA",
+    "name": "FORMULA 2",
+    "description": "3 sushi salmon3 su...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 14.5,
+    "allergens": [
+      "Soja",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "136",
+      "el 136",
+      "numero 136",
+      "formula 2"
+    ]
+  },
+  {
+    "reference": "137",
+    "category": "MENU DIA",
+    "name": "FORMULA 3",
+    "description": "4 sesamo roll4 mak...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 14.5,
+    "allergens": [
+      "Gluten",
+      "Pescado",
+      "Frutos de cáscara",
+      "Sésamo"
+    ],
+    "aliases": [
+      "137",
+      "el 137",
+      "numero 137",
+      "formula 3"
+    ]
+  },
+  {
+    "reference": "138",
+    "category": "MENU DIA",
+    "name": "FORMULA 4",
+    "description": "3 sashimi salmon4 ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 14.5,
+    "allergens": [
+      "Gluten",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "138",
+      "el 138",
+      "numero 138",
+      "formula 4"
+    ]
+  },
+  {
+    "reference": "139",
+    "category": "MENU DIA",
+    "name": "FORMULA 5",
+    "description": "2 sashimi salmon4 ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 14.5,
+    "allergens": [
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "139",
+      "el 139",
+      "numero 139",
+      "formula 5"
+    ]
+  },
+  {
+    "reference": "140",
+    "category": "MENU DIA",
+    "name": "FORMULA 6",
+    "description": "2 Rollito gambas4 ...",
+    "ingredients": [],
+    "pieces": null,
+    "price": 14.5,
+    "allergens": [
+      "Gluten",
+      "Pescado",
+      "Frutos de cáscara"
+    ],
+    "aliases": [
+      "140",
+      "el 140",
+      "numero 140",
+      "formula 6"
+    ]
+  },
+  {
+    "reference": null,
+    "category": "VINO",
+    "name": "Vino tinto la rioja",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": "Consultar",
+    "allergens": [],
+    "aliases": [
+      "vino tinto la rioja"
+    ]
+  },
+  {
+    "reference": null,
+    "category": "VINO",
+    "name": "Vino tinto ribera del duero",
+    "description": "",
+    "ingredients": [],
+    "pieces": null,
+    "price": "Consultar",
+    "allergens": [],
+    "aliases": [
+      "vino tinto ribera del duero"
+    ]
+  }
+]

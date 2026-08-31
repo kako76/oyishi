@@ -70,7 +70,8 @@ export const CartaPage: React.FC = () => {
   const filteredMenu = menuData.filter(item => {
     const matchesCategory = activeCategory === 'Todos' || item.category === activeCategory;
     const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          (item.description && item.description.toLowerCase().includes(searchQuery.toLowerCase()));
+                          (item.description && item.description.toLowerCase().includes(searchQuery.toLowerCase())) ||
+                          (item.reference && item.reference.toLowerCase().includes(searchQuery.toLowerCase()));
 
     let matchesQuickFilter = true;
     if (quickFilter === 'destacado') {
@@ -295,8 +296,8 @@ export const CartaPage: React.FC = () => {
                     <div className="p-5 flex-1 flex flex-col justify-between">
                       <div>
                         <div className="flex justify-between items-start mb-2 gap-3">
-                          <h3 className="font-display text-lg text-oyishi-text group-hover:text-oyishi-gold transition-colors leading-snug">
-                            {item.name}
+                          <h3 className="font-display text-lg text-oyishi-text group-hover:text-oyishi-gold transition-colors leading-snug select-all">
+                            {item.reference ? `${item.reference}. ` : ''}{item.name}
                           </h3>
                           <span className="font-mono text-base font-semibold text-oyishi-gold whitespace-nowrap">
                             {item.price.toFixed(2)} €
