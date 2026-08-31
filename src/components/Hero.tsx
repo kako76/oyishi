@@ -39,12 +39,13 @@ export const Hero: React.FC = () => {
   const yScroll = useTransform(scrollY, [0, 500], [0, 70]);
   const opacityScroll = useTransform(scrollY, [0, 400], [1, 0]);
   const textYScroll = useTransform(scrollY, [0, 400], [0, -50]);
-  const videoYScroll = useTransform(scrollY, [0, 400], [0, 45]);
+  const videoYScroll = useTransform(scrollY, [0, 400], [0, 80]);
 
   // Scroll animations specific to OYISHI text
-  const oyishiColorScroll = useTransform(scrollY, [0, 300], ['#F6F1E8', '#D8B36A']);
-  const oyishiXScroll = useTransform(scrollY, [0, 500], [0, -40]);
-  const oyishiScaleScroll = useTransform(scrollY, [0, 500], [1, 0.96]);
+  const oyishiColorScroll = useTransform(scrollY, [0, 250, 500], ['#F6F1E8', '#E8C982', '#D8B36A']);
+  const oyishiXScroll = useTransform(scrollY, [0, 500], [0, -60]);
+  const oyishiScaleScroll = useTransform(scrollY, [0, 500], [1, 0.94]);
+  const oyishiOpacityScroll = useTransform(scrollY, [0, 500], [1, 0.90]);
 
   // Disable scroll parallax when reduced motion is preferred
   const y = isReduced ? 0 : yScroll;
@@ -54,6 +55,7 @@ export const Hero: React.FC = () => {
   const textColor = isReduced ? '#F6F1E8' : oyishiColorScroll;
   const oyishiX = isReduced ? 0 : oyishiXScroll;
   const oyishiScale = isReduced ? 1 : oyishiScaleScroll;
+  const oyishiOpacity = isReduced ? 1 : oyishiOpacityScroll;
 
   const word = "OYISHI";
 
@@ -106,7 +108,7 @@ export const Hero: React.FC = () => {
               variants={containerVariant}
               initial="hidden"
               animate="visible"
-              style={{ x: oyishiX, scale: oyishiScale }}
+              style={{ x: oyishiX, scale: oyishiScale, opacity: oyishiOpacity }}
               className="relative -ml-1 md:-ml-2 overflow-visible origin-left"
             >
               <h1 className="text-[clamp(4.5rem,10.5vw,12.5rem)] leading-[0.8] font-serif flex overflow-visible drop-shadow-[0_15px_35px_rgba(0,0,0,0.5)] tracking-[-0.03em]">

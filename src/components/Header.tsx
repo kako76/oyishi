@@ -37,9 +37,9 @@ export const Header: React.FC = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between w-full relative">
+        <div className="flex items-center justify-between w-full">
           {/* Logo (Left) */}
-          <div className="flex items-center flex-shrink-0">
+          <div className="flex flex-1 justify-start min-w-0">
             <a href="/" className="group flex items-center gap-3 focus-ring rounded-sm p-1">
               <div className="w-9 h-9 rounded-sm border border-oyishi-gold/40 bg-oyishi-gold/10 text-oyishi-gold flex items-center justify-center font-display text-lg font-bold shadow-[0_0_12px_rgba(216,179,106,0.2)] group-hover:scale-105 transition-transform duration-300">
                 和
@@ -48,7 +48,7 @@ export const Header: React.FC = () => {
                 <h1 className="font-display text-2xl font-bold tracking-[0.25em] text-oyishi-text group-hover:text-oyishi-gold transition-colors leading-none">
                   OYISHI
                 </h1>
-                <span className="text-[9px] font-sans tracking-[0.25em] text-oyishi-textSec uppercase mt-1">
+                <span className="text-[9px] font-sans tracking-[0.25em] text-oyishi-textSec uppercase mt-1 whitespace-nowrap">
                   Gastronomía Japonesa
                 </span>
               </div>
@@ -56,13 +56,15 @@ export const Header: React.FC = () => {
           </div>
 
           {/* Status Indicator (Center) */}
-          <div className="hidden xl:flex absolute left-1/2 -translate-x-1/2 items-center gap-2 px-4 py-1.5 rounded-sm bg-oyishi-card/60 border border-oyishi-border/80 text-[11px] font-sans backdrop-blur-sm shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/90 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
-            <span className="text-oyishi-textSec tracking-wide">Abierto · {restaurantInfo.schedule.replace('De Lunes a Domingo: ', '')}</span>
+          <div className="hidden xl:flex flex-shrink-0 justify-center px-4">
+            <div className="flex items-center gap-2 px-4 py-1.5 rounded-sm bg-oyishi-card/60 border border-oyishi-border/80 text-[11px] font-sans backdrop-blur-sm shadow-sm whitespace-nowrap">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/90 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
+              <span className="text-oyishi-textSec tracking-wide">Abierto · {restaurantInfo.schedule.replace('De Lunes a Domingo: ', '')}</span>
+            </div>
           </div>
 
           {/* Nav & Actions (Right) */}
-          <div className="flex items-center gap-6 lg:gap-8 justify-end flex-grow ml-4">
+          <div className="flex flex-1 justify-end items-center gap-4 lg:gap-6 min-w-0">
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => (
