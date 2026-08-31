@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { menuData, categories } from '../data/oyishi';
-import { Plus } from 'lucide-react';
+import { Plus, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useCart } from '../hooks/useCart';
 import { motion, AnimatePresence } from 'framer-motion';
 import { isValidFoodImage } from '../utils/imageUtils';
@@ -9,14 +9,52 @@ export const InteractiveMenu: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('Todos');
   const [searchQuery, setSearchQuery] = useState('');
   const { addToCart } = useCart();
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+
+  const updateScrollState = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 2);
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 2);
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    updateScrollState();
+    el.addEventListener('scroll', updateScrollState, { passive: true });
+    const ro = new ResizeObserver(updateScrollState);
+    ro.observe(el);
+    return () => {
+      el.removeEventListener('scroll', updateScrollState);
+      ro.disconnect();
+    };
+  }, [updateScrollState]);
+
+  const scroll = (direction: 'left' | 'right') => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.scrollBy({ left: direction === 'right' ? 200 : -200, behavior: 'smooth' });
+  };
 
   const allCategories = ['Todos', ...categories];
 
   const filteredMenu = menuData.filter(item => {
     const matchesCategory = activeCategory === 'Todos' || item.category === activeCategory;
-    const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          (item.description && item.description.toLowerCase().includes(searchQuery.toLowerCase()));
-    return matchesCategory && matchesSearch;
+    
+    if (!searchQuery.trim()) return matchesCategory;
+
+    const searchLower = searchQuery.trim().toLowerCase();
+    
+    // Exact match for reference to avoid 41 matching 41A
+    const matchesReference = item.reference && item.reference.toLowerCase() === searchLower;
+    
+    const matchesText = item.name.toLowerCase().includes(searchLower) ||
+                        (item.description && item.description.toLowerCase().includes(searchLower));
+                        
+    return matchesCategory && (matchesReference || matchesText);
   });
 
   return (
@@ -43,20 +81,67 @@ export const InteractiveMenu: React.FC = () => {
         </div>
 
         {/* Filters */}
-        <div className="flex overflow-x-auto pb-4 mb-12 scrollbar-hide gap-4 justify-start md:justify-center">
-          {allCategories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`whitespace-nowrap px-6 py-2.5 min-h-[44px] inline-flex items-center justify-center rounded-full font-mono text-sm transition-all duration-300 focus-ring ${
-                activeCategory === cat
-                ? 'bg-oyishi-gold text-oyishi-bg shadow-[0_0_15px_rgba(201,162,39,0.4)] font-semibold'
-                : 'bg-oyishi-bgSec text-oyishi-textSec hover:text-oyishi-text hover:bg-[#2D2D36]'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+        <div className="relative mb-12">
+          {/* Left arrow */}
+          <button
+            aria-label="Desplazar categorías a la izquierda"
+            onClick={() => scroll('left')}
+            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-9 h-9 rounded-full bg-oyishi-bgSec border border-[#2D2D36] text-oyishi-textSec hover:text-oyishi-gold hover:border-oyishi-gold transition-all duration-300 shadow-lg ${
+              canScrollLeft ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+            }`}
+          >
+            <ChevronLeft size={18} />
+          </button>
+
+          {/* Left gradient fade */}
+          <div
+            className="absolute left-0 top-0 bottom-4 w-14 z-[5] pointer-events-none transition-opacity duration-300"
+            style={{
+              background: 'linear-gradient(to right, var(--color-oyishi-bg, #0F0E0C) 0%, transparent 100%)',
+              opacity: canScrollLeft ? 1 : 0,
+            }}
+          />
+
+          {/* Scrollable list */}
+          <div
+            ref={scrollRef}
+            className="flex overflow-x-auto pb-4 scrollbar-hide gap-4 px-10"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {allCategories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`whitespace-nowrap px-6 py-2.5 min-h-[44px] inline-flex items-center justify-center rounded-full font-mono text-sm transition-all duration-300 focus-ring ${
+                  activeCategory === cat
+                  ? 'bg-oyishi-gold text-oyishi-bg shadow-[0_0_15px_rgba(201,162,39,0.4)] font-semibold'
+                  : 'bg-oyishi-bgSec text-oyishi-textSec hover:text-oyishi-text hover:bg-[#2D2D36]'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          {/* Right gradient fade */}
+          <div
+            className="absolute right-0 top-0 bottom-4 w-14 z-[5] pointer-events-none transition-opacity duration-300"
+            style={{
+              background: 'linear-gradient(to left, var(--color-oyishi-bg, #0F0E0C) 0%, transparent 100%)',
+              opacity: canScrollRight ? 1 : 0,
+            }}
+          />
+
+          {/* Right arrow */}
+          <button
+            aria-label="Desplazar categorías a la derecha"
+            onClick={() => scroll('right')}
+            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-9 h-9 rounded-full bg-oyishi-bgSec border border-[#2D2D36] text-oyishi-textSec hover:text-oyishi-gold hover:border-oyishi-gold transition-all duration-300 shadow-lg ${
+              canScrollRight ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+            }`}
+          >
+            <ChevronRight size={18} />
+          </button>
         </div>
 
         {/* Grid */}
@@ -100,7 +185,8 @@ export const InteractiveMenu: React.FC = () => {
                   <div className="p-5 flex-1 flex flex-col">
 
                     <div className="flex justify-between items-start mb-2 gap-4">
-                      <h4 className="font-display text-lg text-oyishi-text group-hover:text-oyishi-gold transition-colors">
+                      <h4 className="font-display text-lg text-oyishi-text group-hover:text-oyishi-gold transition-colors select-all">
+                        {item.reference && <span className="text-oyishi-gold font-bold">{item.reference}. </span>}
                         {item.name}
                       </h4>
                       <span className="font-mono text-lg text-oyishi-gold whitespace-nowrap">
