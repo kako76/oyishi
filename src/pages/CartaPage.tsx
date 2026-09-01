@@ -28,11 +28,17 @@ function formatCategoryTitle(cat: string): string {
     'BEBIDAS': 'Bebidas & Sakes',
     'EXCLUSIVOS TARTAS': 'Tartar Especiales',
   };
-  if (map[cat.toUpperCase()]) return map[cat.toUpperCase()];
-  if (cat === cat.toUpperCase()) {
-    return cat.charAt(0) + cat.slice(1).toLowerCase();
+  let formatted = cat;
+  if (map[cat.toUpperCase()]) {
+    formatted = map[cat.toUpperCase()];
+  } else if (cat === cat.toUpperCase()) {
+    formatted = cat.charAt(0) + cat.slice(1).toLowerCase();
   }
-  return cat;
+  
+  // Fix missing spaces before parentheses and format pieces
+  return formatted
+    .replace(/([^\s])\(/g, '$1 (')
+    .replace(/(\d+)\s*(piezas|pieza)/gi, '$1 piezas');
 }
 
 export const CartaPage: React.FC = () => {
@@ -97,7 +103,7 @@ export const CartaPage: React.FC = () => {
   };
 
   return (
-    <main className="pt-24 bg-oyishi-bg min-h-screen text-oyishi-text relative overflow-hidden">
+    <main className="pt-24 bg-oyishi-bg min-h-screen text-oyishi-text relative overflow-hidden pb-24 md:pb-0">
       <WashiOverlay />
       <KanjiWatermark char="味" className="absolute right-10 top-24 text-9xl font-display text-white/[0.02] select-none pointer-events-none font-bold hidden md:block" />
       {/* Header & Filter Bar */}

@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.7, ease: LUXE_EASE }}
-      className="bg-oyishi-bg border-t border-oyishi-border/60 pt-20 pb-12"
+      className="bg-oyishi-bg border-t border-oyishi-border/60 pt-20 pb-24 md:pb-12"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
@@ -47,7 +47,7 @@ export const Footer: React.FC = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-xs font-sans text-oyishi-gold tracking-[0.25em] uppercase font-medium mb-6">Contacto Directo</h4>
+            <h4 className="text-[10px] md:text-xs font-sans text-oyishi-gold tracking-widest md:tracking-[0.25em] uppercase font-medium mb-6">Contacto Directo</h4>
             <ul className="space-y-3 text-sm text-oyishi-textSec font-light">
               <li className="flex items-start gap-3 group">
                 <MapPin size={18} className="mt-1 text-oyishi-gold shrink-0" />
@@ -77,7 +77,7 @@ export const Footer: React.FC = () => {
 
           {/* Horario */}
           <div>
-            <h4 className="text-xs font-sans text-oyishi-gold tracking-[0.25em] uppercase font-medium mb-6">Horario de Apertura</h4>
+            <h4 className="text-[10px] md:text-xs font-sans text-oyishi-gold tracking-widest md:tracking-[0.25em] uppercase font-medium mb-6">Horario de Apertura</h4>
             <ul className="space-y-3 text-sm text-oyishi-textSec font-light">
               <li className="flex items-start gap-3">
                 <Clock size={18} className="mt-1 text-oyishi-gold shrink-0" />
@@ -92,7 +92,7 @@ export const Footer: React.FC = () => {
 
           {/* Reservas */}
           <div>
-            <h4 className="text-xs font-sans text-oyishi-gold tracking-[0.25em] uppercase font-medium mb-6">Reservas</h4>
+            <h4 className="text-[10px] md:text-xs font-sans text-oyishi-gold tracking-widest md:tracking-[0.25em] uppercase font-medium mb-6">Reservas</h4>
             <div className="space-y-4 text-xs text-oyishi-textSec">
               <p className="font-sans font-light text-xs leading-relaxed">Atención telefónica directa para consultar disponibilidad y confirmar tu mesa.</p>
               <a

@@ -17,7 +17,7 @@ export const ReservasPage: React.FC = () => {
   });
 
   return (
-    <main className="pt-24 bg-oyishi-bg min-h-screen text-oyishi-text">
+    <main className="pt-24 bg-oyishi-bg min-h-screen text-oyishi-text pb-24 md:pb-0">
 
       {/* HEADER SECTION */}
       <section className="py-16 md:py-20 bg-oyishi-bgSec/40 border-b border-oyishi-border/60 relative overflow-hidden text-center">

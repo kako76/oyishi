@@ -104,12 +104,12 @@ export const FeaturedProductsSection: React.FC = () => {
                     </div>
                   )}
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F0B09] via-[#0F0B09]/40 to-transparent pointer-events-none group-hover:from-[#0F0B09]/90 transition-colors duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent pointer-events-none group-hover:from-black transition-colors duration-500"></div>
 
                   <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between z-10">
                     <div className="transform group-hover:-translate-y-1 transition-transform duration-300">
                       <span className="text-[10px] font-sans font-medium text-oyishi-gold/80 tracking-widest uppercase block mb-1">Familia</span>
-                      <span className="font-sans text-base md:text-lg tracking-wider text-oyishi-text uppercase font-semibold group-hover:text-oyishi-gold transition-colors">
+                      <span className="font-sans text-base md:text-lg tracking-wider text-oyishi-text uppercase font-semibold group-hover:text-oyishi-gold transition-colors drop-shadow-md">
                         {cat}
                       </span>
                     </div>

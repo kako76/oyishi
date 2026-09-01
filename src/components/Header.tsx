@@ -146,6 +146,14 @@ export const Header: React.FC = () => {
                   {link.name}
                 </a>
               ))}
+              
+              <a
+                href="tel:+34916902832"
+                className="mt-4 bg-[#1A1513] border border-oyishi-gold/30 text-oyishi-gold font-sans font-bold text-xs tracking-widest uppercase rounded-sm flex items-center justify-center gap-3 py-4 hover:border-oyishi-gold hover:text-[#1A1513] hover:bg-oyishi-gold transition-colors shadow-md"
+              >
+                <PhoneCall size={16} />
+                <span>Llamar al 916 90 28 32</span>
+              </a>
             </nav>
           </motion.div>
         )}
