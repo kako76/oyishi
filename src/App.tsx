@@ -19,6 +19,17 @@ const CookiesPage = lazy(() => import('./pages/CookiesPage').then(module => ({ d
 const AdminOrdersPage = lazy(() => import('./pages/AdminOrdersPage').then(module => ({ default: module.AdminOrdersPage })));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then(module => ({ default: module.NotFoundPage })));
 
+// Nuevos componentes CMS inyectados de forma segura
+const AdminDashboardPage = lazy(() => import('./pages/AdminDashboardPage').then(module => ({ default: module.AdminDashboardPage })));
+const AdminContentPage = lazy(() => import('./pages/AdminContentPage').then(module => ({ default: module.AdminContentPage })));
+const AdminSchedulesPage = lazy(() => import('./pages/AdminSchedulesPage').then(module => ({ default: module.AdminSchedulesPage })));
+const AdminReservationsPage = lazy(() => import('./pages/AdminReservationsPage').then(module => ({ default: module.AdminReservationsPage })));
+const AdminWebPage = lazy(() => import('./pages/AdminWebPage').then(module => ({ default: module.AdminWebPage })));
+const AdminRestaurantPage = lazy(() => import('./pages/AdminRestaurantPage').then(module => ({ default: module.AdminRestaurantPage })));
+const AdminAndreaPage = lazy(() => import('./pages/AdminAndreaPage').then(module => ({ default: module.AdminAndreaPage })));
+const AdminSettingsPage = lazy(() => import('./pages/AdminSettingsPage').then(module => ({ default: module.AdminSettingsPage })));
+import { AdminLayout } from './components/admin/AdminLayout';
+
 function PageContainer({ children, pageKey }: { children: React.ReactNode; pageKey: string }) {
   const isReduced = useIsReducedMotion();
 
@@ -108,6 +119,21 @@ function App() {
   }, []);
 
   const renderCurrentPage = () => {
+    if (currentPath.startsWith('/admin') && currentPath !== '/admin/pedidos') {
+      return (
+        <AdminLayout currentPath={currentPath} onNavigate={navigateTo}>
+          {currentPath === '/admin' && <AdminDashboardPage />}
+          {currentPath === '/admin/carta' && <AdminContentPage />}
+          {currentPath === '/admin/horarios' && <AdminSchedulesPage />}
+          {currentPath === '/admin/reservas' && <AdminReservationsPage />}
+          {currentPath === '/admin/web' && <AdminWebPage />}
+          {currentPath === '/admin/restaurante' && <AdminRestaurantPage />}
+          {currentPath === '/admin/andrea' && <AdminAndreaPage />}
+          {currentPath === '/admin/configuracion' && <AdminSettingsPage />}
+        </AdminLayout>
+      );
+    }
+
     switch (currentPath) {
       case '/pedidos':
       case '/carta':
