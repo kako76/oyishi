@@ -1,4 +1,4 @@
-import oyishiData from '../../../src/data/oyishi/products.json';
+import oyishiData from '../../src/data/oyishi/products.json';
 
 interface Env {
   DB: D1Database;
