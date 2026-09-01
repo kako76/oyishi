@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, Menu, X, PhoneCall } from 'lucide-react';
+import { ShoppingBag, Menu, X, PhoneCall, Clock } from 'lucide-react';
 import { useCart } from '../hooks/useCart';
 import { motion, AnimatePresence } from 'framer-motion';
 import { restaurantInfo } from '../data/oyishi/restaurant';
@@ -24,42 +24,49 @@ export const Header: React.FC = () => {
     { name: 'Carta', href: '/carta' },
     { name: 'Quiénes Somos', href: '/quienes-somos' },
     { name: 'Reservas', href: '/reservas' },
-    { name: 'Puntos', href: restaurantInfo.pointsUrl },
     { name: 'Contacto', href: '/contacto' },
   ];
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+      className={`fixed top-0 w-full z-50 flex flex-col transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
         isScrolled
-          ? 'bg-[#140F0C]/90 backdrop-blur-md border-b border-oyishi-border/80 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.85)]'
-          : 'bg-gradient-to-b from-[#120E0C]/95 via-[#120E0C]/60 to-transparent py-4'
+          ? 'bg-[#140F0C]/90 backdrop-blur-md border-b border-oyishi-border/80 shadow-[0_10px_30px_rgba(0,0,0,0.85)]'
+          : 'bg-gradient-to-b from-[#120E0C]/95 via-[#120E0C]/60 to-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <div className="flex items-center gap-4">
-            <a href="/" className="group flex items-center gap-3 focus-ring rounded-sm p-1">
-              <div className="w-9 h-9 rounded-sm border border-oyishi-gold/40 bg-oyishi-gold/10 text-oyishi-gold flex items-center justify-center font-display text-lg font-bold shadow-[0_0_12px_rgba(216,179,106,0.2)] group-hover:scale-105 transition-transform duration-300">
-                和
-              </div>
-              <div className="flex flex-col">
-                <h1 className="font-display text-2xl font-bold tracking-[0.25em] text-oyishi-text group-hover:text-oyishi-gold transition-colors leading-none">
-                  OYISHI
-                </h1>
-                <span className="text-[9px] font-sans tracking-[0.25em] text-oyishi-textSec uppercase mt-1">
-                  Gastronomía Japonesa
-                </span>
-              </div>
-            </a>
-
-            {/* Status Indicator */}
-            <div className="hidden lg:flex items-center gap-2 ml-4 px-3 py-1 rounded-sm bg-oyishi-card/60 border border-oyishi-border/80 text-[11px] font-sans backdrop-blur-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/90"></span>
-              <span className="text-oyishi-textSec">Abierto · {restaurantInfo.schedule.replace('De Lunes a Domingo: ', '')}</span>
-            </div>
+      {/* Top Bar - Schedule */}
+      <div className="w-full bg-[#0a0806]/80 backdrop-blur-md border-b border-oyishi-border/20 py-1.5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center items-center text-[10px] sm:text-[11px] font-sans text-oyishi-textSec tracking-[0.15em] uppercase">
+            <Clock size={12} className="mr-2 text-oyishi-gold/80" />
+            <span className="truncate">{restaurantInfo.schedule.replace('De Lunes a Domingo: ', '')}</span>
+            <span className="mx-2 sm:mx-3 text-oyishi-border/60">•</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/90 mr-1.5 shrink-0"></span>
+            <span className="text-emerald-500/90 font-medium tracking-wider shrink-0">Abierto</span>
           </div>
+        </div>
+      </div>
+
+      <div className={`w-full transition-all duration-500 ${isScrolled ? 'py-3' : 'py-4'}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center">
+            {/* Logo */}
+            <div className="flex items-center gap-4">
+              <a href="/" className="group flex items-center gap-3 focus-ring rounded-sm p-1">
+                <div className="w-9 h-9 rounded-sm border border-oyishi-gold/40 bg-oyishi-gold/10 text-oyishi-gold flex items-center justify-center font-display text-lg font-bold shadow-[0_0_12px_rgba(216,179,106,0.2)] group-hover:scale-105 transition-transform duration-300">
+                  和
+                </div>
+                <div className="flex flex-col">
+                  <h1 className="font-display text-2xl font-bold tracking-[0.25em] text-oyishi-text group-hover:text-oyishi-gold transition-colors leading-none">
+                    OYISHI
+                  </h1>
+                  <span className="text-[9px] font-sans tracking-[0.25em] text-oyishi-textSec uppercase mt-1">
+                    Gastronomía Japonesa
+                  </span>
+                </div>
+              </a>
+            </div>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
@@ -116,6 +123,7 @@ export const Header: React.FC = () => {
           </div>
         </div>
       </div>
+      </div>
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -138,10 +146,6 @@ export const Header: React.FC = () => {
                   {link.name}
                 </a>
               ))}
-              <div className="flex items-center gap-3 mt-4 text-xs font-sans text-oyishi-textSec">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/90"></span>
-                <span>Horario: {restaurantInfo.schedule.replace('De Lunes a Domingo: ', '')}</span>
-              </div>
             </nav>
           </motion.div>
         )}

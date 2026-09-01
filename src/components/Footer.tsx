@@ -40,8 +40,6 @@ export const Footer: React.FC = () => {
               <span>·</span>
               <a href="/reservas" className="hover:text-oyishi-gold transition-colors focus-ring">Reservas</a>
               <span>·</span>
-              <a href={restaurantInfo.pointsUrl} className="hover:text-oyishi-text transition-colors focus-ring">Puntos</a>
-              <span>·</span>
               <a href="/contacto" className="hover:text-oyishi-text transition-colors focus-ring">Contacto</a>
             </div>
 
