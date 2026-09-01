@@ -13,7 +13,7 @@ function hexToUint8Array(hex: string): Uint8Array {
   return bytes;
 }
 
-function extractOrderFromRetellPayload(payload: any) {
+function extractOrderFromRetellPayload(payload: any, catalog: any[]) {
   // Buscamos los datos de forma robusta en el payload de Retell
   const callData = payload.data || payload.call || payload;
   const analysisData = callData.call_analysis || payload.call_analysis || {};
@@ -117,15 +117,15 @@ function extractOrderFromRetellPayload(payload: any) {
     
     // Buscar candidatos por referencia, nombre estricto y alias
     const candByRef = (rawRef && rawRef !== 'UNDEFINED' && rawRef !== 'NULL') 
-      ? oyishiData.products.find(p => p.reference && String(p.reference).toUpperCase() === rawRef) 
+      ? catalog.find((p: any) => p.reference && String(p.reference).toUpperCase() === rawRef) 
       : null;
       
-    const candByName = oyishiData.products.find(p => p.name.toLowerCase() === nameLower);
+    const candByName = catalog.find((p: any) => p.name.toLowerCase() === nameLower);
     
     let candByAlias = null;
     const bevMatch = findBeverageOfficialName(rawName);
     if (bevMatch) {
-      candByAlias = oyishiData.products.find(p => p.name.toLowerCase() === bevMatch.toLowerCase());
+      candByAlias = catalog.find((p: any) => p.name.toLowerCase() === bevMatch.toLowerCase());
     }
 
     const isIncompatible = (rawN: string, product: any) => {
@@ -367,6 +367,24 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 };
 
 async function processWebhook(request: Request, env: Env, rawBody: string, log: Function) {
+  let context_catalog = oyishiData.products;
+  try {
+    if (env.DB) {
+      const { results } = await env.DB.prepare('SELECT * FROM products').all();
+      if (results && results.length > 0) {
+        context_catalog = results.map(p => ({
+          ...p,
+          allergens: typeof p.allergens === 'string' ? JSON.parse(p.allergens) : [],
+          verified: Boolean(p.verified),
+          active: Boolean(p.active),
+        }));
+        log('[OYISHI] Catálogo cargado desde D1. Total productos: ' + context_catalog.length);
+      }
+    }
+  } catch(e: any) {
+    log('[OYISHI] Error leyendo catálogo D1, usando fallback JSON.', e?.message);
+  }
+
   // ── 1. Variables de entorno ──────────────────────────────────────────────
   const expectedSecret = env.RETELL_WEBHOOK_SECRET;
   if (!expectedSecret) {
@@ -495,8 +513,181 @@ async function processWebhook(request: Request, env: Env, rawBody: string, log: 
     );
   }
 
-  // ── 5.5. Interceptar Tool Call (calcular_pedido) ──────────────────────────
-  if (payload.name === 'calcular_pedido' || payload.type === 'tool_call' || (payload.args && payload.tool_call_id)) {
+  // ── 5.5. Interceptar Tool Calls ──────────────────────────
+  if (payload.type === 'tool_call' || payload.name === 'calcular_pedido' || payload.name === 'check_availability' || payload.name === 'confirm_reservation' || (payload.args && payload.tool_call_id)) {
+    const toolName = payload.name || (payload.args?.agent_call_id ? 'confirm_reservation' : (payload.args?.date ? 'check_availability' : 'calcular_pedido'));
+
+    if (toolName === 'check_availability') {
+      log('--- TOOL CALL INTERCEPTADO: check_availability ---');
+      const args = payload.args || {};
+      const reqDate = args.date;
+      const reqTime = args.time;
+      const partySize = Number(args.party_size) || 2;
+
+      if (!env.DB) {
+        return new Response(JSON.stringify({ available: false, reason: "UNAVAILABLE", mensaje_para_agente: "No puedes confirmar esta reserva. No hay disponibilidad para esa hora o el aforo está completo." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+
+      if (!reqDate || !reqTime || !/^\d{4}-\d{2}-\d{2}$/.test(reqDate) || !/^\d{2}:\d{2}$/.test(reqTime)) {
+        return new Response(JSON.stringify({ available: false, date: reqDate, time: reqTime, reason: "UNAVAILABLE", mensaje_para_agente: "No puedes confirmar esta reserva. Fecha u hora no válidas." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+
+      try {
+        const dateObj = new Date(reqDate);
+        const jsDay = dateObj.getDay();
+        const dbDay = jsDay === 0 ? 7 : jsDay;
+
+        const { results: scheduleResults } = await env.DB.prepare('SELECT * FROM schedules WHERE day_id = ?').bind(dbDay).all();
+        
+        if (!scheduleResults || scheduleResults.length === 0) {
+          return new Response(JSON.stringify({ available: false, date: reqDate, time: reqTime, reason: "CLOSED", mensaje_para_agente: "No puedes confirmar esta reserva. El restaurante está cerrado ese día." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+        }
+
+        const schedule: any = scheduleResults[0];
+        if (schedule.is_closed) {
+          return new Response(JSON.stringify({ available: false, date: reqDate, time: reqTime, reason: "CLOSED", mensaje_para_agente: "No puedes confirmar esta reserva. El restaurante está cerrado ese día." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+        }
+
+        const reqMins = (() => {
+          const [h, m] = reqTime.split(':').map(Number);
+          return h * 60 + (m || 0);
+        })();
+
+        const checkRange = (open: string, close: string) => {
+          if (!open || !close) return false;
+          const [oH, oM] = open.split(':').map(Number);
+          const [cH, cM] = close.split(':').map(Number);
+          return reqMins >= (oH * 60 + oM) && reqMins <= (cH * 60 + cM - 45);
+        };
+
+        if (!checkRange(schedule.open_time_1, schedule.close_time_1) && !checkRange(schedule.open_time_2, schedule.close_time_2)) {
+          return new Response(JSON.stringify({ available: false, date: reqDate, time: reqTime, reason: "OUT_OF_HOURS", mensaje_para_agente: "No puedes confirmar esta reserva. El horario solicitado está fuera del horario de servicio." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+        }
+
+        const MAX_PEOPLE_PER_SLOT = 40;
+        const { results: resResults } = await env.DB.prepare(
+          'SELECT SUM(party_size) as total FROM reservations WHERE date = ? AND time = ? AND status != ?'
+        ).bind(reqDate, reqTime, 'CANCELADA').all();
+        
+        const currentTotal = Number(resResults?.[0]?.total || 0);
+        
+        if (currentTotal + partySize > MAX_PEOPLE_PER_SLOT) {
+          return new Response(JSON.stringify({ available: false, date: reqDate, time: reqTime, reason: "UNAVAILABLE", mensaje_para_agente: "No puedes confirmar esta reserva. No hay disponibilidad para esa hora o el aforo está completo." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+        }
+
+        return new Response(JSON.stringify({ available: true, date: reqDate, time: reqTime, party_size: partySize, mensaje_para_agente: "Hay disponibilidad. Puedes confirmar la reserva al cliente." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+
+      } catch (e: any) {
+        log('❌ Error DB check_availability:', e.message);
+        return new Response(JSON.stringify({ available: false, date: reqDate, time: reqTime, reason: "UNAVAILABLE", mensaje_para_agente: "No puedes confirmar esta reserva. No hay disponibilidad para esa hora o el aforo está completo." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+    }
+
+    if (toolName === 'confirm_reservation') {
+      log('--- TOOL CALL INTERCEPTADO: confirm_reservation ---');
+      const args = payload.args || {};
+      const reqDate = args.date;
+      const reqTime = args.time;
+      const partySize = Number(args.party_size) || 2;
+      const customerName = args.customer_name || payload.customer_name || 'Desconocido';
+      const phone = args.phone || payload.phone || payload.from_number || 'Desconocido';
+      const callData = payload.data || payload.call || payload;
+      const call_id = callData.call_id || payload.call_id;
+      const agentCallId = String(args.agent_call_id || call_id || '');
+
+      if (!agentCallId) {
+        return new Response(JSON.stringify({ confirmed: false, reservation_confirmed: false, reason: "Se requiere agent_call_id para procesar la reserva." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+
+      if (!env.DB) {
+        return new Response(JSON.stringify({ confirmed: false, reservation_confirmed: false, reason: "Error interno del servidor (BD)." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+
+      try {
+
+        if (!reqDate || !reqTime || !/^\d{4}-\d{2}-\d{2}$/.test(reqDate) || !/^\d{2}:\d{2}$/.test(reqTime)) {
+          return new Response(JSON.stringify({ confirmed: false, reservation_confirmed: false, reason: "Fecha u hora no válidas." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+        }
+
+        const dateObj = new Date(reqDate);
+        const jsDay = dateObj.getDay();
+        const dbDay = jsDay === 0 ? 7 : jsDay;
+
+        const { results: scheduleResults } = await env.DB.prepare('SELECT * FROM schedules WHERE day_id = ?').bind(dbDay).all();
+        
+        if (!scheduleResults || scheduleResults.length === 0 || (scheduleResults[0] as any).is_closed) {
+          return new Response(JSON.stringify({ confirmed: false, reservation_confirmed: false, reason: "El restaurante está cerrado ese día." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+        }
+
+        const schedule: any = scheduleResults[0];
+        const reqMins = (() => {
+          const [h, m] = reqTime.split(':').map(Number);
+          return h * 60 + (m || 0);
+        })();
+
+        const checkRange = (open: string, close: string) => {
+          if (!open || !close) return false;
+          const [oH, oM] = open.split(':').map(Number);
+          const [cH, cM] = close.split(':').map(Number);
+          return reqMins >= (oH * 60 + oM) && reqMins <= (cH * 60 + cM - 45);
+        };
+
+        if (!checkRange(schedule.open_time_1, schedule.close_time_1) && !checkRange(schedule.open_time_2, schedule.close_time_2)) {
+          return new Response(JSON.stringify({ confirmed: false, reservation_confirmed: false, reason: "El horario solicitado está fuera del horario de servicio." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+        }
+
+        const MAX_PEOPLE_PER_SLOT = 40;
+        const { results: resResults } = await env.DB.prepare(
+          'SELECT SUM(party_size) as total FROM reservations WHERE date = ? AND time = ? AND status != ?'
+        ).bind(reqDate, reqTime, 'CANCELADA').all();
+        
+        const currentTotal = Number(resResults?.[0]?.total || 0);
+        
+        if (currentTotal + partySize > MAX_PEOPLE_PER_SLOT) {
+          return new Response(JSON.stringify({ confirmed: false, reservation_confirmed: false, reason: "Lo siento, el aforo se ha completado hace unos instantes." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+        }
+
+        const resId = `res_${agentCallId}_${Date.now()}`;
+        const createdAt = new Date().toISOString();
+        
+        try {
+          await env.DB.prepare(
+            `INSERT INTO reservations (id, date, time, party_size, customer_name, phone, status, source, created_at, updated_at, agent_call_id)
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+          ).bind(
+            resId, reqDate, reqTime, partySize, customerName, phone, 'CONFIRMADA', 'RETELL', createdAt, createdAt, agentCallId
+          ).run();
+        } catch(insertErr: any) {
+          const errMsg = insertErr.message || '';
+          if (errMsg.includes('has no column named agent_call_id') || errMsg.includes('no such column')) {
+            log('[OYISHI] confirm_reservation: Falta migración agent_call_id. Abortando.');
+            return new Response(JSON.stringify({ confirmed: false, reservation_confirmed: false, reason: "DATABASE_NOT_READY" }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+          }
+          if (errMsg.includes('UNIQUE constraint failed') || errMsg.includes('UNIQUE constraint')) {
+            log('[OYISHI] confirm_reservation: Reserva duplicada interceptada por índice UNIQUE. Éxito.');
+            return new Response(JSON.stringify({ 
+              confirmed: true,
+              reservation_confirmed: true,
+              reservation_id: resId, 
+              message: "Reserva confirmada correctamente (reintento)." 
+            }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+          }
+          throw insertErr;
+        }
+
+        return new Response(JSON.stringify({ 
+          confirmed: true,
+          reservation_confirmed: true,
+          reservation_id: resId, 
+          message: "Reserva confirmada correctamente." 
+        }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+
+      } catch (e: any) {
+        log('❌ Error DB confirm_reservation:', e.message);
+        return new Response(JSON.stringify({ confirmed: false, reservation_confirmed: false, reason: "Error interno al guardar la reserva." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+    }
+
     log('--- TOOL CALL INTERCEPTADO: calcular_pedido ---');
     
     // Extraemos los items recibidos de los argumentos de la herramienta
@@ -505,7 +696,7 @@ async function processWebhook(request: Request, env: Env, rawBody: string, log: 
     // Reutilizamos la robusta lógica de normalización enviándole un payload falso
     const { normalizedItems } = extractOrderFromRetellPayload({
       args: { order_items: items }
-    });
+    }, context_catalog);
 
     let total = 0;
     const resultItems = normalizedItems.map(item => {
@@ -549,7 +740,7 @@ async function processWebhook(request: Request, env: Env, rawBody: string, log: 
   }
 
   // ── 7. Extraer datos del pedido ───────────────────────────────────────────
-  const { orderRecord, debug_info, normalizedItems } = extractOrderFromRetellPayload(payload);
+  const { orderRecord, debug_info, normalizedItems } = extractOrderFromRetellPayload(payload, context_catalog);
   log(`D) [OYISHI] order_items encontrados: ${debug_info.found_order_items ? 'SI' : 'NO'}`);
   log(`D) [OYISHI] total recalculado: ${orderRecord.total}`);
 

@@ -3,10 +3,18 @@ import { CalendarCheck, PhoneCall, ExternalLink } from 'lucide-react';
 import { restaurantInfo } from '../data/oyishi/restaurant';
 import { motion } from 'framer-motion';
 import { LUXE_EASE, useIsReducedMotion } from '../utils/motionVariants';
+import { useWebContent } from '../hooks/useWebContent';
 import { KanjiWatermark, WashiOverlay } from './JapaneseElements';
 
 export const ReservationForm: React.FC = () => {
   const isReduced = useIsReducedMotion();
+  const { config } = useWebContent();
+
+  const phone = config?.cta?.phone || restaurantInfo.phones[0];
+  const safePhone = phone.replace(/[^0-9+]/g, '');
+  const whatsapp = config?.cta?.whatsapp || '699 36 52 12';
+  const safeWhatsapp = whatsapp.replace(/[^0-9+]/g, '');
+  const btnText = config?.cta?.buttonText || "LLAMAR AHORA";
 
   return (
     <section id="reservas" className="py-24 bg-oyishi-bgSec relative overflow-hidden border-b border-oyishi-border/60">
@@ -41,7 +49,7 @@ export const ReservationForm: React.FC = () => {
             </a>
 
             <a
-              href={`https://wa.me/34699365212?text=${encodeURIComponent("Hola OYISHI, me gustaría reservar mesa...")}`}
+              href={`https://wa.me/34${safeWhatsapp}?text=${encodeURIComponent("Hola OYISHI, me gustaría reservar mesa...")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="focus-ring w-full sm:w-auto px-6 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-sans font-semibold text-xs tracking-wider uppercase rounded-sm transition-all hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-2 shadow-md min-h-[44px]"
@@ -50,11 +58,11 @@ export const ReservationForm: React.FC = () => {
             </a>
 
             <a
-              href={`tel:+34${restaurantInfo.phones[0].replace(/\s+/g, '')}`}
+              href={`tel:+34${safePhone}`}
               className="focus-ring w-full sm:w-auto px-6 py-4 border border-oyishi-border hover:border-oyishi-gold/60 hover:text-oyishi-gold text-oyishi-text flex items-center justify-center gap-2 font-sans font-semibold text-xs tracking-wider uppercase rounded-sm transition-all hover:-translate-y-0.5 active:scale-95 min-h-[44px]"
             >
               <PhoneCall size={15} className="text-oyishi-gold" />
-              <span>{restaurantInfo.phones[0]}</span>
+              <span>{btnText}</span>
             </a>
           </div>
 

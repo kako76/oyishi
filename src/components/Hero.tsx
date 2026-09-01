@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, CalendarCheck } from 'lucide-react';
 import { useIsReducedMotion } from '../utils/motionVariants';
@@ -32,6 +32,39 @@ const letterVisibleVariant: any = {
 
 export const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  
+  const [heroContent, setHeroContent] = useState({
+    title: "Japón, servido en Fuenlabrada.",
+    subtitle: "Sushi y cocina japonesa para disfrutar pieza a pieza.",
+    buttonMenuText: "VER CARTA",
+    buttonReserveText: "RESERVAR MESA",
+    buttonOrderText: "PEDIR PARA LLEVAR",
+    showButtonMenu: true,
+    showButtonReserve: true,
+    showButtonOrder: false // Default to false to preserve exact current visual if API fails
+  });
+
+  useEffect(() => {
+    fetch('/api/web-content')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.hero) {
+          setHeroContent({
+            title: data.hero.title || "Japón, servido en Fuenlabrada.",
+            subtitle: data.hero.subtitle || "Sushi y cocina japonesa para disfrutar pieza a pieza.",
+            buttonMenuText: data.hero.buttonMenuText || "VER CARTA",
+            buttonReserveText: data.hero.buttonReserveText || "RESERVAR MESA",
+            buttonOrderText: data.hero.buttonOrderText || "PEDIR PARA LLEVAR",
+            showButtonMenu: data.hero.showButtonMenu !== false,
+            showButtonReserve: data.hero.showButtonReserve !== false,
+            showButtonOrder: data.hero.showButtonOrder === true
+          });
+        }
+      })
+      .catch(err => {
+        console.error('Error fetching hero content, using fallback:', err);
+      });
+  }, []);
 
   const isReduced = useIsReducedMotion();
 
@@ -137,7 +170,7 @@ export const Hero: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 className="text-2xl md:text-3xl text-[#E8E4DF] font-serif italic tracking-wide"
               >
-                Japón, servido en Fuenlabrada.
+                {heroContent.title}
               </motion.h2>
 
               <motion.p
@@ -146,7 +179,7 @@ export const Hero: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
                 className="text-[#AFA79E] text-sm md:text-base font-light leading-relaxed max-w-[380px] drop-shadow-sm pt-2"
               >
-                Sushi y cocina japonesa para disfrutar pieza a pieza.
+                {heroContent.subtitle}
               </motion.p>
             </div>
 
@@ -155,25 +188,39 @@ export const Hero: React.FC = () => {
               initial={isReduced ? { opacity: 1 } : { opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5 mt-10"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center flex-wrap gap-4 sm:gap-4 mt-10"
             >
-              <a
-                href="/carta"
-                className="group btn-shimmer focus-ring relative px-8 py-[18px] bg-oyishi-coral text-white font-bold tracking-[0.2em] text-[11px] uppercase overflow-hidden rounded-sm transition-all duration-300 shadow-[0_4px_15px_rgba(232,93,78,0.25)] hover:shadow-[0_8px_35px_rgba(232,93,78,0.45)] hover:-translate-y-[2px] active:scale-95 text-center"
-              >
-                <span className="relative z-10 flex items-center justify-center gap-3">
-                  VER CARTA <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-              </a>
-              <a
-                href="/reservas"
-                className="group focus-ring px-8 py-[18px] border border-oyishi-gold/40 text-[#E8E4DF] font-bold tracking-[0.2em] text-[11px] uppercase transition-all duration-300 hover:bg-oyishi-gold hover:text-[#120E0C] hover:border-oyishi-gold hover:shadow-[0_4px_20px_rgba(216,179,106,0.3)] hover:-translate-y-[2px] active:scale-95 flex items-center justify-center gap-3 text-center bg-transparent backdrop-blur-sm rounded-sm"
-              >
-                <span className="relative z-10 flex items-center justify-center gap-3">
-                  <CalendarCheck size={14} className="text-oyishi-gold group-hover:text-[#120E0C] transition-colors" />
-                  RESERVAR MESA
-                </span>
-              </a>
+              {heroContent.showButtonMenu && (
+                <a
+                  href="/carta"
+                  className="group btn-shimmer focus-ring relative px-6 py-[16px] bg-oyishi-coral text-white font-bold tracking-[0.2em] text-[11px] uppercase overflow-hidden rounded-sm transition-all duration-300 shadow-[0_4px_15px_rgba(232,93,78,0.25)] hover:shadow-[0_8px_35px_rgba(232,93,78,0.45)] hover:-translate-y-[2px] active:scale-95 text-center"
+                >
+                  <span className="relative z-10 flex items-center justify-center gap-3">
+                    {heroContent.buttonMenuText} <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300" />
+                  </span>
+                </a>
+              )}
+              {heroContent.showButtonReserve && (
+                <a
+                  href="/reservas"
+                  className="group focus-ring px-6 py-[16px] border border-oyishi-gold/40 text-[#E8E4DF] font-bold tracking-[0.2em] text-[11px] uppercase transition-all duration-300 hover:bg-oyishi-gold hover:text-[#120E0C] hover:border-oyishi-gold hover:shadow-[0_4px_20px_rgba(216,179,106,0.3)] hover:-translate-y-[2px] active:scale-95 flex items-center justify-center gap-3 text-center bg-transparent backdrop-blur-sm rounded-sm"
+                >
+                  <span className="relative z-10 flex items-center justify-center gap-3">
+                    <CalendarCheck size={14} className="text-oyishi-gold group-hover:text-[#120E0C] transition-colors" />
+                    {heroContent.buttonReserveText}
+                  </span>
+                </a>
+              )}
+              {heroContent.showButtonOrder && (
+                <a
+                  href="/carta"
+                  className="group focus-ring px-6 py-[16px] border border-oyishi-border text-oyishi-textSec font-bold tracking-[0.2em] text-[11px] uppercase transition-all duration-300 hover:bg-white hover:text-black hover:border-white hover:shadow-[0_4px_20px_rgba(255,255,255,0.2)] hover:-translate-y-[2px] active:scale-95 flex items-center justify-center gap-3 text-center bg-transparent backdrop-blur-sm rounded-sm"
+                >
+                  <span className="relative z-10 flex items-center justify-center gap-3">
+                    {heroContent.buttonOrderText}
+                  </span>
+                </a>
+              )}
             </motion.div>
 
           </div>

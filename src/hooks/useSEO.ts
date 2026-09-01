@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useWebContent } from './useWebContent';
 
 interface SEOProps {
   title: string;
@@ -6,17 +7,23 @@ interface SEOProps {
   path?: string;
 }
 
-export function useSEO({ title, description, path }: SEOProps) {
+export function useSEO({ title: defaultTitle, description: defaultDescription, path }: SEOProps) {
+  const { config } = useWebContent();
+  
+  const title = (path === '/' || path === undefined) && config?.seo?.title ? config.seo.title : defaultTitle;
+  const description = (path === '/' || path === undefined) && config?.seo?.description ? config.seo.description : defaultDescription;
+  const ogTitle = (path === '/' || path === undefined) && config?.seo?.ogTitle ? config.seo.ogTitle : title;
+
   useEffect(() => {
     // 1. Update Title
     document.title = title;
 
     // 2. Update OG & Twitter Title
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute('content', title);
+    const ogTitleEl = document.querySelector('meta[property="og:title"]');
+    if (ogTitleEl) ogTitleEl.setAttribute('content', ogTitle);
 
     const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-    if (twitterTitle) twitterTitle.setAttribute('content', title);
+    if (twitterTitle) twitterTitle.setAttribute('content', ogTitle);
 
     // 3. Update Description
     if (description) {

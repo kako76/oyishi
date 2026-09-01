@@ -3,9 +3,32 @@ import { MapPin, Phone, Mail, Clock, CalendarCheck } from 'lucide-react';
 import { restaurantInfo } from '../data/oyishi/restaurant';
 import { motion } from 'framer-motion';
 import { LUXE_EASE, useIsReducedMotion } from '../utils/motionVariants';
+import { useWebContent } from '../hooks/useWebContent';
 
 export const Footer: React.FC = () => {
   const isReduced = useIsReducedMotion();
+  const { config } = useWebContent();
+  
+  const phone = config?.cta?.phone || restaurantInfo.phones[0];
+  const safePhone = phone.replace(/[^0-9+]/g, '');
+  
+  const instagram = config?.social?.instagram || '';
+  const facebook = config?.social?.facebook || '';
+  const tiktok = config?.social?.tiktok || '';
+  const hasSocials = !!(instagram || facebook || tiktok);
+
+  const getSafeUrl = (url: string) => {
+    if (!url) return '#';
+    try {
+      const parsed = new URL(url);
+      if (parsed.protocol === 'javascript:') return '#';
+      return url;
+    } catch (e) {
+      // Si no tiene http/https, pero no es javascript
+      if (!url.toLowerCase().startsWith('javascript:')) return url;
+      return '#';
+    }
+  };
 
   return (
     <motion.footer
@@ -43,6 +66,26 @@ export const Footer: React.FC = () => {
               <a href="/contacto" className="hover:text-oyishi-text transition-colors focus-ring">Contacto</a>
             </div>
 
+            {hasSocials && (
+              <div className="flex items-center gap-4 text-oyishi-textSec font-mono text-[10px] tracking-widest uppercase font-bold">
+                {instagram && (
+                  <a href={getSafeUrl(instagram)} target="_blank" rel="noopener noreferrer" className="hover:text-oyishi-gold transition-colors focus-ring p-1">
+                    Instagram
+                  </a>
+                )}
+                {facebook && (
+                  <a href={getSafeUrl(facebook)} target="_blank" rel="noopener noreferrer" className="hover:text-oyishi-gold transition-colors focus-ring p-1">
+                    Facebook
+                  </a>
+                )}
+                {tiktok && (
+                  <a href={getSafeUrl(tiktok)} target="_blank" rel="noopener noreferrer" className="hover:text-oyishi-gold transition-colors focus-ring p-1">
+                    TikTok
+                  </a>
+                )}
+              </div>
+            )}
+
           </div>
 
           {/* Contact */}
@@ -62,7 +105,7 @@ export const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-3 group">
                 <Phone size={16} className="text-oyishi-gold shrink-0" />
-                <a href={`tel:+34${restaurantInfo.phones[0].replace(/\s+/g, '')}`} className="hover:text-oyishi-text transition-colors font-mono focus-ring text-xs">{restaurantInfo.phones[0]}</a>
+                <a href={`tel:+34${safePhone}`} className="hover:text-oyishi-text transition-colors font-mono focus-ring text-xs">{phone}</a>
               </li>
               <li className="flex items-center gap-3 group">
                 <Phone size={16} className="text-oyishi-gold shrink-0" />

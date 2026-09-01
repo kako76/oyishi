@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { adminOrdersService, type RetellOrder } from '../services/adminOrdersService';
 import {
   Lock,
-  LogOut,
   RefreshCw,
   Phone,
   Calendar,
@@ -122,13 +121,6 @@ export const AdminOrdersPage: React.FC = () => {
     } else {
       setLoginError(result.error || 'Contraseña incorrecta. Por favor, verifica las credenciales de acceso OYISHI.');
     }
-  };
-
-  const handleLogout = () => {
-    adminOrdersService.logout();
-    setIsAuthenticated(false);
-    setOrders([]);
-    setSelectedOrder(null);
   };
 
   const handleStatusChange = async (id: string, newStatus: RetellOrder['status']) => {
@@ -316,9 +308,9 @@ export const AdminOrdersPage: React.FC = () => {
   }
 
   return (
-    <main className="min-h-screen pt-24 pb-20 bg-oyishi-bg text-oyishi-text">
+    <div className="min-h-screen pb-10 bg-oyishi-bg text-oyishi-text">
       {/* Header Superior del Panel Admin */}
-      <div className="bg-oyishi-card/80 border-b border-oyishi-border/80 backdrop-blur-md sticky top-16 z-30 px-4 sm:px-6 lg:px-8 py-4">
+      <div className="bg-oyishi-card/80 border-b border-oyishi-border/80 backdrop-blur-md sticky top-0 z-30 px-4 sm:px-6 lg:px-8 py-4">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-oyishi-gold/15 border border-oyishi-gold/40 flex items-center justify-center text-oyishi-gold font-display text-lg">
@@ -360,14 +352,6 @@ export const AdminOrdersPage: React.FC = () => {
               title="Recargar datos ahora"
             >
               <RefreshCw size={16} className={isLoading ? 'animate-spin' : ''} />
-            </button>
-
-            <button
-              onClick={handleLogout}
-              className="px-3 py-1.5 rounded-lg bg-red-950/40 border border-red-900/60 text-red-300 hover:bg-red-900/60 text-xs font-sans font-medium transition-colors flex items-center gap-1.5"
-            >
-              <LogOut size={14} />
-              <span>Cerrar Sesión</span>
             </button>
           </div>
         </div>
@@ -810,7 +794,7 @@ export const AdminOrdersPage: React.FC = () => {
           </div>
         )}
       </AnimatePresence>
-    </main>
+    </div>
   );
 };
 

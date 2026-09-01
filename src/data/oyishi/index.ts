@@ -16,6 +16,7 @@ export interface OyishiProduct {
   sourceUrl: string;
   source: 'oyishi.es';
   verified: boolean;
+  active?: boolean;
 }
 
 export const dataMetadata = {

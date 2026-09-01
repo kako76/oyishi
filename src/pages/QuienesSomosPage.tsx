@@ -1,8 +1,9 @@
 import React from 'react';
-import { menuData } from '../data/oyishi';
+import { useCatalog } from '../hooks/useCatalog';
 import { restaurantInfo } from '../data/oyishi/restaurant';
 import { ArrowRight, Sparkles, CalendarCheck, Utensils, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useWebContent } from '../hooks/useWebContent';
 import { useSEO } from '../hooks/useSEO';
 
 const fadeInUp = {
@@ -22,6 +23,14 @@ const staggerContainer = {
 };
 
 export const QuienesSomosPage: React.FC = () => {
+  const { menuData } = useCatalog();
+  const { config } = useWebContent();
+  
+  const title = config?.about?.title || "QUIÉNES SOMOS";
+  const mainText = config?.about?.mainText || "Filosofía & Esencia";
+  const secondaryText = config?.about?.secondaryText || "En <strong class=\"text-oyishi-text font-medium\">OYISHI</strong> combinamos la disciplina de la cocina tradicional japonesa con el rigor en la selección del producto. Ubicados en <strong class=\"text-oyishi-text font-medium\">Fuenlabrada (Calle Leganés 42)</strong>, nuestro compromiso es ofrecer una propuesta gastronómica honesta, fresca y equilibrada para cada ocasión.";
+  const showSection = config?.about?.showSection !== false;
+
   useSEO({
     title: 'Quiénes Somos | OYISHI Fuenlabrada',
     description: 'Conoce la filosofía, la dedicación y la historia detrás de OYISHI. Nuestra misión es ofrecer gastronomía japonesa auténtica en el sur de Madrid.',
@@ -32,6 +41,14 @@ export const QuienesSomosPage: React.FC = () => {
   const featuredBandeja = menuData.find(p => p.category.toUpperCase().includes('BANDEJAS') && p.imageUrl);
   const featuredNigiri = menuData.find(p => p.category.toUpperCase().includes('NIGIRI') && p.imageUrl);
   const featuredSashimi = menuData.find(p => p.category.toUpperCase().includes('SASHIMI') && p.imageUrl);
+
+  if (!showSection) {
+    return (
+      <main className="pt-24 bg-oyishi-bg min-h-screen text-oyishi-text flex items-center justify-center">
+        <h1 className="text-2xl font-display tracking-widest text-oyishi-textSec uppercase">Sección no disponible</h1>
+      </main>
+    );
+  }
 
   return (
     <main className="pt-24 bg-oyishi-bg min-h-screen text-oyishi-text">
@@ -47,16 +64,15 @@ export const QuienesSomosPage: React.FC = () => {
             variants={fadeInUp}
           >
             <span className="text-xs font-sans font-medium text-oyishi-gold tracking-[0.25em] uppercase mb-3 block">
-              Filosofía & Esencia
+              {mainText}
             </span>
             <h1 className="text-4xl md:text-6xl font-display text-oyishi-text mb-6 tracking-tight">
-              QUIÉNES SOMOS
+              {title}
             </h1>
             <div className="w-16 h-0.5 bg-oyishi-gold mx-auto mb-8 opacity-80" />
 
-            <p className="text-oyishi-textSec text-base md:text-xl font-light leading-relaxed max-w-3xl mx-auto">
-              En <strong className="text-oyishi-text font-medium">OYISHI</strong> combinamos la disciplina de la cocina tradicional japonesa con el rigor en la selección del producto. Ubicados en <strong className="text-oyishi-text font-medium">Fuenlabrada (Calle Leganés 42)</strong>, nuestro compromiso es ofrecer una propuesta gastronómica honesta, fresca y equilibrada para cada ocasión.
-            </p>
+            {/* We use dangerouslySetInnerHTML safely only for the bold formatting that might be there natively or just render raw text */}
+            <p className="text-oyishi-textSec text-base md:text-xl font-light leading-relaxed max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: secondaryText.replace(/\n/g, '<br />') }} />
           </motion.div>
         </div>
       </section>

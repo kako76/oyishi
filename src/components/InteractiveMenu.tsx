@@ -1,11 +1,12 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { menuData, categories } from '../data/oyishi';
+import { useCatalog } from '../hooks/useCatalog';
 import { Plus, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useCart } from '../hooks/useCart';
 import { motion, AnimatePresence } from 'framer-motion';
 import { isValidFoodImage } from '../utils/imageUtils';
 
 export const InteractiveMenu: React.FC = () => {
+  const { menuData, categories } = useCatalog();
   const [activeCategory, setActiveCategory] = useState<string>('Todos');
   const [searchQuery, setSearchQuery] = useState('');
   const { addToCart } = useCart();

@@ -1,7 +1,8 @@
 import React from 'react';
-import { menuData, categories } from '../data/oyishi';
+import { useCatalog } from '../hooks/useCatalog';
 import { ArrowRight, Plus, Sparkles, UtensilsCrossed, CheckCircle2, Award } from 'lucide-react';
 import { useCart } from '../hooks/useCart';
+import { useWebContent } from '../hooks/useWebContent';
 import { motion } from 'framer-motion';
 import { isValidFoodImage } from '../utils/imageUtils';
 import { ImageWithSkeleton } from './ImageWithSkeleton';
@@ -25,11 +26,31 @@ const staggerContainer = {
 };
 
 export const FeaturedProductsSection: React.FC = () => {
+  const { menuData, categories } = useCatalog();
   const { addToCart } = useCart();
+  const { config } = useWebContent();
   const isReduced = useIsReducedMotion();
+
+  const featuredTitle = config?.featured?.title || "SELECCIÓN OYISHI";
+  const featuredSubtitle = config?.featured?.subtitle || "Una selección representativa de la propuesta gastronómica de OYISHI.";
+  const showFeaturedSection = config?.featured?.showSection !== false;
+
+  const rawRefs = config?.featured?.productRefs?.split(',').map((r: string) => r.trim()).filter(Boolean) || [];
+  let customFeaturedProducts: any[] = [];
+  if (rawRefs.length > 0) {
+    rawRefs.forEach((ref: string) => {
+      const p = menuData.find(m => m.reference?.toLowerCase() === ref.toLowerCase());
+      if (p && !customFeaturedProducts.find(ext => ext.id === p.id)) {
+        customFeaturedProducts.push(p);
+      }
+    });
+  }
 
   // 8 productos destacados reales (con imagen de plato válida)
   const selectionProducts = menuData.filter(p => isValidFoodImage(p.imageUrl)).slice(0, 8);
+  
+  // Usar los seleccionados o fallback al estático actual
+  const finalFeaturedProducts = customFeaturedProducts.length > 0 ? customFeaturedProducts : selectionProducts;
 
   // Producto estrella para romper la retícula (Break the grid)
   const heroDish = selectionProducts[0] || menuData[0];
@@ -244,9 +265,10 @@ export const FeaturedProductsSection: React.FC = () => {
       )}
 
       {/* 3. SELECCIÓN OYISHI (Productos Destacados con Superficie Editorial Refinada) */}
-      <section className="py-24 bg-oyishi-bgSec border-b border-oyishi-border/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+      {showFeaturedSection && (
+        <section className="py-24 bg-oyishi-bgSec border-b border-oyishi-border/60">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
             initial={isReduced ? { opacity: 1 } : "hidden"}
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -256,9 +278,9 @@ export const FeaturedProductsSection: React.FC = () => {
             <span className="text-xs font-sans font-medium text-oyishi-gold tracking-[0.3em] uppercase mb-3 block flex items-center justify-center gap-2">
               <Sparkles size={14} className="text-oyishi-gold" /> Carta Destacada
             </span>
-            <h3 className="text-3xl md:text-5xl font-display text-oyishi-text mb-4 tracking-tight">SELECCIÓN OYISHI</h3>
+            <h3 className="text-3xl md:text-5xl font-display text-oyishi-text mb-4 tracking-tight">{featuredTitle}</h3>
             <p className="text-oyishi-textSec text-base md:text-lg max-w-xl mx-auto font-light">
-              Una selección representativa de la propuesta gastronómica de OYISHI.
+              {featuredSubtitle}
             </p>
           </motion.div>
 
@@ -269,7 +291,7 @@ export const FeaturedProductsSection: React.FC = () => {
             variants={isReduced ? undefined : staggerContainer}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           >
-            {selectionProducts.map((item) => (
+            {finalFeaturedProducts.map((item) => (
               <motion.div
                 key={item.id}
                 variants={isReduced ? undefined : fadeInUp}
@@ -316,7 +338,7 @@ export const FeaturedProductsSection: React.FC = () => {
                     {/* Alérgenos discretos */}
                     {item.allergens && item.allergens.length > 0 && (
                       <div className="mb-4 flex flex-wrap gap-1 opacity-70 group-hover:opacity-100 transition-opacity">
-                        {item.allergens.map((alg, idx) => (
+                        {item.allergens.map((alg: string, idx: number) => (
                           <span key={idx} className="px-1.5 py-0.5 border border-oyishi-border/40 bg-oyishi-bg/80 rounded text-[9px] text-oyishi-textSec font-mono uppercase tracking-wider">
                             {alg}
                           </span>
@@ -352,6 +374,7 @@ export const FeaturedProductsSection: React.FC = () => {
           </div>
         </div>
       </section>
+      )}
 
       {/* 3. BANDEJAS Y COMBINADOS */}
       {bandejasProducts.length > 0 && (

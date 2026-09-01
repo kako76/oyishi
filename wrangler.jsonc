@@ -12,6 +12,12 @@
       "database_name": "oyishi_db",
       "database_id": "1cec021b-2859-41df-b143-366b5fa4b245"
     }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "IMAGES_BUCKET",
+      "bucket_name": "oyishi-images"
+    }
   ]
 }
 

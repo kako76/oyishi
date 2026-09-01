@@ -4,12 +4,17 @@ import { useCart } from '../hooks/useCart';
 import { motion, AnimatePresence } from 'framer-motion';
 import { restaurantInfo } from '../data/oyishi/restaurant';
 import { LUXE_EASE, useIsReducedMotion } from '../utils/motionVariants';
+import { useWebContent } from '../hooks/useWebContent';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { totalItems, setIsCartOpen, badgeAnimationKey } = useCart();
   const isReduced = useIsReducedMotion();
+  const { config } = useWebContent();
+  
+  const phone = config?.cta?.phone || restaurantInfo.phones[0];
+  const safePhone = phone.replace(/[^0-9+]/g, '');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -81,12 +86,12 @@ export const Header: React.FC = () => {
           {/* Column 3: Teléfono & Carrito */}
           <div className="flex items-center justify-end gap-3 xl:gap-4">
             <a
-              href={`tel:+34${restaurantInfo.phones[0].replace(/\s+/g, '')}`}
+              href={`tel:+34${safePhone}`}
               className="hidden sm:flex items-center gap-2 text-[11px] font-sans font-medium text-oyishi-textSec hover:text-oyishi-text transition-all duration-300 focus-ring px-4 py-2.5 rounded-sm border border-oyishi-border/80 bg-oyishi-card/60 group hover:border-oyishi-gold/60 hover:shadow-[0_0_12px_rgba(216,179,106,0.15)] whitespace-nowrap"
               title="Llamar a OYISHI Fuenlabrada"
             >
               <PhoneCall size={14} className="text-oyishi-gold shrink-0 group-hover:rotate-12 transition-transform duration-300" />
-              <span className="tracking-wider">{restaurantInfo.phones[0]}</span>
+              <span className="tracking-wider">{phone}</span>
             </a>
 
             <button

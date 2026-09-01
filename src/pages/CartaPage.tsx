@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { menuData, categories } from '../data/oyishi';
+import { useCatalog } from '../hooks/useCatalog';
 import { Plus, Search, X, SlidersHorizontal } from 'lucide-react';
 import { useCart } from '../hooks/useCart';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -36,6 +36,7 @@ function formatCategoryTitle(cat: string): string {
 }
 
 export const CartaPage: React.FC = () => {
+  const { menuData, categories } = useCatalog();
   const [activeCategory, setActiveCategory] = useState<string>('Todos');
   const [searchQuery, setSearchQuery] = useState('');
   const [quickFilter, setQuickFilter] = useState<'all' | 'destacado' | 'vegetariano' | 'sin_gluten' | 'nigiris'>('all');

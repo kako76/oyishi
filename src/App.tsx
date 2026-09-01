@@ -17,7 +17,16 @@ const AvisoLegalPage = lazy(() => import('./pages/AvisoLegalPage').then(module =
 const PrivacidadPage = lazy(() => import('./pages/PrivacidadPage').then(module => ({ default: module.PrivacidadPage })));
 const CookiesPage = lazy(() => import('./pages/CookiesPage').then(module => ({ default: module.CookiesPage })));
 const AdminOrdersPage = lazy(() => import('./pages/AdminOrdersPage').then(module => ({ default: module.AdminOrdersPage })));
+const AdminContentPage = lazy(() => import('./pages/AdminContentPage').then(module => ({ default: module.AdminContentPage })));
+const AdminDashboardPage = lazy(() => import('./pages/AdminDashboardPage').then(module => ({ default: module.AdminDashboardPage })));
+const AdminWebPage = lazy(() => import('./pages/AdminWebPage').then(module => ({ default: module.AdminWebPage })));
+const AdminSchedulesPage = lazy(() => import('./pages/AdminSchedulesPage').then(module => ({ default: module.AdminSchedulesPage })));
+const AdminRestaurantPage = lazy(() => import('./pages/AdminRestaurantPage').then(module => ({ default: module.AdminRestaurantPage })));
+const AdminAndreaPage = lazy(() => import('./pages/AdminAndreaPage').then(module => ({ default: module.AdminAndreaPage })));
+const AdminSettingsPage = lazy(() => import('./pages/AdminSettingsPage').then(module => ({ default: module.AdminSettingsPage })));
+const AdminReservationsPage = lazy(() => import('./pages/AdminReservationsPage').then(module => ({ default: module.AdminReservationsPage })));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then(module => ({ default: module.NotFoundPage })));
+import { AdminLayout } from './components/admin/AdminLayout';
 
 function PageContainer({ children, pageKey }: { children: React.ReactNode; pageKey: string }) {
   const isReduced = useIsReducedMotion();
@@ -124,14 +133,48 @@ function App() {
         return <PrivacidadPage />;
       case '/cookies':
         return <CookiesPage />;
+      case '/admin':
+        return <AdminDashboardPage />;
       case '/admin/pedidos':
         return <AdminOrdersPage />;
+      case '/admin/carta':
+        return <AdminContentPage />;
+      case '/admin/web':
+        return <AdminWebPage />;
+      case '/admin/horarios':
+        return <AdminSchedulesPage />;
+      case '/admin/restaurante':
+        return <AdminRestaurantPage />;
+      case '/admin/reservas':
+        return <AdminReservationsPage />;
+      case '/admin/andrea':
+        return <AdminAndreaPage />;
+      case '/admin/configuracion':
+        return <AdminSettingsPage />;
       case '/':
         return <HomePage />;
       default:
         return <NotFoundPage />;
     }
   };
+
+  const isAdmin = currentPath.startsWith('/admin');
+
+  if (isAdmin) {
+    return (
+      <CartProvider>
+        <AdminLayout currentPath={currentPath} onNavigate={navigateTo}>
+          <Suspense fallback={
+            <div className="pt-40 pb-24 text-center text-oyishi-gold font-mono text-xs tracking-widest uppercase animate-pulse">
+              Cargando módulo...
+            </div>
+          }>
+            {renderCurrentPage()}
+          </Suspense>
+        </AdminLayout>
+      </CartProvider>
+    );
+  }
 
   return (
     <CartProvider>
