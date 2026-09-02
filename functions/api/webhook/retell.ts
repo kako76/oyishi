@@ -591,11 +591,10 @@ async function processWebhook(request: Request, env: Env, rawBody: string, log: 
       const partySize = Number(args.party_size) || 2;
       const customerName = args.customer_name || payload.customer_name || 'Desconocido';
       const phone = args.phone || payload.phone || payload.from_number || 'Desconocido';
-      const callData = payload.data || payload.call || payload;
-      const call_id = callData.call_id || payload.call_id;
-      const agentCallId = String(args.agent_call_id || call_id || '');
+      const call_id = payload.call?.call_id || payload.data?.call_id || payload.call_id;
+      const agentCallId = String(args.agent_call_id || call_id || '').trim();
 
-      if (!agentCallId) {
+      if (!agentCallId || agentCallId === 'undefined' || agentCallId === 'null') {
         return new Response(JSON.stringify({ confirmed: false, reservation_confirmed: false, reason: "Se requiere agent_call_id para procesar la reserva." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
       }
 
