@@ -711,10 +711,20 @@ async function processWebhook(request: Request, env: Env, rawBody: string, log: 
       };
     });
 
+    let textoResumen = "Te resumo el pedido:\\n";
+    resultItems.forEach(item => {
+      if (item.reference && item.reference !== 'desconocida') {
+        textoResumen += `${item.cantidad} del ${item.reference}, ${item.producto_oficial}, a ${item.precio_unitario} euros cada uno, subtotal ${item.subtotal.toFixed(2)} euros.\\n`;
+      } else {
+        textoResumen += `${item.cantidad} ${item.producto_oficial}, a ${item.precio_unitario} euros cada uno, subtotal ${item.subtotal.toFixed(2)} euros.\\n`;
+      }
+    });
+    textoResumen += `El total del pedido es ${total.toFixed(2)} euros.\\n¿Es correcto?`;
+
     const responseJson = {
       productos: resultItems,
       total_oficial: total,
-      mensaje_para_agente: `El cálculo total es ${total.toFixed(2)} €. Debes decir exactamente este importe.`
+      mensaje_para_agente: `Debes leer LITERALMENTE el siguiente resumen al cliente sin omitir nada:\\n${textoResumen}`
     };
 
     log(`[OYISHI TOOL] Retornando cálculo al agente. Total: ${total.toFixed(2)} €`);
