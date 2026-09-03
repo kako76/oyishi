@@ -186,8 +186,7 @@ export const InteractiveMenu: React.FC = () => {
 
                     <div className="flex justify-between items-start mb-2 gap-4">
                       <h4 className="font-display text-lg text-oyishi-text group-hover:text-oyishi-gold transition-colors select-all">
-                        {item.reference && <span className="text-oyishi-gold font-bold">{item.reference}. </span>}
-                        {item.name}
+                        {item.reference ? `${item.reference} — ` : ''}{item.name}
                       </h4>
                       <span className="font-mono text-lg text-oyishi-gold whitespace-nowrap">
                         {item.price.toFixed(2)}€

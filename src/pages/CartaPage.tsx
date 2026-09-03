@@ -301,8 +301,10 @@ export const CartaPage: React.FC = () => {
                     <div className="p-5 flex-1 flex flex-col justify-between">
                       <div>
                         <div className="flex justify-between items-start mb-2 gap-3">
-                          <h3 className="font-display text-lg text-oyishi-text group-hover:text-oyishi-gold transition-colors leading-snug">
-                            {item.name}
+                          <h3 className="font-display text-lg text-oyishi-text group-hover:text-oyishi-gold transition-colors leading-snug flex items-start gap-2">
+                            <span className="flex-1">
+                              {item.reference ? `${item.reference} — ` : ''}{item.name}
+                            </span>
                           </h3>
                           <span className="font-mono text-base font-semibold text-oyishi-gold whitespace-nowrap">
                             {item.price.toFixed(2)} €
